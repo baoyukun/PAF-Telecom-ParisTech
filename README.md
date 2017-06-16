@@ -42,11 +42,13 @@ Dans le cadre de votre projet, vous devrez
 
 ### vendredi 16 juin 2017
 
-Nous déssinons l'architecture de notre projet comme le suivant:
+L'architecture de notre construction sera la suivante:
 
 ![architecture](/resource/architecture.png "architecture")
 
-Nous devons extraire telles informations à partir des rapports scientifiques:
+Les opérations de fetching et construction des données ne seront pas forcément réalisées en même temps que l'affichag de ces données, d'où la séparation research/client. Les données sont stockées en partie sous des fichiers .JSON ce qui simplifie leur accès pour la zone client: les données sont alors prêtes à être traitées par les modules D3.js qui affichera les graphiques au client.
+
+Nous avons considéré les informations suivantes comme pertinentes à extraire des publications scientifiques:
 
 - Article
   - Nom des auteurs
@@ -70,7 +72,7 @@ Nous devons extraire telles informations à partir des rapports scientifiques:
   - Thème
   - Evolution de toutes ces données en fonction du temps
 
-Nous trouvons que les recherches dans le domaine "_Citation Network_" nous intéressent le plus et qu'il y a aussi des ressources à ce sujet disponibles que l'on pourra consulter par la suite. Ci-dessous les principaux programmes et avancées qui ont été faites dans le domaine:
+Nous trouvons que les recherches dans le domaine "_Citation Network_" nous intéressent le plus et qu'il y a beaucoup de ressources à ce sujet disponibles que l'on pourra consulter par la suite. Ci-dessous les principaux programmes qui ont été fait dans le domaine:
 
 - [Action Science Explorer](http://www.cs.umd.edu/hcil/ase/)
 
