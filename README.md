@@ -7,13 +7,15 @@
 
 [Cyril Concolato](https://concolato.wp.imt.fr/) (bureau: E504)
 
-## Membre
+## Membres
 
 [BAO Yukun](https://github.com/baoyukun)
 
 [FILIU Nino](https://github.com/ninofiliu)
 
 [ZHU Fangda](https://github.com/zhufangda)
+
+DIALLO Cherif (adresse git pas encore communiqué)
 
 ## Domaines
 
@@ -66,9 +68,9 @@ Nous devons extraire telles informations à partir des rapports scientifiques:
   - Citations par les autres institutions
   - Citations des autres institutions
   - Thème
-  - Evolution de toutes ces données en fonction du t
+  - Evolution de toutes ces données en fonction du temps
 
-Nous trouvons que les recherches dans le domaine "_Citation Network_" nous intéressent le plus et qu'il y a aussi telles ressources disponibles pour notre consultation dans la suite.
+Nous trouvons que les recherches dans le domaine "_Citation Network_" nous intéressent le plus et qu'il y a aussi des ressources à ce sujet disponibles que l'on pourra consulter par la suite. Ci-dessous les principaux programmes et avancées qui ont été faites dans le domaine:
 
 - [Action Science Explorer](http://www.cs.umd.edu/hcil/ase/)
 
