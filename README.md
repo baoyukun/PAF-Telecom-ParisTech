@@ -86,4 +86,4 @@ SA est un logiciel qui permet une analyse de réseau et une représentation visu
 
 - [VOSviewer](http://www.vosviewer.com/)
 
-Programme pour construire et visualiser des données bibliomé
+Programme pour construire et visualiser des données bibliométriques. Au lieu de construire le fichier de références à la main, ce programme permet d'analyser syntaxiquement automatique tout le fichier.
