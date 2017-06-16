@@ -15,7 +15,7 @@
 
 [ZHU Fangda](https://github.com/zhufangda)
 
-DIALLO Cherif (adresse git pas encore communiqué)
+[DIALLO Cherif](https://github.com/Mcdiallo)
 
 ## Domaines
 
