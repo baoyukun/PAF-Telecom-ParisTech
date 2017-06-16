@@ -11,11 +11,11 @@
 
 [BAO Yukun](https://github.com/baoyukun)
 
+[DIALLO Cherif](https://github.com/Mcdiallo)
+
 [FILIU Nino](https://github.com/ninofiliu)
 
 [ZHU Fangda](https://github.com/zhufangda)
-
-[DIALLO Cherif](https://github.com/Mcdiallo)
 
 ## Domaines
 
@@ -45,6 +45,8 @@ Dans le cadre de votre projet, vous devrez
 L'architecture de notre construction sera la suivante:
 
 ![architecture](/resource/architecture.png "architecture")
+
+![Organigramme de programmation](/resource/Organigramme de programmation.png "Organigramme de programmation")
 
 Les opérations de fetching et construction des données ne seront pas forcément réalisées en même temps que l'affichag de ces données, d'où la séparation research/client. Les données sont stockées en partie sous des fichiers .JSON ce qui simplifie leur accès pour la zone client: les données sont alors prêtes à être traitées par les modules D3.js qui affichera les graphiques au client.
 
