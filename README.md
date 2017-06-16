@@ -46,7 +46,7 @@ L'architecture de notre construction sera la suivante:
 
 ![architecture](/resource/architecture.png "architecture")
 
-![Organigramme de programmation](/resource/Organigramme de programmation.png "Organigramme de programmation")
+![Organigramme de programmation](/resource/architecture1.png "Organigramme de programmation")
 
 Les opérations de fetching et construction des données ne seront pas forcément réalisées en même temps que l'affichag de ces données, d'où la séparation research/client. Les données sont stockées en partie sous des fichiers .JSON ce qui simplifie leur accès pour la zone client: les données sont alors prêtes à être traitées par les modules D3.js qui affichera les graphiques au client.
 
