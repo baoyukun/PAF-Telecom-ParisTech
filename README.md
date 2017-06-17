@@ -1,4 +1,5 @@
 ﻿# PAF-Telecom-ParisTech
+
 **Analyse de publications scientifiques – Visualisation des résultats**
 
 ## Encadrants
@@ -36,11 +37,25 @@ Dans le cadre de votre projet, vous devrez
 - Trouver des regroupements –d’articles, de chercheurs…- par analyse du graphe
 - Produire des représentations d’articles ou de groupes d’articles, de chercheurs…
 
-![demo result](/resource/image0.jpg "demo result")
+[![demo result](/resource/image0.jpg "demo result")](http://paf.telecom-paristech.fr/projets/analyse-publications-scientifiques-visualisation-resultats)
 
 ## Développement du projet
 
-### vendredi 16 juin 2017
+- **Semaine 1**
+ - [Vendredi](#Vendredi-16-juin-2017)
+- **Semaine 2**
+ - [Lundi](#Lundi-19-juin-2017)
+ - [Mardi](#Mardi-20-juin-2017)
+ - [Mercredi](#Mercredi-21-juin-2017)
+ - [Jeudi](#Jeudi-22-juin-2017)
+ - [Vendredi](#Vendredi-23-juin-2017)
+- **Semaine 3**
+ - [Lundi](#Lundi-26-juin-2017)
+ - [Mardi](#Mardi-27-juin-2017)
+ - [Mercredi](#Mercredi-28-juin-2017)
+ - [Jeudi](#Jeudi-29-juin-2017)
+
+### Vendredi 16 juin 2017
 
 L'architecture de notre construction sera la suivante:
 
@@ -93,3 +108,41 @@ SA est un logiciel qui permet une analyse de réseau et une représentation visu
 - [VOSviewer](http://www.vosviewer.com/)
 
 Programme pour construire et visualiser des données bibliométriques. Au lieu de construire le fichier de références à la main, ce programme permet d'analyser syntaxiquement automatique tout le fichier.
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Lundi 19 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Mardi 20 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Mercredi 21 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Jeudi 22 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Vendredi 23 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Lundi 26 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Mardi 27 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Mercredi 28 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
+
+### Jeudi 29 juin 2017
+
+[*Retour au calendrier*](#Développement-du-projet)
