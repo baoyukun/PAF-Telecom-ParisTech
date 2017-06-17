@@ -42,18 +42,18 @@ Dans le cadre de votre projet, vous devrez
 ## Développement du projet
 
 - **Semaine 1**
- - [Vendredi](#Vendredi-16-juin-2017)
+  - [Vendredi](#vendredi-16-juin-2017)
 - **Semaine 2**
- - [Lundi](#Lundi-19-juin-2017)
- - [Mardi](#Mardi-20-juin-2017)
- - [Mercredi](#Mercredi-21-juin-2017)
- - [Jeudi](#Jeudi-22-juin-2017)
- - [Vendredi](#Vendredi-23-juin-2017)
+  - [Lundi](#lundi-19-juin-2017)
+  - [Mardi](#mardi-20-juin-2017)
+  - [Mercredi](#mercredi-21-juin-2017)
+  - [Jeudi](#jeudi-22-juin-2017)
+  - [Vendredi](#vendredi-23-juin-2017)
 - **Semaine 3**
- - [Lundi](#Lundi-26-juin-2017)
- - [Mardi](#Mardi-27-juin-2017)
- - [Mercredi](#Mercredi-28-juin-2017)
- - [Jeudi](#Jeudi-29-juin-2017)
+  - [Lundi](#lundi-26-juin-2017)
+  - [Mardi](#mardi-27-juin-2017)
+  - [Mercredi](#mercredi-28-juin-2017)
+  - [Jeudi](#jeudi-29-juin-2017)
 
 ### Vendredi 16 juin 2017
 
@@ -109,40 +109,40 @@ SA est un logiciel qui permet une analyse de réseau et une représentation visu
 
 Programme pour construire et visualiser des données bibliométriques. Au lieu de construire le fichier de références à la main, ce programme permet d'analyser syntaxiquement automatique tout le fichier.
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Lundi 19 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Mardi 20 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 21 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 22 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Vendredi 23 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Lundi 26 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Mardi 27 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 28 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 29 juin 2017
 
-[*Retour au calendrier*](#Développement-du-projet)
+[*Retour au calendrier*](#développement-du-projet)
