@@ -4,3 +4,5 @@ JSON va être le langage dans lequel nous allons stocker nos données. Il faudra
 - _read.php_: implémentation de base d'une lecture php et d'une conversion de l'objet JSON en un objet PHP
 - _write.php_: implémentation de base de la conversion d'un objet PHP en un objet JSON et écriture de celui-ci dans un fichier JSON
 - _read-JS.php_: implémentation d'une lecture php et de l'insertion dans la variable dans le code JavaScript
+
+Une lecture d'un fichier JSON par un document HTML est déjà fourni dans les codes d'implémentation de D3.js, donc pas besoin d'en réécrire un.
