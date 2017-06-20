@@ -23,7 +23,7 @@ for ($i=0; $i<count($C); $i++){
 
 $Cmodjson=json_encode($Cmod);
 
-$f=fopen("data/chercheurstptd3.json","w");
+$f=fopen("data/chercheurs.json","w");
 fwrite($f,$Cmodjson);
 fclose($f);
 
