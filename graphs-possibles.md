@@ -5,9 +5,9 @@ _Ici est regroupé toutes les données à mettre sous forme de représentation g
 - liens entre les auteurs en fonction des mots clés utilisés: [force-directed graph](https://bl.ocks.org/mbostock/4062045)
 - liens entre les auteurs en fonction des articles co-écrits: [force-directed graph](https://bl.ocks.org/mbostock/4062045)
 - liens entre les auteurs en fonction des citations: [force-directed graph](https://bl.ocks.org/mbostock/4062045) ou [Mobile patents suite](http://bl.ocks.org/mbostock/1153292)
-- prédominance de certaines thématiques en foction de la période : [Data Visualization : Jawbone UP](https://nyquist212.wordpress.com/category/d3-js/)
-- prédominance de certains auteurs en fonction de la période : [Data Visualization : Jawbone UP](https://nyquist212.wordpress.com/category/d3-js/)
-
-Par `Nino FILIU` et `Cherif DIALLO`
+- prédominance de certaines thématiques en fonction du temps : [Data Visualization : Jawbone UP](https://nyquist212.wordpress.com/category/d3-js/)
+- prédominance de certains auteurs en fonction du temps : [Data Visualization : Jawbone UP](https://nyquist212.wordpress.com/category/d3-js/)
 
 _plus de propositions à venir_
+
+Par `Nino FILIU` et `Cherif DIALLO`
