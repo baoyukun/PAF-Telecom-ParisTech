@@ -133,6 +133,12 @@ Par `ZHU Fangda` et `BAO Yukun`
 
 ### Mardi 20 juin 2017
 
+J'ai passé la première partie de la journée à déterminer avec Cherif quels données nous allions représenter et avec l'aides de quels graphs. Ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/blob/master/rapports/graphs-possibles.md). Cette détermination permet de savoir quels sont les données à avoir en amont: auteurs, co-auteurs, citations, etc.
+
+J'ai écrit des scripts PHP pour permettre d'aller chercher le fichier JSON, de le modifier pour qu'il ait la forme des fichiers JSON qu'utilisent les plugins D3 que j'utilise, et d'afficher le graph correspondant.
+
+Par `Nino Filiu`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 21 juin 2017
