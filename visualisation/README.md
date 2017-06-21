@@ -12,7 +12,7 @@ La méthode utilisée ici pour visualiser les données est la suivante:
 
 Il y a en outre des scripts intermédiaires permettant de génerer des données plus pertinentes à visualiser. Par exemple, **min-DFG** lire un fichier JSON censé être affiché par un FDG et va supprimer les liens qui ont un poids trop faible. C'est utile pour traiter **data/coauteurs.php** qui contient trop d'informations: son affichage par un FDG ou un ZFDG est lente et incompréhensible.
 
-**Lexique**
+## Lexique
 
 - FDG: [force-directed graph](https://bl.ocks.org/mbostock/4062045)
 - ZFDG: [zoomable force-directed graph](https://bl.ocks.org/pkerpedjiev/f2e6ebb2532dae603de13f0606563f5b)
