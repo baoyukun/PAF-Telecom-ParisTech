@@ -2,6 +2,8 @@
 
 Ce dossier regroupe tous les scripts permettant un affichage des données.
 
+## Explication de la méthode et des liens entre les scripts
+
 La méthode utilisée ici pour visualiser les données est la suivante:
 1. Pour chaque graph à afficher, il y a un script dédié pour traiter les fichiers JSON
 2. Ces scripts créent un fichier JSON "prêt à afficher": le plugin d3.js n'a alors qu'à aller chercher le bon fichier
@@ -11,6 +13,10 @@ La méthode utilisée ici pour visualiser les données est la suivante:
 - **coauteurs.php** va lire **data/publis.json** et crée **data/coauteurs.json** qui sera afiché par *display.php?dataURL=data/coauteurs.json&graphType=FDG* par un force-directed graph (FDG);
 
 Il y a en outre des scripts intermédiaires permettant de génerer des données plus pertinentes à visualiser. Par exemple, **min-DFG** lire un fichier JSON censé être affiché par un FDG et va supprimer les liens qui ont un poids trop faible. C'est utile pour traiter **data/coauteurs.php** qui contient trop d'informations: son affichage par un FDG ou un ZFDG est lente et incompréhensible.
+
+La méthode peut donc être visualisée de la manière suivante:
+
+![Cheminement des informations, des données jusqu'à la visualisation](../resource/chemin-infos-visualisation.png "cheminement des informations, des données jusqu'à la visualisation")
 
 ## Lexique
 
