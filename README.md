@@ -135,13 +135,17 @@ Par `ZHU Fangda` et `BAO Yukun`
 
 J'ai passé la première partie de la journée à déterminer avec Cherif quels données nous allions représenter et avec l'aides de quels graphs. Ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/blob/master/rapports/graphs-possibles.md). Cette détermination permet de savoir quels sont les données à avoir en amont: auteurs, co-auteurs, citations, etc.
 
-J'ai écrit des scripts PHP pour permettre d'aller chercher le fichier JSON, de le modifier pour qu'il ait la forme des fichiers JSON qu'utilisent les plugins D3 que j'utilise, et d'afficher le graph correspondant.
+J'ai écrit des scripts PHP pour permettre d'aller chercher le fichier JSON, de le modifier pour qu'il ait la forme des fichiers JSON qu'utilisent les plugins D3 que j'utilise, et d'afficher le graph correspondant. J'appelle par la suite cette catégorie de fichiers JSON les PAA (prêts-à-afficher).
 
 Par `Nino Filiu`
 
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 21 juin 2017
+
+J'ai continué le développement des outils de visualisation de fichiers JSON. J'ai écrit des scripts PHP permettant la production de PAA, d'autres produisant des fichiers intermédiaires avant le passage par une sorte de "filtre" PHP qui modifie les données pour ne garder que celles pertinentes. Le détail de ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/edit/master/visualisation)
+
+Par `Nino Filiu`
 
 [*Retour au calendrier*](#développement-du-projet)
 
