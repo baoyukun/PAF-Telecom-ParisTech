@@ -14,7 +14,7 @@ La méthode utilisée ici pour visualiser les données est la suivante:
 
 Il y a en outre des scripts intermédiaires permettant de génerer des données plus pertinentes à visualiser. Par exemple, **min-DFG** lire un fichier JSON censé être affiché par un FDG et va supprimer les liens qui ont un poids trop faible. C'est utile pour traiter **data/coauteurs.php** qui contient trop d'informations: son affichage par un FDG ou un ZFDG est lente et incompréhensible.
 
-La méthode peut donc être visualisée de la manière suivante:
+La méthode et les emplacements des fichiers peut donc être visualisée de la manière suivante:
 
 ![Cheminement des informations, des données jusqu'à la visualisation](../resource/chemin-infos-visualisation.png "cheminement des informations, des données jusqu'à la visualisation")
 
