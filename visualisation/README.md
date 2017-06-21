@@ -9,3 +9,11 @@ La méthode utilisée ici pour visualiser les données est la suivante:
 
 - **chercheurs.php** va lire **data/chercheurstpt.json** et crée **data/chercheurs.json** qui sera affichée par *display.php?dataURL=data/chercheurstptd3.json&graphType=CT* par un collapsible tree (CT)
 - **coauteurs.php** va lire **data/publis.json** et crée **data/coauteurs.json** qui sera afiché par *display.php?dataURL=data/coauteurs.json&graphType=FDG* par un force-directed graph (FDG);
+
+Il y a en outre des scripts intermédiaires permettant de génerer des données plus pertinentes à visualiser. Par exemple, **min-DFG** lire un fichier JSON censé être affiché par un FDG et va supprimer les liens qui ont un poids trop faible. C'est utile pour traiter **data/coauteurs.php** qui contient trop d'informations: son affichage par un FDG ou un ZFDG est lente et incompréhensible.
+
+**Lexique**
+
+- FDG: [force-directed graph](https://bl.ocks.org/mbostock/4062045)
+- ZFDG: [zoomable force-directed graph](https://bl.ocks.org/pkerpedjiev/f2e6ebb2532dae603de13f0606563f5b)
+- CT: [collapsible tree](https://bl.ocks.org/mbostock/4339083)
