@@ -31,7 +31,10 @@
 
 |**fichier de données**|**affichage**|**temps d'execution**|
 |----------------------|-------------|---------------------|
-|coauteurs-min         |FDG,ZFDG     |<1s                  |
+|coauteurs-min3        |FDG,ZFDG     |<1s                  |
+|coauteurs-min7        |FDG,ZFDG     |<1s                  |
+|coauteurs-min10       |FDG,ZFDG     |<1s                  |
+|coauteurs-min25       |FDG,ZFDG     |<1s                  |
 |chercheurs            |CT           |<1s                  |
 |coauteurs             |FDG,ZFDG     |50s environ          |
 
