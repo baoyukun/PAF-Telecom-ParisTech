@@ -147,7 +147,13 @@ Nous divisons le travail de cette partie en deux morceaux: Fangda prend en charg
 
 Notre schéma de travail pourrait se représenter comme ceci:
 
-`Articles téléchargés en PDF`  -----*analyser*---->>  `Données en json`  -----*construire / mettre en jour (e.g., jena)*---->>  `Graph de connaissance en RDF`  <<----*requête reçue par serveur*-----  `Serveur`  -----*envoyer réponse sous json*---->>  `Visualisation D3`
+```
+`Articles téléchargés en PDF`  -----*analyser*---->>  `Données en json`  
+
+-----*construire / mettre en jour (e.g., jena)*---->>  `Graph de connaissance en RDF`
+
+<<----*requête reçue par serveur*-----  `Serveur`  -----*envoyer réponse sous json*---->>  `Visualisation D3`
+```
 
 Les données d'un article sont organisées sous json comme ceci:
 
@@ -184,6 +190,8 @@ Les données d'un article sont organisées sous json comme ceci:
   ]
 }
 ```
+
+Par `BAO Yukun`
 
 [*Retour au calendrier*](#développement-du-projet)
 
