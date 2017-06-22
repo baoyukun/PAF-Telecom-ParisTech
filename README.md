@@ -133,19 +133,88 @@ Par `ZHU Fangda` et `BAO Yukun`
 
 ### Mardi 20 juin 2017
 
+#### Partie Visualisation
+
 J'ai passé la première partie de la journée à déterminer avec Cherif quels données nous allions représenter et avec l'aides de quels graphs. Ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/blob/master/rapports/graphs-possibles.md). Cette détermination permet de savoir quels sont les données à avoir en amont: auteurs, co-auteurs, citations, etc.
 
 J'ai écrit des scripts PHP pour permettre d'aller chercher le fichier JSON, de le modifier pour qu'il ait la forme des fichiers JSON qu'utilisent les plugins D3 que j'utilise, et d'afficher le graph correspondant. J'appelle par la suite cette catégorie de fichiers JSON les PAA (prêts-à-afficher).
 
 Par `Nino Filiu`
 
+#### Partie Analyse
+
+Nous divisons le travail de cette partie en deux morceaux: Fangda prend en charge du graph de connaissance (éventuellement nécessite un apprentissage préliminaire) et Yukun continue à classifier et analyser des articles PDF en mettant toutes les informations dans un format uniforme de json.
+
+Notre schéma de travail pourrait se représenter comme ceci:
+
+`Articles téléchargés en PDF`  -----*analyser*---->>  `Données en json`  -----*construire / mettre en jour (e.g., jena)*---->>  `Graph de connaissance en RDF`  <<----*requête reçue par serveur*-----  `Serveur`  -----*envoyer réponse sous json*---->>  `Visualisation D3`
+
+Les données d'un article sont organisées sous json comme ceci:
+
+```json
+{
+  "identity": "http://givingsense.eu/sembib/data/tpt/paf2017/Nom_du_article_0001",
+  "title": "Nom_du_article",
+  "ref": "refName",
+  "date": {"year": 2017, "month": 6},
+  "address": "publicationAddress",
+  "belongTo": "booktitle_or_conference_Name",
+  "category": "invite",
+  "language": "en",
+  "audience": "2",
+  "project": "projectName",
+  "department": "departmentName",
+  "group": "groupName",
+  "author": [
+    {"firstName": "Yukun", "middleName": "", "lastName": "BAO", "affiliation": "telecom-paristech", "ID": "xxx001"},
+    {"firstName": "Fangda", "middleName": "", "lastName": "ZHU", "affiliation": "telecom-paristech", "ID": "xxx002"},
+    {"firstName": "Nino", "middleName": "", "lastName": "FILIU", "affiliation": "telecom-paristech", "ID": "xxx003"},
+    {"firstName": "Cherif", "middleName": "", "lastName": "DIALLO", "affiliation": "telecom-paristech", "ID": "xxx004"}
+  ],
+  "keyword": ["keyword1", "keyword2", "keyword3"],
+  "citationList": [
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}}
+  ],
+  "citedList": [
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}}
+  ]
+}
+```
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 21 juin 2017
 
+#### Partie Visualisation
+
 J'ai continué le développement des outils de visualisation de fichiers JSON. J'ai écrit des scripts PHP permettant la production de PAA, d'autres produisant des fichiers intermédiaires avant le passage par une sorte de "filtre" PHP qui modifie les données pour ne garder que celles pertinentes. Le détail de ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/edit/master/visualisation)
 
 Par `Nino Filiu`
+
+#### Partie Analyse
+
+J'ai étudié le RDF, SPARSQL et Ontology à l'aide de tutoriel et documentation de Jena.
+
+Par `ZHU Fangda`
+
+De mon part, j'ai essayé plein d'outils pour récupérer, nettoyer et mettre en forme des données. Voici plus d'informations sur les outils et mon remarque:
+
+- [SoPaper, So Easy](https://github.com/ppwwyyxx/SoPaper) qui permet à partir le nom d'un article de chercher et télécharger cet article sur Internet. Pour l'instant, on n'a pas besoin de l'utiliser car on se contente tout au début de construire un graph de connaissance basé sur les [1819 articles](http://givingsense.eu/sembib/data/srcPdf/) fournis par professeur et on les a déjà téléchargés en écrivant un [code Python de quelques lignes](crawler/downloader.py).
+
+- [Grobid](http://grobid.readthedocs.io/en/latest/) qui permet d'extraire des données d'un article de format `PDF`. Les données obtenues sont organisées sous forme `XML` bien structurée et un programme pourrais très facilement "voir" touts les informations liées avec cet article. Grâce aux algorithmes de *Machine Learning*, le résultat est satisfaisant mais malheureusement les erreurs ne sont pas négligeables.
+
+- [PDFMiner](https://github.com/euske/pdfminer), [PyPDF](http://pythonhosted.org/PyPDF2/), [Pdf2htmlEX
+](https://github.com/coolwanglu/pdf2htmlEX), [Apache PDFBox](https://pdfbox.apache.org/) et autres logiciels qui permettent d'extraire toute information en plein texte ou bien qui transmettent fichier PDF en fichier texte. Cela est très important parce qu'on doit enfin exploiter des mots clés d'un article à partir du plein texte en utilisant `NLTK (Natural Language Processing Toolkit)`.
+
+- [Scholar.py](https://github.com/ckreibich/scholar.py), [Arxiv-references
+](https://github.com/nishimuuu/Arxiv-references), [Scopus-API
+](https://github.com/scopus-api/scopus) et crawlers écrits par moi, qui essaient de chercher et de vérifier toutes les informations d'un article. A priori, `Google Scholar` est un bon endroit pour faire ça alors que malheureusement non seulement manque-il des APIs publics, mais aussi il déteste des crawlers récursifs.
+
+Par `BAO Yukun`
 
 [*Retour au calendrier*](#développement-du-projet)
 
