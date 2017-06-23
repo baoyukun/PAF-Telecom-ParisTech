@@ -235,6 +235,12 @@ Par `BAO Yukun`
 
 ### Jeudi 22 juin 2017
 
+J'ai modifié les scripts existants en fonction de la nouvelle convention de fichier JSON décrite plus haut par Yukun. J'ai en outre écrit de nouveaux scripts permettant une visualisation des mots-clefs. Cela m'a pris un peu de temps étant donné qu'il fallait construire une toute nouvelle clase d'objets adapté à ce script.
+
+Je n'ai pas encore mis à jour la partie "visualisation" du git car j'attends d'avoir des scripts fonctionnels et complets.
+
+Par `Nino Filiu`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Vendredi 23 juin 2017
