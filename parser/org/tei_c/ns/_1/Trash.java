@@ -1,11 +1,3 @@
-//
-// 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.8-b130911.1802 生成的
-// 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2017.06.23 时间 04:21:10 AM CEST 
-//
-
-
 package org.tei_c.ns._1;
 
 import java.util.ArrayList;
@@ -22,9 +14,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
- * <p>anonymous complex type的 Java 类。
+ * <p>Java class for anonymous complex type.
  * 
- * <p>以下模式片段指定包含在此类中的预期内容。
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType>
@@ -53,79 +45,79 @@ public class Trash {
     @XmlElementRef(name = "ref", namespace = "http://www.tei-c.org/ns/1.0", type = Ref.class, required = false)
     @XmlMixed
     protected List<Object> content;
-    @XmlAttribute(name = "evidence")
-    protected List<String> evidences;
-    @XmlAttribute(name = "instant")
-    protected String instant;
-    @XmlAttribute(name = "source")
-    protected List<String> sources;
-    @XmlAttribute(name = "min")
-    protected String min;
-    @XmlAttribute(name = "max")
-    protected String max;
-    @XmlAttribute(name = "atLeast")
-    protected String atLeast;
-    @XmlAttribute(name = "atMost")
-    protected String atMost;
-    @XmlAttribute(name = "confidence")
-    protected Double confidence;
-    @XmlAttribute(name = "extent")
-    protected String extent;
-    @XmlAttribute(name = "quantity")
-    protected String quantity;
-    @XmlAttribute(name = "scope")
-    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-    protected String scope;
     @XmlAttribute(name = "unit")
     protected String unit;
     @XmlAttribute(name = "precision")
     protected TeiDataCertainty precision;
-    @XmlAttribute(name = "notBefore-custom")
-    protected List<String> notBeforeCustoms;
+    @XmlAttribute(name = "quantity")
+    protected String quantity;
+    @XmlAttribute(name = "confidence")
+    protected Double confidence;
+    @XmlAttribute(name = "atLeast")
+    protected String atLeast;
+    @XmlAttribute(name = "max")
+    protected String max;
+    @XmlAttribute(name = "min")
+    protected String min;
+    @XmlAttribute(name = "atMost")
+    protected String atMost;
+    @XmlAttribute(name = "extent")
+    protected String extent;
+    @XmlAttribute(name = "scope")
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    protected String scope;
+    @XmlAttribute(name = "source")
+    protected List<String> sources;
+    @XmlAttribute(name = "evidence")
+    protected List<String> evidences;
+    @XmlAttribute(name = "instant")
+    protected String instant;
     @XmlAttribute(name = "from-custom")
     protected List<String> fromCustoms;
     @XmlAttribute(name = "notAfter-custom")
     protected List<String> notAfterCustoms;
-    @XmlAttribute(name = "when-custom")
-    protected List<String> whenCustoms;
-    @XmlAttribute(name = "datingPoint")
-    protected String datingPoint;
+    @XmlAttribute(name = "notBefore-custom")
+    protected List<String> notBeforeCustoms;
     @XmlAttribute(name = "to-custom")
     protected List<String> toCustoms;
     @XmlAttribute(name = "datingMethod")
     protected String datingMethod;
+    @XmlAttribute(name = "when-custom")
+    protected List<String> whenCustoms;
+    @XmlAttribute(name = "datingPoint")
+    protected String datingPoint;
+    @XmlAttribute(name = "notAfter")
+    protected String notAfter;
+    @XmlAttribute(name = "from")
+    protected String from;
     @XmlAttribute(name = "when")
     protected String when;
     @XmlAttribute(name = "notBefore")
     protected String notBefore;
-    @XmlAttribute(name = "from")
-    protected String from;
-    @XmlAttribute(name = "notAfter")
-    protected String notAfter;
     @XmlAttribute(name = "to")
     protected String to;
-    @XmlAttribute(name = "period")
-    protected String period;
-    @XmlAttribute(name = "to-iso")
-    protected String toIso;
-    @XmlAttribute(name = "from-iso")
-    protected String fromIso;
-    @XmlAttribute(name = "when-iso")
-    protected String whenIso;
-    @XmlAttribute(name = "notBefore-iso")
-    protected String notBeforeIso;
     @XmlAttribute(name = "notAfter-iso")
     protected String notAfterIso;
+    @XmlAttribute(name = "from-iso")
+    protected String fromIso;
+    @XmlAttribute(name = "notBefore-iso")
+    protected String notBeforeIso;
+    @XmlAttribute(name = "when-iso")
+    protected String whenIso;
+    @XmlAttribute(name = "to-iso")
+    protected String toIso;
     @XmlAttribute(name = "calendar")
     protected String calendar;
+    @XmlAttribute(name = "period")
+    protected String period;
     @XmlAttribute(name = "key")
     protected String key;
     @XmlAttribute(name = "ref")
     protected List<String> reves;
-    @XmlAttribute(name = "role")
-    protected List<String> roles;
     @XmlAttribute(name = "nymRef")
     protected List<String> nymReves;
+    @XmlAttribute(name = "role")
+    protected List<String> roles;
 
     /**
      * Gets the value of the content property.
@@ -145,8 +137,8 @@ public class Trash {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Ref }
      * {@link String }
+     * {@link Ref }
      * 
      * 
      */
@@ -158,60 +150,243 @@ public class Trash {
     }
 
     /**
-     * Gets the value of the evidences property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the evidences property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getEvidences().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getEvidences() {
-        if (evidences == null) {
-            evidences = new ArrayList<String>();
-        }
-        return this.evidences;
-    }
-
-    /**
-     * 获取instant属性的值。
+     * Gets the value of the unit property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getInstant() {
-        if (instant == null) {
-            return "false";
-        } else {
-            return instant;
-        }
+    public String getUnit() {
+        return unit;
     }
 
     /**
-     * 设置instant属性的值。
+     * Sets the value of the unit property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setInstant(String value) {
-        this.instant = value;
+    public void setUnit(String value) {
+        this.unit = value;
+    }
+
+    /**
+     * Gets the value of the precision property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link TeiDataCertainty }
+     *     
+     */
+    public TeiDataCertainty getPrecision() {
+        return precision;
+    }
+
+    /**
+     * Sets the value of the precision property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link TeiDataCertainty }
+     *     
+     */
+    public void setPrecision(TeiDataCertainty value) {
+        this.precision = value;
+    }
+
+    /**
+     * Gets the value of the quantity property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getQuantity() {
+        return quantity;
+    }
+
+    /**
+     * Sets the value of the quantity property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setQuantity(String value) {
+        this.quantity = value;
+    }
+
+    /**
+     * Gets the value of the confidence property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Double }
+     *     
+     */
+    public Double getConfidence() {
+        return confidence;
+    }
+
+    /**
+     * Sets the value of the confidence property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Double }
+     *     
+     */
+    public void setConfidence(Double value) {
+        this.confidence = value;
+    }
+
+    /**
+     * Gets the value of the atLeast property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAtLeast() {
+        return atLeast;
+    }
+
+    /**
+     * Sets the value of the atLeast property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAtLeast(String value) {
+        this.atLeast = value;
+    }
+
+    /**
+     * Gets the value of the max property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMax() {
+        return max;
+    }
+
+    /**
+     * Sets the value of the max property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMax(String value) {
+        this.max = value;
+    }
+
+    /**
+     * Gets the value of the min property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getMin() {
+        return min;
+    }
+
+    /**
+     * Sets the value of the min property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setMin(String value) {
+        this.min = value;
+    }
+
+    /**
+     * Gets the value of the atMost property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAtMost() {
+        return atMost;
+    }
+
+    /**
+     * Sets the value of the atMost property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAtMost(String value) {
+        this.atMost = value;
+    }
+
+    /**
+     * Gets the value of the extent property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getExtent() {
+        return extent;
+    }
+
+    /**
+     * Sets the value of the extent property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setExtent(String value) {
+        this.extent = value;
+    }
+
+    /**
+     * Gets the value of the scope property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    /**
+     * Sets the value of the scope property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setScope(String value) {
+        this.scope = value;
     }
 
     /**
@@ -244,258 +419,18 @@ public class Trash {
     }
 
     /**
-     * 获取min属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMin() {
-        return min;
-    }
-
-    /**
-     * 设置min属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMin(String value) {
-        this.min = value;
-    }
-
-    /**
-     * 获取max属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getMax() {
-        return max;
-    }
-
-    /**
-     * 设置max属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setMax(String value) {
-        this.max = value;
-    }
-
-    /**
-     * 获取atLeast属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAtLeast() {
-        return atLeast;
-    }
-
-    /**
-     * 设置atLeast属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAtLeast(String value) {
-        this.atLeast = value;
-    }
-
-    /**
-     * 获取atMost属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getAtMost() {
-        return atMost;
-    }
-
-    /**
-     * 设置atMost属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setAtMost(String value) {
-        this.atMost = value;
-    }
-
-    /**
-     * 获取confidence属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Double }
-     *     
-     */
-    public Double getConfidence() {
-        return confidence;
-    }
-
-    /**
-     * 设置confidence属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Double }
-     *     
-     */
-    public void setConfidence(Double value) {
-        this.confidence = value;
-    }
-
-    /**
-     * 获取extent属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getExtent() {
-        return extent;
-    }
-
-    /**
-     * 设置extent属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setExtent(String value) {
-        this.extent = value;
-    }
-
-    /**
-     * 获取quantity属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getQuantity() {
-        return quantity;
-    }
-
-    /**
-     * 设置quantity属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setQuantity(String value) {
-        this.quantity = value;
-    }
-
-    /**
-     * 获取scope属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getScope() {
-        return scope;
-    }
-
-    /**
-     * 设置scope属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setScope(String value) {
-        this.scope = value;
-    }
-
-    /**
-     * 获取unit属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getUnit() {
-        return unit;
-    }
-
-    /**
-     * 设置unit属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setUnit(String value) {
-        this.unit = value;
-    }
-
-    /**
-     * 获取precision属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link TeiDataCertainty }
-     *     
-     */
-    public TeiDataCertainty getPrecision() {
-        return precision;
-    }
-
-    /**
-     * 设置precision属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TeiDataCertainty }
-     *     
-     */
-    public void setPrecision(TeiDataCertainty value) {
-        this.precision = value;
-    }
-
-    /**
-     * Gets the value of the notBeforeCustoms property.
+     * Gets the value of the evidences property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the notBeforeCustoms property.
+     * This is why there is not a <CODE>set</CODE> method for the evidences property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getNotBeforeCustoms().add(newItem);
+     *    getEvidences().add(newItem);
      * </pre>
      * 
      * 
@@ -505,11 +440,39 @@ public class Trash {
      * 
      * 
      */
-    public List<String> getNotBeforeCustoms() {
-        if (notBeforeCustoms == null) {
-            notBeforeCustoms = new ArrayList<String>();
+    public List<String> getEvidences() {
+        if (evidences == null) {
+            evidences = new ArrayList<String>();
         }
-        return this.notBeforeCustoms;
+        return this.evidences;
+    }
+
+    /**
+     * Gets the value of the instant property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getInstant() {
+        if (instant == null) {
+            return "false";
+        } else {
+            return instant;
+        }
+    }
+
+    /**
+     * Sets the value of the instant property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setInstant(String value) {
+        this.instant = value;
     }
 
     /**
@@ -571,18 +534,18 @@ public class Trash {
     }
 
     /**
-     * Gets the value of the whenCustoms property.
+     * Gets the value of the notBeforeCustoms property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the whenCustoms property.
+     * This is why there is not a <CODE>set</CODE> method for the notBeforeCustoms property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getWhenCustoms().add(newItem);
+     *    getNotBeforeCustoms().add(newItem);
      * </pre>
      * 
      * 
@@ -592,35 +555,11 @@ public class Trash {
      * 
      * 
      */
-    public List<String> getWhenCustoms() {
-        if (whenCustoms == null) {
-            whenCustoms = new ArrayList<String>();
+    public List<String> getNotBeforeCustoms() {
+        if (notBeforeCustoms == null) {
+            notBeforeCustoms = new ArrayList<String>();
         }
-        return this.whenCustoms;
-    }
-
-    /**
-     * 获取datingPoint属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getDatingPoint() {
-        return datingPoint;
-    }
-
-    /**
-     * 设置datingPoint属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setDatingPoint(String value) {
-        this.datingPoint = value;
+        return this.notBeforeCustoms;
     }
 
     /**
@@ -653,7 +592,7 @@ public class Trash {
     }
 
     /**
-     * 获取datingMethod属性的值。
+     * Gets the value of the datingMethod property.
      * 
      * @return
      *     possible object is
@@ -665,7 +604,7 @@ public class Trash {
     }
 
     /**
-     * 设置datingMethod属性的值。
+     * Sets the value of the datingMethod property.
      * 
      * @param value
      *     allowed object is
@@ -677,79 +616,60 @@ public class Trash {
     }
 
     /**
-     * 获取when属性的值。
+     * Gets the value of the whenCustoms property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the whenCustoms property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getWhenCustoms().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getWhenCustoms() {
+        if (whenCustoms == null) {
+            whenCustoms = new ArrayList<String>();
+        }
+        return this.whenCustoms;
+    }
+
+    /**
+     * Gets the value of the datingPoint property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getWhen() {
-        return when;
+    public String getDatingPoint() {
+        return datingPoint;
     }
 
     /**
-     * 设置when属性的值。
+     * Sets the value of the datingPoint property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setWhen(String value) {
-        this.when = value;
+    public void setDatingPoint(String value) {
+        this.datingPoint = value;
     }
 
     /**
-     * 获取notBefore属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNotBefore() {
-        return notBefore;
-    }
-
-    /**
-     * 设置notBefore属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotBefore(String value) {
-        this.notBefore = value;
-    }
-
-    /**
-     * 获取from属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFrom() {
-        return from;
-    }
-
-    /**
-     * 设置from属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFrom(String value) {
-        this.from = value;
-    }
-
-    /**
-     * 获取notAfter属性的值。
+     * Gets the value of the notAfter property.
      * 
      * @return
      *     possible object is
@@ -761,7 +681,7 @@ public class Trash {
     }
 
     /**
-     * 设置notAfter属性的值。
+     * Sets the value of the notAfter property.
      * 
      * @param value
      *     allowed object is
@@ -773,7 +693,79 @@ public class Trash {
     }
 
     /**
-     * 获取to属性的值。
+     * Gets the value of the from property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFrom() {
+        return from;
+    }
+
+    /**
+     * Sets the value of the from property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFrom(String value) {
+        this.from = value;
+    }
+
+    /**
+     * Gets the value of the when property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWhen() {
+        return when;
+    }
+
+    /**
+     * Sets the value of the when property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWhen(String value) {
+        this.when = value;
+    }
+
+    /**
+     * Gets the value of the notBefore property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNotBefore() {
+        return notBefore;
+    }
+
+    /**
+     * Sets the value of the notBefore property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNotBefore(String value) {
+        this.notBefore = value;
+    }
+
+    /**
+     * Gets the value of the to property.
      * 
      * @return
      *     possible object is
@@ -785,7 +777,7 @@ public class Trash {
     }
 
     /**
-     * 设置to属性的值。
+     * Sets the value of the to property.
      * 
      * @param value
      *     allowed object is
@@ -797,127 +789,7 @@ public class Trash {
     }
 
     /**
-     * 获取period属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getPeriod() {
-        return period;
-    }
-
-    /**
-     * 设置period属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setPeriod(String value) {
-        this.period = value;
-    }
-
-    /**
-     * 获取toIso属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getToIso() {
-        return toIso;
-    }
-
-    /**
-     * 设置toIso属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setToIso(String value) {
-        this.toIso = value;
-    }
-
-    /**
-     * 获取fromIso属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFromIso() {
-        return fromIso;
-    }
-
-    /**
-     * 设置fromIso属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFromIso(String value) {
-        this.fromIso = value;
-    }
-
-    /**
-     * 获取whenIso属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getWhenIso() {
-        return whenIso;
-    }
-
-    /**
-     * 设置whenIso属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setWhenIso(String value) {
-        this.whenIso = value;
-    }
-
-    /**
-     * 获取notBeforeIso属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNotBeforeIso() {
-        return notBeforeIso;
-    }
-
-    /**
-     * 设置notBeforeIso属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNotBeforeIso(String value) {
-        this.notBeforeIso = value;
-    }
-
-    /**
-     * 获取notAfterIso属性的值。
+     * Gets the value of the notAfterIso property.
      * 
      * @return
      *     possible object is
@@ -929,7 +801,7 @@ public class Trash {
     }
 
     /**
-     * 设置notAfterIso属性的值。
+     * Sets the value of the notAfterIso property.
      * 
      * @param value
      *     allowed object is
@@ -941,7 +813,103 @@ public class Trash {
     }
 
     /**
-     * 获取calendar属性的值。
+     * Gets the value of the fromIso property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFromIso() {
+        return fromIso;
+    }
+
+    /**
+     * Sets the value of the fromIso property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFromIso(String value) {
+        this.fromIso = value;
+    }
+
+    /**
+     * Gets the value of the notBeforeIso property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getNotBeforeIso() {
+        return notBeforeIso;
+    }
+
+    /**
+     * Sets the value of the notBeforeIso property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setNotBeforeIso(String value) {
+        this.notBeforeIso = value;
+    }
+
+    /**
+     * Gets the value of the whenIso property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWhenIso() {
+        return whenIso;
+    }
+
+    /**
+     * Sets the value of the whenIso property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWhenIso(String value) {
+        this.whenIso = value;
+    }
+
+    /**
+     * Gets the value of the toIso property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getToIso() {
+        return toIso;
+    }
+
+    /**
+     * Sets the value of the toIso property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setToIso(String value) {
+        this.toIso = value;
+    }
+
+    /**
+     * Gets the value of the calendar property.
      * 
      * @return
      *     possible object is
@@ -953,7 +921,7 @@ public class Trash {
     }
 
     /**
-     * 设置calendar属性的值。
+     * Sets the value of the calendar property.
      * 
      * @param value
      *     allowed object is
@@ -965,7 +933,31 @@ public class Trash {
     }
 
     /**
-     * 获取key属性的值。
+     * Gets the value of the period property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getPeriod() {
+        return period;
+    }
+
+    /**
+     * Sets the value of the period property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setPeriod(String value) {
+        this.period = value;
+    }
+
+    /**
+     * Gets the value of the key property.
      * 
      * @return
      *     possible object is
@@ -977,7 +969,7 @@ public class Trash {
     }
 
     /**
-     * 设置key属性的值。
+     * Sets the value of the key property.
      * 
      * @param value
      *     allowed object is
@@ -1018,35 +1010,6 @@ public class Trash {
     }
 
     /**
-     * Gets the value of the roles property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the roles property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getRoles().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
-     */
-    public List<String> getRoles() {
-        if (roles == null) {
-            roles = new ArrayList<String>();
-        }
-        return this.roles;
-    }
-
-    /**
      * Gets the value of the nymReves property.
      * 
      * <p>
@@ -1073,6 +1036,35 @@ public class Trash {
             nymReves = new ArrayList<String>();
         }
         return this.nymReves;
+    }
+
+    /**
+     * Gets the value of the roles property.
+     * 
+     * <p>
+     * This accessor method returns a reference to the live list,
+     * not a snapshot. Therefore any modification you make to the
+     * returned list will be present inside the JAXB object.
+     * This is why there is not a <CODE>set</CODE> method for the roles property.
+     * 
+     * <p>
+     * For example, to add a new item, do as follows:
+     * <pre>
+     *    getRoles().add(newItem);
+     * </pre>
+     * 
+     * 
+     * <p>
+     * Objects of the following type(s) are allowed in the list
+     * {@link String }
+     * 
+     * 
+     */
+    public List<String> getRoles() {
+        if (roles == null) {
+            roles = new ArrayList<String>();
+        }
+        return this.roles;
     }
 
 }
