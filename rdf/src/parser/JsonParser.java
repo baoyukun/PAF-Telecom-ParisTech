@@ -1,4 +1,4 @@
-package main;
+package parser;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,7 +7,6 @@ import java.util.List;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -52,7 +51,7 @@ public class JsonParser {
      * @throws JsonProcessingException **/
     public static List<Article> parserArticleList(String path) throws JsonProcessingException, IOException{
     	File file = new File(path);
-    	
+    
     	ObjectMapper mapper = new ObjectMapper();
     	
     	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);

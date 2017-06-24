@@ -1,4 +1,4 @@
-package main;
+package parser;
 
 import java.net.URI;
 import java.net.URL;

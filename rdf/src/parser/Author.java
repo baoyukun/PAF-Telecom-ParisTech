@@ -1,4 +1,4 @@
-package main;
+package parser;
 
 import com.sun.org.apache.xml.internal.utils.URI;
 
