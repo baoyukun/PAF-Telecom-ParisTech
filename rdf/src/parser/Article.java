@@ -2,6 +2,7 @@ package parser;
 
 import java.net.URI;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,8 +20,6 @@ public class Article {
 	private String language;
 	private String audience;
 
-    @JsonProperty("author")
-	private List<Author> authorsList;
 	private String title;
 	private String booktitle;
 	private String state;
@@ -37,6 +36,19 @@ public class Article {
 	@JsonProperty("invited state")
 	private String invitedState;
 	
+    @JsonProperty("author")
+	private List<Author> authorsList;
+    @JsonProperty("citationList")
+	private List<Author> citationList;
+    @JsonProperty("citedList")
+	private List<Author> citedList;
+	private List<Article> referenceList;
+	private List<String> keywords;
+	
+	public Article() {
+
+
+	}
 	public final String getInvitedState() {
 		return invitedState;
 	}
@@ -81,8 +93,6 @@ public class Article {
 	public final void setKeywords(List<String> keywords) {
 		this.keywords = keywords;
 	}
-	private List<Article> referenceList;
-	private List<String> keywords;
 
 	
 	public final String getUri() {
@@ -155,7 +165,7 @@ public class Article {
 		return title;
 	}
 	public final void setTitle(String title) {
-		this.title = title;
+		this.title = title.trim().replaceAll("\\s+", " ");
 	}
 	public final String getBooktitle() {
 		return booktitle;

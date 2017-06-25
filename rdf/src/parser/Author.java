@@ -1,6 +1,6 @@
 package parser;
 
-import com.sun.org.apache.xml.internal.utils.URI;
+
 
 public class Author {
 	private String familyName = null;
@@ -9,6 +9,7 @@ public class Author {
 	private String affiliation = null;
 	private String departement = null;
 	private String groupe = null;
+	
 	
 	public final String getAffiliation() {
 		return affiliation;
@@ -35,23 +36,23 @@ public class Author {
 	}
 
 	public final String getFamilyName() {
-		return familyName;
+		return familyName.trim();
 	}
 
 	public final void setFamilyName(String familyName) {
-		this.familyName = familyName;
+		this.familyName = familyName.trim();
 	}
 
 	public final String getGivenName() {
-		return givenName;
+		return givenName.trim();
 	}
 
 	public final void setGivenName(String givenName) {
-		this.givenName = givenName;
+		this.givenName = givenName.trim();
 	}
 
 	public final String getUri() {
-		return uri;
+		return uri.trim();
 	}
 
 	public final void setUri(String uri) {
@@ -59,7 +60,12 @@ public class Author {
 	}
 
 	public Author() {
-
+		
+	}
+	
+	public Author(String familyName, String givenName){
+		this.familyName = familyName;
+		this.givenName = givenName;
 	}
 	
 	@Override
