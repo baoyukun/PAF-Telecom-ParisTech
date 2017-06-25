@@ -2,17 +2,17 @@
 
 Toutes les informations que le serveur peut obtenir ou qui sont déjà sous forme de fichier JSON et qui seront plus tard necessaires à la construction des graphs.
 
-|**information**                              |**statut**            |
-|---------------------------------------------|----------------------|
-|Liste des chercheurs avec leur groupe        |?                     |
-|Liste des chercheurs avec leur département   |?                     |
-|Liste des chercheurs avec les mots-clefs     |?                     |
-|Liste des publications avec les auteurs      |?                     |
-|Liste des publications avec le département   |?                     |
-|Liste des publications avec le groupe        |?                     |
-|Liste des publications avec les mots-clefs   |?                     |
-|Liste des publications avec la date          |?                     |
-|Liste des publications avec les auteurs cités|?                     |
+|**information**                              |**statut**                                             |**resultat**     |
+|---------------------------------------------|-------------------------------------------------------|---------------|
+|Liste des chercheurs avec leur groupe        |[query](#liste-des-chercheurs-avec-leur-groupe)        |[Resultat]("/visualisation/json/liste-des-chercheurs-avec-leur-groupe.json")
+|Liste des chercheurs avec leur département   |[query](#liste-des-chercheurs-avec-leur-département)   |[Resultat]("/visualisation/json/liste-des-chercheurs-avec-leur-département.json")
+|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[Resultat]("/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs")
+|Liste des publications avec les auteurs      |[query](#liste-des-publications-avec-les-auteurs)      |[Resultat]("/visualisation/json/liste-des-publications-avec-les-auteurs")
+|Liste des publications avec le département   |[query](#liste-des-publications-avec-le-département)   |[Resultat]("/visualisation/json/liste-des-publications-avec-le-département")
+|Liste des publications avec le groupe        |[query](#liste-des-publications-avec-le-groupe)        |[Resultat]("/visualisation/json/liste-des-publications-avec-le-groupe")
+|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[Resultat]("/visualisation/json/liste-des-publications-avec-les-mots-clefs")
+|Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[Resultat]("/visualisation/json/liste-des-publications-avec-la-date.json")
+|Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[Resultat]("/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json")
 
 
 Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 1.1 Graph Store HTTP Protocolles"  pour obtenir la resultat. Le code resemble à ci-dessous
@@ -31,7 +31,7 @@ Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 
   ```
   Pour différent de demande, il suffit de changer le myquery chaqut fois. 
 
-## Liste des chercheurs avec leur groupe 
+## Liste des chercheurs avec leur groupe
 Query:
 ```sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -72,7 +72,7 @@ Resultat:
 }
       
 ```
-## Liste des chercheurs avec leur département[Resultat]
+## Liste des chercheurs avec leur département
 Query
 ```sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -87,7 +87,7 @@ WHERE {
 ```
 
 
-## Liste des chercheurs avec les mots-clefs [Resultat]
+## Liste des chercheurs avec les mots-clefs
 ``` sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
@@ -100,8 +100,7 @@ WHERE {
   ?author foaf:givenname ?GivenName
 }
 ```
-## Liste des publications avec les auteurs[Resultat](13,648 entries):
-)
+## Liste des publications avec les auteurs
 ``` sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
@@ -115,7 +114,7 @@ WHERE {
 }
 ```
 
-## Liste des publications avec le département[Resultat]( 3,797 entries)
+## Liste des publications avec le département
 ``` sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
@@ -126,7 +125,7 @@ WHERE {
   ?article paf:departement ?departement
 }
 ```
-## Liste des publications avec le groupe[Resultat]( 3,797 entries)
+## Liste des publications avec le groupe
 ``` sql
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
