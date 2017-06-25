@@ -216,11 +216,11 @@ J'ai étudié le RDF, SPARSQL et Ontology à l'aide de tutoriel et documentation
 
 Par `ZHU Fangda`
 
-De mon part, j'ai essayé plein d'outils pour récupérer, nettoyer et mettre en forme des données. Voici plus d'informations sur les outils et mon remarque:
+De mon part, j'ai essayé plein d'outils pour récupérer, nettoyer et mettre en forme des données. Voici plus d'informations sur les outils et ma remarque:
 
-- [SoPaper, So Easy](https://github.com/ppwwyyxx/SoPaper) qui permet à partir le nom d'un article de chercher et télécharger cet article sur Internet. Pour l'instant, on n'a pas besoin de l'utiliser car on se contente tout au début de construire un graph de connaissance basé sur les [1819 articles](http://givingsense.eu/sembib/data/srcPdf/) fournis par professeur et on les a déjà téléchargés en écrivant un [code Python de quelques lignes](crawler/downloader.py).
+- [SoPaper, So Easy](https://github.com/ppwwyyxx/SoPaper) qui permet à partir du nom d'un article de chercher et télécharger cet article sur Internet. Pour l'instant, on n'a pas besoin de l'utiliser car on se contente tout au début de construire un graph de connaissance basé sur les [1819 articles](http://givingsense.eu/sembib/data/srcPdf/) fournis par professeur et on les a déjà téléchargés en écrivant un [code Python de quelques lignes](crawler/downloader.py).
 
-- [Grobid](http://grobid.readthedocs.io/en/latest/) qui permet d'extraire des données d'un article de format `PDF`. Les données obtenues sont organisées sous forme `XML` bien structurée et un programme pourrais très facilement "voir" touts les informations liées avec cet article. Grâce aux algorithmes de *Machine Learning*, le résultat est satisfaisant mais malheureusement les erreurs ne sont pas négligeables.
+- [Grobid](http://grobid.readthedocs.io/en/latest/) qui permet d'extraire des données d'un article de format `PDF`. Les données obtenues sont organisées sous forme `XML` bien structurée et un programme pourrais très facilement "voir" toutes les informations liées avec cet article. Grâce aux algorithmes de *Machine Learning*, le résultat est satisfaisant mais malheureusement les erreurs ne sont pas négligeables.
 
 - [PDFMiner](https://github.com/euske/pdfminer), [PyPDF](http://pythonhosted.org/PyPDF2/), [Pdf2htmlEX
 ](https://github.com/coolwanglu/pdf2htmlEX), [Apache PDFBox](https://pdfbox.apache.org/) et autres logiciels qui permettent d'extraire toute information en plein texte ou bien qui transmettent fichier PDF en fichier texte. Cela est très important parce qu'on doit enfin exploiter des mots clés d'un article à partir du plein texte en utilisant `NLTK (Natural Language Processing Toolkit)`.
@@ -234,6 +234,12 @@ Par `BAO Yukun`
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 22 juin 2017
+
+J'ai modifié les scripts existants en fonction de la nouvelle convention de fichier JSON décrite plus haut par Yukun. J'ai en outre écrit de nouveaux scripts permettant une visualisation des mots-clefs. Cela m'a pris un peu de temps étant donné qu'il fallait construire une toute nouvelle clase d'objets adapté à ce script.
+
+Je n'ai pas encore mis à jour la partie "visualisation" du git car j'attends d'avoir des scripts fonctionnels et complets.
+
+Par `Nino Filiu`
 
 [*Retour au calendrier*](#développement-du-projet)
 
