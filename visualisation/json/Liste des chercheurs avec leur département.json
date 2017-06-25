@@ -1,0 +1,984 @@
+{
+  "head": {
+    "vars": [ "familyName" , "GivenName" , "departement" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "familyName": { "type": "literal" , "value": "VIGNES" } ,
+        "GivenName": { "type": "literal" , "value": "Sylvie" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DEMEURE" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GUIARD" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BAILLY" } ,
+        "GivenName": { "type": "literal" , "value": "Gilles" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rossi" } ,
+        "GivenName": { "type": "literal" , "value": "Dario" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MOURET" } ,
+        "GivenName": { "type": "literal" , "value": "Gerard" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SENELLART" } ,
+        "GivenName": { "type": "literal" , "value": "Pierre" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MADORE" } ,
+        "GivenName": { "type": "literal" , "value": "David" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Kofman" } ,
+        "GivenName": { "type": "literal" , "value": "Daniel" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DIAMANTI" } ,
+        "GivenName": { "type": "literal" , "value": "Eleni" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Godlewski" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Giovanidis" } ,
+        "GivenName": { "type": "literal" , "value": "Anastasios" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gagnaire" } ,
+        "GivenName": { "type": "literal" , "value": "Maurice" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Zahr" } ,
+        "GivenName": { "type": "literal" , "value": "Sawsan" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SOZIO" } ,
+        "GivenName": { "type": "literal" , "value": "Mauro" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "URIEN" } ,
+        "GivenName": { "type": "literal" , "value": "Pascal" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Boukhatem" } ,
+        "GivenName": { "type": "literal" , "value": "Nadia" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Simoni" } ,
+        "GivenName": { "type": "literal" , "value": "Noémie" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ABDESSALEM" } ,
+        "GivenName": { "type": "literal" , "value": "Talel" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "USTUNEL" } ,
+        "GivenName": { "type": "literal" , "value": "Suleyman" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Coupechoux" } ,
+        "GivenName": { "type": "literal" , "value": "Marceau" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BELLOT" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "EAGAN" } ,
+        "GivenName": { "type": "literal" , "value": "James" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BURTSCHY" } ,
+        "GivenName": { "type": "literal" , "value": "Bernard" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "HUDRY" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GADRET" } ,
+        "GivenName": { "type": "literal" , "value": "Serge" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "KUZNETSOV" } ,
+        "GivenName": { "type": "literal" , "value": "Petr" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "COHEN" } ,
+        "GivenName": { "type": "literal" , "value": "Gerard" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BORDE" } ,
+        "GivenName": { "type": "literal" , "value": "Etienne" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RIGUIDEL" } ,
+        "GivenName": { "type": "literal" , "value": "Michel" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DAX" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "TARDIEU" } ,
+        "GivenName": { "type": "literal" , "value": "Samuel" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SUCHANEK" } ,
+        "GivenName": { "type": "literal" , "value": "Fabian" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bonald" } ,
+        "GivenName": { "type": "literal" , "value": "Thomas" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DIACONESCU" } ,
+        "GivenName": { "type": "literal" , "value": "Ada" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LOBSTEIN" } ,
+        "GivenName": { "type": "literal" , "value": "Antoine" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RAMBAUD" } ,
+        "GivenName": { "type": "literal" , "value": "Matthieu" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ZAQUINE" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BUSCH" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DECREUSEFOND" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "PAUTET" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MARKHAM" } ,
+        "GivenName": { "type": "literal" , "value": "Damian" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RANDRIAMBOLOLONA" } ,
+        "GivenName": { "type": "literal" , "value": "Hugues" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Martins" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rougier" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Louis" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GARDOLL" } ,
+        "GivenName": { "type": "literal" , "value": "Sebastien" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DESSALLES" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Louis" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "NAJM" } ,
+        "GivenName": { "type": "literal" , "value": "Elie" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LECOLINET" } ,
+        "GivenName": { "type": "literal" , "value": "Eric" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Iannone" } ,
+        "GivenName": { "type": "literal" , "value": "Luigi" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ROBERT" } ,
+        "GivenName": { "type": "literal" , "value": "Thomas" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LABIOD" } ,
+        "GivenName": { "type": "literal" , "value": "Houda" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LENEUTRE" } ,
+        "GivenName": { "type": "literal" , "value": "Jean" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "AISSAOUI" } ,
+        "GivenName": { "type": "literal" , "value": "Hassane" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ALLEAUME" } ,
+        "GivenName": { "type": "literal" , "value": "Romain" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SAKAROVITCH" } ,
+        "GivenName": { "type": "literal" , "value": "Jacques" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "KHATOUN" } ,
+        "GivenName": { "type": "literal" , "value": "Rida" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SERHROUCHNI" } ,
+        "GivenName": { "type": "literal" , "value": "Ahmed" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SHARROCK" } ,
+        "GivenName": { "type": "literal" , "value": "Remi" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MEYER" } ,
+        "GivenName": { "type": "literal" , "value": "Bertrand" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "CHARON" } ,
+        "GivenName": { "type": "literal" , "value": "Irene" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Vergne" } ,
+        "GivenName": { "type": "literal" , "value": "Anaïs" } ,
+        "departement": { "type": "literal" , "value": "INFRES" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "David" } ,
+        "GivenName": { "type": "literal" , "value": "Bertrand" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Brettel" } ,
+        "GivenName": { "type": "literal" , "value": "Hans" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "D'Alche-Buc" } ,
+        "GivenName": { "type": "literal" , "value": "Florence" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Asselineau" } ,
+        "GivenName": { "type": "literal" , "value": "Dominique" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Fort" } ,
+        "GivenName": { "type": "literal" , "value": "Gersende" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Likforman" } ,
+        "GivenName": { "type": "literal" , "value": "Laurence" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Roux" } ,
+        "GivenName": { "type": "literal" , "value": "Michel" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Memari" } ,
+        "GivenName": { "type": "literal" , "value": "Pooran" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Moulines" } ,
+        "GivenName": { "type": "literal" , "value": "Éric" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Clavel" } ,
+        "GivenName": { "type": "literal" , "value": "Chloé" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tupin" } ,
+        "GivenName": { "type": "literal" , "value": "Florence" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Boubekeur" } ,
+        "GivenName": { "type": "literal" , "value": "Tamy" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Nicolas" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Marie" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Roueff" } ,
+        "GivenName": { "type": "literal" , "value": "François" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Le Feuvre" } ,
+        "GivenName": { "type": "literal" , "value": "Jean" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cardoso" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-François" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Essid" } ,
+        "GivenName": { "type": "literal" , "value": "Slim" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bloch" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Pesquet-Popescu" } ,
+        "GivenName": { "type": "literal" , "value": "Béatrice" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Maître" } ,
+        "GivenName": { "type": "literal" , "value": "Henri" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Richard" } ,
+        "GivenName": { "type": "literal" , "value": "Gaël" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sigelle" } ,
+        "GivenName": { "type": "literal" , "value": "Marc" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Campedel" } ,
+        "GivenName": { "type": "literal" , "value": "Marine" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Chollet" } ,
+        "GivenName": { "type": "literal" , "value": "Gérard" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Clémençon" } ,
+        "GivenName": { "type": "literal" , "value": "Stephan" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Almansa" } ,
+        "GivenName": { "type": "literal" , "value": "Andrés" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ladjal" } ,
+        "GivenName": { "type": "literal" , "value": "Saïd" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Pelachaud" } ,
+        "GivenName": { "type": "literal" , "value": "Catherine" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tierny" } ,
+        "GivenName": { "type": "literal" , "value": "Julien" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Charbit" } ,
+        "GivenName": { "type": "literal" , "value": "Maurice" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cappé" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sahbi" } ,
+        "GivenName": { "type": "literal" , "value": "Hichem" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Blanchet" } ,
+        "GivenName": { "type": "literal" , "value": "Gérard" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Salmon" } ,
+        "GivenName": { "type": "literal" , "value": "Joseph" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Valenzise" } ,
+        "GivenName": { "type": "literal" , "value": "Giuseppe" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bianchi" } ,
+        "GivenName": { "type": "literal" , "value": "Pascal" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "TENDERO" } ,
+        "GivenName": { "type": "literal" , "value": "Yohann" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Moissinac" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Claude" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gramfort" } ,
+        "GivenName": { "type": "literal" , "value": "Alexandre" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Dufourd" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Claude" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Portier" } ,
+        "GivenName": { "type": "literal" , "value": "Francois" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cagnazzo" } ,
+        "GivenName": { "type": "literal" , "value": "Marco" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gousseau" } ,
+        "GivenName": { "type": "literal" , "value": "Yann" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Dufaux" } ,
+        "GivenName": { "type": "literal" , "value": "Frédéric" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Fercoq" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Grenier" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Badeau" } ,
+        "GivenName": { "type": "literal" , "value": "Roland" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Angelini" } ,
+        "GivenName": { "type": "literal" , "value": "Elsa" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Concolato" } ,
+        "GivenName": { "type": "literal" , "value": "Cyril" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sabourin" } ,
+        "GivenName": { "type": "literal" , "value": "Anne" } ,
+        "departement": { "type": "literal" , "value": "TSI" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "HOUY" } ,
+        "GivenName": { "type": "literal" , "value": "Thomas" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LE" } ,
+        "GivenName": { "type": "literal" , "value": "Marie-Christine" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "AURAY" } ,
+        "GivenName": { "type": "literal" , "value": "Nicolas" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MOREL" } ,
+        "GivenName": { "type": "literal" , "value": "Julien" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "POGOREL" } ,
+        "GivenName": { "type": "literal" , "value": "Gérard" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BAKER" } ,
+        "GivenName": { "type": "literal" , "value": "Michael" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DAVIDOVICI-NORA" } ,
+        "GivenName": { "type": "literal" , "value": "Myriam" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GILLE" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LEVALLOIS-BARTH" } ,
+        "GivenName": { "type": "literal" , "value": "Claire" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MUSELLI" } ,
+        "GivenName": { "type": "literal" , "value": "Laure" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "WAELBROECK" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MUSSO" } ,
+        "GivenName": { "type": "literal" , "value": "Pierre" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MANIAK" } ,
+        "GivenName": { "type": "literal" , "value": "Rémi" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DETIENNE" } ,
+        "GivenName": { "type": "literal" , "value": "Françoise" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LEBART" } ,
+        "GivenName": { "type": "literal" , "value": "Ludovic" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BACACHE" } ,
+        "GivenName": { "type": "literal" , "value": "Maya" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "CAHOUR" } ,
+        "GivenName": { "type": "literal" , "value": "Béatrice" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RIZZA" } ,
+        "GivenName": { "type": "literal" , "value": "Caroline" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GARRON" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "FOURNOUT" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BOURREAU" } ,
+        "GivenName": { "type": "literal" , "value": "Marc" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "FERNANDEZ" } ,
+        "GivenName": { "type": "literal" , "value": "Valérie" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BOUNIE" } ,
+        "GivenName": { "type": "literal" , "value": "David" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "CASILLI" } ,
+        "GivenName": { "type": "literal" , "value": "Antonio" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DENIS" } ,
+        "GivenName": { "type": "literal" , "value": "Jerôme" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BEAUDOUIN" } ,
+        "GivenName": { "type": "literal" , "value": "Valérie" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GRZYBOWSKI" } ,
+        "GivenName": { "type": "literal" , "value": "Lukasz" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "COUSSIEU" } ,
+        "GivenName": { "type": "literal" , "value": "Wilfried" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "FIGEAC" } ,
+        "GivenName": { "type": "literal" , "value": "Julien" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GENTES" } ,
+        "GivenName": { "type": "literal" , "value": "Annie" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DIMINESCU" } ,
+        "GivenName": { "type": "literal" , "value": "Dana" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MUNIER-TEMIME" } ,
+        "GivenName": { "type": "literal" , "value": "Brigitte" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DRAETTA" } ,
+        "GivenName": { "type": "literal" , "value": "Laura" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "PASQUIER" } ,
+        "GivenName": { "type": "literal" , "value": "Dominique" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LICOPPE" } ,
+        "GivenName": { "type": "literal" , "value": "Christian" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RELIEU" } ,
+        "GivenName": { "type": "literal" , "value": "Marc" } ,
+        "departement": { "type": "literal" , "value": "EGSH" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Huyart" } ,
+        "GivenName": { "type": "literal" , "value": "Bernard" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Erasme" } ,
+        "GivenName": { "type": "literal" , "value": "Didier" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Wigger" } ,
+        "GivenName": { "type": "literal" , "value": "Michele" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Duc" } ,
+        "GivenName": { "type": "literal" , "value": "Guillaume" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Jaouen" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Hachem" } ,
+        "GivenName": { "type": "literal" , "value": "Walid" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sole" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Polti" } ,
+        "GivenName": { "type": "literal" , "value": "Alexis" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Desgreys" } ,
+        "GivenName": { "type": "literal" , "value": "Patricia" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Minot" } ,
+        "GivenName": { "type": "literal" , "value": "Christophe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rioul" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Begaud" } ,
+        "GivenName": { "type": "literal" , "value": "Xavier" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Chaudhuri" } ,
+        "GivenName": { "type": "literal" , "value": "Sumanta" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Grillot" } ,
+        "GivenName": { "type": "literal" , "value": "Frédéric" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ameur-boulifa" } ,
+        "GivenName": { "type": "literal" , "value": "Rabea" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Fakhoury" } ,
+        "GivenName": { "type": "literal" , "value": "Hussein" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rodriguez" } ,
+        "GivenName": { "type": "literal" , "value": "Georges" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ware" } ,
+        "GivenName": { "type": "literal" , "value": "Cedric" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tchamkerten" } ,
+        "GivenName": { "type": "literal" , "value": "Aslan" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Danger" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-luc" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Popoff" } ,
+        "GivenName": { "type": "literal" , "value": "Sébastien" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Mathieu" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sauvage" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Khy" } ,
+        "GivenName": { "type": "literal" , "value": "Antoine" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Coudert" } ,
+        "GivenName": { "type": "literal" , "value": "Sophie" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Loumeau" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Matherat" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rekaya" } ,
+        "GivenName": { "type": "literal" , "value": "Ghaya" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ciblat" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Roblin" } ,
+        "GivenName": { "type": "literal" , "value": "Christophe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Nguyen" } ,
+        "GivenName": { "type": "literal" , "value": "Van Tam" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Naviner" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-francois" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Apvrille" } ,
+        "GivenName": { "type": "literal" , "value": "Ludovic" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gosset" } ,
+        "GivenName": { "type": "literal" , "value": "Christophe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Belfiore" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-claude" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gallion" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Petit" } ,
+        "GivenName": { "type": "literal" , "value": "Herve" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cousin" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-christophe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bergeault" } ,
+        "GivenName": { "type": "literal" , "value": "Eric" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Pacalet" } ,
+        "GivenName": { "type": "literal" , "value": "Renaud" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gabet" } ,
+        "GivenName": { "type": "literal" , "value": "Renaud" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Hoogvorst" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tanzi" } ,
+        "GivenName": { "type": "literal" , "value": "Tullio" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Naviner" } ,
+        "GivenName": { "type": "literal" , "value": "Lirida" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Graba" } ,
+        "GivenName": { "type": "literal" , "value": "Tarik" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Lepage" } ,
+        "GivenName": { "type": "literal" , "value": "Claire" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sibille" } ,
+        "GivenName": { "type": "literal" , "value": "Alain" } ,
+        "departement": { "type": "literal" , "value": "COMELEC" }
+      }
+    ]
+  }
+}
