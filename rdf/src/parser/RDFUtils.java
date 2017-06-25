@@ -99,13 +99,14 @@ public class RDFUtils{
 	 * **/
 	public Resource addAuthor(Author author) throws FileNotFoundException, IOException{
 		if(author == null) throw new NullPointerException("Can not add a null author");
+		
 		Resource authorRes = checkAuthor(author.getFamilyName().replaceAll("\\W+", "_")
 				, author.getGivenName().replaceAll("\\W+", "_"));
 		if(authorRes == null){
 		authorRes = 
 					this.model.createResource(PAF.AUTHOR
-							+ author.getFamilyName() + "_"
-							+author.getGivenName());
+							+ author.getFamilyName().replaceAll("\\W+", "_") + "_"
+							+ author.getGivenName().replaceAll("\\W+", "_"));
 		}
 		
 			
