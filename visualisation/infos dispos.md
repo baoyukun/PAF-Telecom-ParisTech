@@ -4,15 +4,15 @@ Toutes les informations que le serveur peut obtenir ou qui sont déjà sous form
 
 |**information**                              |**statut**                                             |**resultat**     |
 |---------------------------------------------|-------------------------------------------------------|---------------|
-|Liste des chercheurs avec leur groupe        |[query](#liste-des-chercheurs-avec-leur-groupe)        |[Resultat]("/visualisation/json/liste-des-chercheurs-avec-leur-groupe.json")
-|Liste des chercheurs avec leur département   |[query](#liste-des-chercheurs-avec-leur-département)   |[Resultat]("/visualisation/json/liste-des-chercheurs-avec-leur-département.json")
-|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[Resultat]("/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs")
-|Liste des publications avec les auteurs      |[query](#liste-des-publications-avec-les-auteurs)      |[Resultat]("/visualisation/json/liste-des-publications-avec-les-auteurs")
-|Liste des publications avec le département   |[query](#liste-des-publications-avec-le-département)   |[Resultat]("/visualisation/json/liste-des-publications-avec-le-département")
-|Liste des publications avec le groupe        |[query](#liste-des-publications-avec-le-groupe)        |[Resultat]("/visualisation/json/liste-des-publications-avec-le-groupe")
-|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[Resultat]("/visualisation/json/liste-des-publications-avec-les-mots-clefs")
-|Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[Resultat]("/visualisation/json/liste-des-publications-avec-la-date.json")
-|Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[Resultat]("/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json")
+|Liste des chercheurs avec leur groupe        |[query](#liste-des-chercheurs-avec-leur-groupe)        |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-groupe.json)
+|Liste des chercheurs avec leur département   |[query](#liste-des-chercheurs-avec-leur-département)   |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-département.json)
+|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[12,111 entries](/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs.json)
+|Liste des publications avec les auteurs      |[query](#liste-des-publications-avec-les-auteurs)      |[13,648 entries](/visualisation/json/liste-des-publications-avec-les-auteurs.json)
+|Liste des publications avec le département   |[query](#liste-des-publications-avec-le-département)   |[3,797 entries](/visualisation/json/liste-des-publications-avec-le-département.json)
+|Liste des publications avec le groupe        |[query](#liste-des-publications-avec-le-groupe)        |[3,774 entries]("/visualisation/json/liste-des-publications-avec-le-groupe.json)
+|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[3,665 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
+|Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[Resultat](/visualisation/json/liste-des-publications-avec-la-date.json.)
+|Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[Resultat](/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json)
 
 
 Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 1.1 Graph Store HTTP Protocolles"  pour obtenir la resultat. Le code resemble à ci-dessous
@@ -43,34 +43,6 @@ WHERE {
   ?author foaf:family_name ?familyName.
   ?author foaf:givenname ?GivenName
 }
-```
-Resultat:
-```JSON
-{
-  "head": {
-    "vars": [ "familyName" , "GivenName" , "group" ]
-  } ,
-  "results": {
-    "bindings": [
-      {
-        "familyName": { "type": "literal" , "value": "Duc" } ,
-        "GivenName": { "type": "literal" , "value": "Guillaume" } ,
-        "group": { "type": "literal" , "value": "SEN" }
-      } ,
-      {
-        "familyName": { "type": "literal" , "value": "Polti" } ,
-        "GivenName": { "type": "literal" , "value": "Alexis" } ,
-        "group": { "type": "literal" , "value": "SEN" }
-      } ,
-      {
-        "familyName": { "type": "literal" , "value": "Chaudhuri" } ,
-        "GivenName": { "type": "literal" , "value": "Sumanta" } ,
-        "group": { "type": "literal" , "value": "SEN" }
-      }
-    ]
-  }
-}
-      
 ```
 ## Liste des chercheurs avec leur département
 Query
@@ -141,10 +113,10 @@ WHERE {
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
 
-SELECT ?title ?group
+SELECT ?title ?keyword
 WHERE {
   ?article paf:title ?title.
-  ?article paf:group ?group
+  ?article paf:has_key_word ?keyword 
 }
 ```
 ## Liste des publications avec la date
