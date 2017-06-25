@@ -1,4 +1,4 @@
-# Using Grobid service model to parser PDF
+# Using Grobid service mode to parser PDF
 # Rather quick but low error tolerance
 # @author: BAO Yukun
 
