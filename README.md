@@ -263,9 +263,11 @@ Jusqu'à présent, j'avais travaillé avec l'architecture suivante:
 
 DONNEES JSON -> TRAITEMENT PHP -> AFFICHAGE
 
-ce qui permettait d'avoir un projet qui marche avec le moins d'étapes possibles afin de garantir la réalisation du projet en cas d'échec de l'architecture suivante:
+ce qui permettait d'avoir un projet qui marche avec le moins d'étapes possibles afin de garantir la réalisation du projet en cas d'échec de l'architecture suivante, décrite plus haut:
 
-DONNEES JSON -> EXTRACTION SPARQL -> DONNEES JSON SPECIFIQUES -> TRAITEMENT PHP -> AFFICHAGE
+DONNEES JSON -> STOCKAGE RDF -> EXTRACTION SPARQL -> DONNEES JSON SPECIFIQUES -> TRAITEMENT PHP -> AFFICHAGE
+
+Cette architecture est plus pertinente car RDF est plus adapté au stockage de données et SPARQL est plus adaptée à l'extraction de données provenant de gros fichiers. Je suis en ce moment même en train de développer des scripts permettant la mise en place de cette architecture.
 
 Par `Nino Filiu`
 
