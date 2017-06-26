@@ -1,0 +1,1 @@
+xjc -d F:\WorkSpace\PAF-Telecom-ParisTech\parser -extension F:\program\grobid\grobid-home\schemas\xsd\simpleMode.xsd F:\program\grobid\grobid-home\schemas\xsd\Grobid.xsd

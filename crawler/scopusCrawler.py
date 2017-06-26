@@ -1,4 +1,7 @@
 #coding='utf-8'
+# Using Scopus public APIs to verify paper information
+# and eventually fetch the cited list
+# However, only 403 in 1677 papers are consultable in Scopus
 from scopus import ScopusSearch, ScopusAbstract
 import re
 import json
@@ -42,7 +45,6 @@ for i in obj['articles']:
                 affiliation_id = re.split('\:',element[-1])[1]
                 scopus_id = re.split('\:',element[-2])[1]
                 i['scopus']['author'].append({'fullName': fullName, 'affiliation_id': affiliation_id, 'scopus_id': scopus_id})
-            print (i['scopus']['paperScopusId'])
     except:
         continue
     
