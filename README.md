@@ -157,27 +157,35 @@ Les données d'un article sont organisées sous json comme ceci:
 {
   "identity": "http://givingsense.eu/sembib/data/tpt/paf2017/Nom_du_article_0001",
   "title": "Nom_du_article",
-  "ref": "refName",
+  "doi": "doiName(standard identity)",
   "date": {"year": 2017, "month": 6},
-  "address": "publicationAddress",
-  "belongTo": "booktitle_or_conference_Name",
-  "category": "invite",
-  "language": "en",
-  "audience": "2",
-  "project": "projectName",
-  "department": "departmentName",
-  "group": "groupName",
+  "monTitle": "monographyName",
+  "lang": "en",
   "author": [
-    {"firstName": "Yukun", "middleName": "", "lastName": "BAO", "affiliation": "telecom-paristech", "ID": "xxx001"},
-    {"firstName": "Fangda", "middleName": "", "lastName": "ZHU", "affiliation": "telecom-paristech", "ID": "xxx002"},
-    {"firstName": "Nino", "middleName": "", "lastName": "FILIU", "affiliation": "telecom-paristech", "ID": "xxx003"},
-    {"firstName": "Cherif", "middleName": "", "lastName": "DIALLO", "affiliation": "telecom-paristech", "ID": "xxx004"}
+    {"name": {"firstName": "firstName", "middleName": "middleName", "lastName": "lastName"},
+     "email": "emailAddr",
+     "affiliation": {
+       "department": ["dpart1", "dpart2"],
+       "laboratory": ["lab1", "lab2"],
+       "institution": ["institut1", "institut2"],
+       "address": "address",
+       "settlement": ["settle1", "settle2"],
+       "country": ["country1", "country2"]
+     }
+    },
+    {},
+    {}
   ],
-  "keyword": ["keyword1", "keyword2", "keyword3"],
-  "citationList": [
-    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
-    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
-    {"identity": "", "title": "", "ref": "", "author": [], "date": {}}
+  "keywords": ["keyword1", "keyword2", "keyword3"],
+  "abstract": "abstract",
+  "bibliography": [{
+    "title": "title",
+    "author": {"name": {"firstName": "firstName", "middleName": "middleName", "lastName": "lastName"}},
+    "monoTitle": "monographyName",
+    "date": {"year": 2017, "month": 6}
+    },
+    {},
+    {}
   ],
   "citedList": [
     {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
