@@ -257,6 +257,10 @@ Par `Nino Filiu`
 
 ### Lundi 26 juin 2017
 
+J'ai travaillé sur le poster et j'ai mis au clair certains aspects de l'architecture et de la chaîne d'information avec mes collègues.
+
+Par `Nino Filiu`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mardi 27 juin 2017
