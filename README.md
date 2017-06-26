@@ -155,7 +155,7 @@ Les données d'un article sont organisées sous json comme ceci:
 
 ```json
 {
-  "identity": "http://givingsense.eu/sembib/data/tpt/paf2017/Nom_du_article_0001",
+  "identity": "http://givingsense.eu/sembib/data/tpt/paf2017/f_xxxx",
   "title": "Nom_du_article",
   "doi": "doiName(standard identity)",
   "date": {"year": 2017, "month": 6},
