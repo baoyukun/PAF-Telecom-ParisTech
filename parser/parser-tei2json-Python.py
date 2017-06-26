@@ -1,4 +1,6 @@
 #coding='utf-8'
+# Using Python regular expressions to extract information from TEI format files
+# Good results with rather high speed
 import re
 import os
 import json
@@ -115,12 +117,8 @@ def main(headerPath, refPath, jsonPath):
             
         # Reference part
         teiFile = refPath+'\\'+fileName[:-8]+'.references.tei.xml'
-        try:
-            with open(teiFile, 'rb') as f:
-                inStream = f.read().decode('utf-8')
-        except:
-            print(fileName)
-            continue
+        with open(teiFile, 'rb') as f:
+            inStream = f.read().decode('utf-8')
         
         identity = 'http://givingsense.eu/sembib/data/tpt/paf2017/' + re.split('"',re.findall('<fileDesc xml:id=.*>',inStream)[0])[1]
         
