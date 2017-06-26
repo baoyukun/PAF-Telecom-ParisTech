@@ -160,6 +160,7 @@ Les données d'un article sont organisées sous json comme ceci:
   "doi": "doiName(standard identity)",
   "date": {"year": 2017, "month": 6},
   "monTitle": "monographyName",
+  "citedCount": "4",
   "lang": "en",
   "author": [
     {"name": {"firstName": "firstName", "middleName": "middleName", "lastName": "lastName"},
@@ -187,11 +188,17 @@ Les données d'un article sont organisées sous json comme ceci:
     {},
     {}
   ],
-  "citedList": [
-    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
-    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
-    {"identity": "", "title": "", "ref": "", "author": [], "date": {}}
-  ]
+  "scopus":{
+    "paperScopusId": "paperScopusId",
+    "publicationName": "publicationName",
+    "aggregationType": "aggregationType",
+    "author": [{
+      "fullName": "fullName",
+      "affiliation_id": "affiliation_id",
+      "scopus_id": "scopus_id"
+    },{},{},{}
+    ]
+  }
 }
 ```
 
