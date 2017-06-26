@@ -259,6 +259,14 @@ Par `Nino Filiu`
 
 J'ai travaillé sur le poster et j'ai mis au clair certains aspects de l'architecture et de la chaîne d'information avec mes collègues.
 
+Jusqu'à présent, j'avais travaillé avec l'architecture suivante:
+
+DONNEES JSON -> TRAITEMENT PHP -> AFFICHAGE
+
+ce qui permettait d'avoir un projet qui marche avec le moins d'étapes possibles afin de garantir la réalisation du projet en cas d'échec de l'architecture suivante:
+
+DONNEES JSON -> EXTRACTION SPARQL -> DONNEES JSON SPECIFIQUES -> TRAITEMENT PHP -> AFFICHAGE
+
 Par `Nino Filiu`
 
 [*Retour au calendrier*](#développement-du-projet)
