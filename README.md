@@ -280,6 +280,8 @@ Par `Nino Filiu`
 
 [*Retour au calendrier*](#développement-du-projet)
 
+J'ai essayé de voir si un serveur PHP pouvait processer lui-même les requêtes SPARQL sur le fichier RDF. Je ne pense pas que ça soit impossible, mais je n'ait pas réussi à le faire. Ces langages me sont inconnus et les codes proposés sur internet ne marchent pas (peut-être sont-ils dépassés? Le web design me semblait très "début d'internet").
+
 Par `Nino Filiu`
 
 ### Mardi 27 juin 2017
