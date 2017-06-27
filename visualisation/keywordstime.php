@@ -1,3 +1,5 @@
+<!-- Creates a ready-to display CSV file to display a streamgraph showing the popularity of keywords over time. -->
+
 <?php
 
 $data=json_decode(file_get_contents("data/keywordstime.json"))->results->bindings;
