@@ -286,6 +286,10 @@ J'ai donc fini les scripts d'hier. Ces scripts sont disponibles dans la partie v
 
 Par `Nino Filiu`
 
+J'ai fini le site internet et j'ai vérifié la possibilité d'intégration des scripts PHPs développés par Nino.
+
+Par `Cherif Diallo`
+
 ### Mardi 27 juin 2017
 
 [*Retour au calendrier*](#développement-du-projet)
