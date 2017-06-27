@@ -1,6 +1,4 @@
 package parser;
-
-import java.awt.event.FocusAdapter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -11,6 +9,8 @@ import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.jena.query.Dataset;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -26,48 +26,33 @@ import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
 
 import org.apache.jena.sparql.vocabulary.FOAF;
-
-import org.apache.jena.util.FileManager;
+import org.apache.jena.tdb.TDBFactory;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
 import main.PAF;
 
 
-public class RDFUtils{
-	static public Logger log = Logger.getLogger(RDFUtils.class);
+public class RDFUtilsTDB{
+	static public Logger log = Logger.getLogger(RDFUtilsTDB.class);
 	 
-	public static RDFUtils rdf = null;
-	private static final String rdfFile = "res/database.rdf";
+	public static RDFUtilsTDB rdf = null;
+	private static final String DATABASE = "res/database";
 	private Model model = null;
+	private Dataset dataset;
 	
-	private RDFUtils() throws IOException{	
+	
+	private RDFUtilsTDB() throws IOException{	
 		log.setLevel(Level.INFO);
 		model =  ModelFactory.createDefaultModel();
 		model.setNsPrefix("foaf", FOAF.NS);
 		model.setNsPrefix("paf", PAF.NS);
-		
-		File file = new File(rdfFile);
-		if(!file.getParentFile().isDirectory()) file.getParentFile().mkdirs();
-		if(!file.exists()){
-			file.createNewFile();
-			update();
-		}
-		 
-		InputStream in = FileManager.get().open(file.getAbsolutePath());		
-		model.read(file.getAbsolutePath(), "RDFXML") ;
+		dataset = TDBFactory.createDataset(DATABASE);
 	}
 
-	
-	/** Update the rdf file. This method will update the data in the rdf file**/
-	public void update() throws FileNotFoundException, IOException{
-		try(OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream(rdfFile) , Charset.forName("UTF-8"));){
-			model.write(or,"RDFXML");
-		}
-	}
 
-	public static RDFUtils getInstance() throws IOException{
-		if(rdf == null) rdf = new RDFUtils();
+	public static RDFUtilsTDB getInstance() throws IOException{
+		if(rdf == null) rdf = new RDFUtilsTDB();
 		return rdf;
 	}
 	
@@ -82,8 +67,12 @@ public class RDFUtils{
 	 * **/
 	public Resource addAuthor(Author author) throws FileNotFoundException, IOException, IllegalArgumentException, IllegalAccessException{
 		if(author == null) throw new NullPointerException("Can not add a null author");
-		
+
 		Resource authorRes = checkAuthor(author);
+		
+		dataset.begin(ReadWrite.WRITE);
+		this.model = dataset.getDefaultModel();
+		
 		if(authorRes == null){
 			authorRes = model 
 				.createResource(PAF.AUTHOR + author.getFamilyName().replaceAll("\\W+", "_") + "_"
@@ -127,7 +116,8 @@ public class RDFUtils{
 			}
 		}
 		
-		update();
+		dataset.commit();
+		dataset.end();
 		return authorRes;
 	}
 
@@ -138,6 +128,9 @@ public class RDFUtils{
 	 * 			Returns null if not
 	 *  */
 	public Resource checkAuthor(Author author){
+		dataset.begin(ReadWrite.WRITE);
+		model = dataset.getDefaultModel();
+		
 		if(author.getGivenName().equals("")) return null;
 		String queryString = "SELECT ?x ?g "
 				+ "WHERE {?x  <" + FOAF.family_name.getURI() +">  \"" + author.getFamilyName().toLowerCase() + "\". "
@@ -155,12 +148,14 @@ public class RDFUtils{
 				    	sln.getResource("x").addProperty(FOAF.givenname, author.getGivenName().toLowerCase());
 				    	log.warn("Change Given name:" + givienName  + "--->" + author.getGivenName());
 				    }
-				   
+				   dataset.commit();
 				    return sln.getResource("x");
 				}else{
 					return null;
 				}
-		 }
+		 }finally {
+			dataset.end();
+		}
 			    	
 	}
 	
@@ -173,6 +168,10 @@ public class RDFUtils{
 		//Check if thisResou resource has existed.
 		Resource articleRes = null;
 		if(check == true) articleRes = checkArticle(article);
+		
+		dataset.begin(ReadWrite.READ);
+		model = dataset.getDefaultModel();
+		
 		// Create article resource 
 		if(articleRes == null){
 			String uri = article.getUri();
@@ -193,7 +192,7 @@ public class RDFUtils{
 			}				
 		}
 
-		// add scorpus
+		// add scopus
 		if(article.getScopus() != null){
 			if(article.getScopus().getAggregationType() != null)
 				articleRes.addProperty(PAF.AggregationType, article.getScopus().getAggregationType());
@@ -203,14 +202,7 @@ public class RDFUtils{
 				articleRes.addProperty(PAF.PublicationName, article.getScopus().getPublicationName());
 		}
 		
-		//Add author list
-		for(Author author: article.getAuthorsList()){
-			Resource authorRes = checkAuthor(author);
-			if(authorRes == null) authorRes = addAuthor(author);			
-			model.add(articleRes,PAF.WRITTENBY,authorRes);
-		}
-		
-		
+
 		//Add KeyWord		
 		List<String> keywords = article.getKeywords();
 		if(keywords != null){
@@ -228,6 +220,21 @@ public class RDFUtils{
 				model.add(articleRes,PAF.CITATION, citationRes);
 			}
 		}
+		
+		dataset.commit();
+		dataset.end();
+		
+		//Add author list
+		for(Author author: article.getAuthorsList()){
+			Resource authorRes = checkAuthor(author);
+			if(authorRes == null) authorRes = addAuthor(author);
+			
+			dataset.begin(ReadWrite.WRITE);
+			model = dataset.getDefaultModel();
+			model.add(articleRes,PAF.WRITTENBY,authorRes);
+			dataset.commit();
+			dataset.end();
+		}
 				
 		return articleRes;
 	}
@@ -244,7 +251,7 @@ public class RDFUtils{
 					+ "WHERE {?x  <" + PAF.NS + "title" +">  \"" + article.getTitle().toLowerCase()
 					+ "\"}";	
 		QueryExecution qexec = null;
-		
+		dataset.begin(ReadWrite.READ);
 		try{
 			Query query = QueryFactory.create(queryString);
 			qexec = QueryExecutionFactory.create(query, model);
@@ -261,6 +268,7 @@ public class RDFUtils{
 		}finally {
 			try{
 				qexec.close();
+				dataset.end();
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
