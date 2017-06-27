@@ -1,0 +1,44 @@
+{
+  "projet": "PAF2017-TelecomParistech",
+  "articles": [
+    {
+  "identity": "http://givingsense.eu/sembib/data/tpt/paf2017/f_xxxx",
+  "title": "Nom_du_article",
+  "doi": "doiName(standard identity)",
+  "date": {"year": 2017, "month": 6},
+  "monTitle": "monographyName",
+  "lang": "en",
+  "author": [
+    {"name": {"firstName": "firstName", "middleName": "middleName", "lastName": "lastName"},
+     "email": "emailAddr",
+     "affiliation": {
+       "department": ["dpart1", "dpart2"],
+       "laboratory": ["lab1", "lab2"],
+       "institution": ["institut1", "institut2"],
+       "address": "address",
+       "settlement": ["settle1", "settle2"],
+       "country": ["country1", "country2"]
+     }
+    },
+    {},
+    {}
+  ],
+  "keywords": ["keyword1", "keyword2", "keyword3"],
+  "abstract": "abstract",
+  "bibliography": [{
+    "title": "title",
+    "author": [{"name": {"firstName": "firstName", "middleName": "middleName", "lastName": "lastName"}}],
+    "monoTitle": "monographyName",
+    "date": {"year": 2017, "month": 6}
+    },
+    {},
+    {}
+  ],
+  "citedList": [
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}},
+    {"identity": "", "title": "", "ref": "", "author": [], "date": {}}
+  ]
+	},{},{},{},{}
+  ]
+}

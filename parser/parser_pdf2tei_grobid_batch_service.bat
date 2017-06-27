@@ -1,0 +1,3 @@
+java -Xmx1024m -jar grobid-core-0.4.1.one-jar.jar -gH F:\program\grobid\grobid-home -gP F:\program\grobid\grobid-home\config\grobid.properties -dIn F:\WorkSpace\papers\paper -dOut F:\WorkSpace\papers\paper-header -exe processHeader
+java -Xmx1024m -jar grobid-core-0.4.1.one-jar.jar -gH F:\program\grobid\grobid-home -gP F:\program\grobid\grobid-home\config\grobid.properties -dIn F:\WorkSpace\papers\paper -dOut F:\WorkSpace\papers\paper-reference -exe processReferences
+java -Xmx1024m -jar grobid-core-0.4.1.one-jar.jar -gH F:\program\grobid\grobid-home -gP F:\program\grobid\grobid-home\config\grobid.properties -dIn F:\WorkSpace\papers\paper -dOut F:\WorkSpace\papers\paper-full -ignoreAssets -exe processFullText

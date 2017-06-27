@@ -1,0 +1,984 @@
+{
+  "head": {
+    "vars": [ "familyName" , "GivenName" , "group" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "familyName": { "type": "literal" , "value": "Duc" } ,
+        "GivenName": { "type": "literal" , "value": "Guillaume" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Polti" } ,
+        "GivenName": { "type": "literal" , "value": "Alexis" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Chaudhuri" } ,
+        "GivenName": { "type": "literal" , "value": "Sumanta" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Danger" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-luc" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Mathieu" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sauvage" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Matherat" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Hoogvorst" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Naviner" } ,
+        "GivenName": { "type": "literal" , "value": "Lirida" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Graba" } ,
+        "GivenName": { "type": "literal" , "value": "Tarik" } ,
+        "group": { "type": "literal" , "value": "SEN" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Wigger" } ,
+        "GivenName": { "type": "literal" , "value": "Michele" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Hachem" } ,
+        "GivenName": { "type": "literal" , "value": "Walid" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sole" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rioul" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rodriguez" } ,
+        "GivenName": { "type": "literal" , "value": "Georges" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tchamkerten" } ,
+        "GivenName": { "type": "literal" , "value": "Aslan" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rekaya" } ,
+        "GivenName": { "type": "literal" , "value": "Ghaya" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ciblat" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Belfiore" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-claude" } ,
+        "group": { "type": "literal" , "value": "ComNum" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DIAMANTI" } ,
+        "GivenName": { "type": "literal" , "value": "Eleni" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "URIEN" } ,
+        "GivenName": { "type": "literal" , "value": "Pascal" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RIGUIDEL" } ,
+        "GivenName": { "type": "literal" , "value": "Michel" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ZAQUINE" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MARKHAM" } ,
+        "GivenName": { "type": "literal" , "value": "Damian" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LABIOD" } ,
+        "GivenName": { "type": "literal" , "value": "Houda" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LENEUTRE" } ,
+        "GivenName": { "type": "literal" , "value": "Jean" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "AISSAOUI" } ,
+        "GivenName": { "type": "literal" , "value": "Hassane" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ALLEAUME" } ,
+        "GivenName": { "type": "literal" , "value": "Romain" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "KHATOUN" } ,
+        "GivenName": { "type": "literal" , "value": "Rida" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SERHROUCHNI" } ,
+        "GivenName": { "type": "literal" , "value": "Ahmed" } ,
+        "group": { "type": "literal" , "value": "SR" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Huyart" } ,
+        "GivenName": { "type": "literal" , "value": "Bernard" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Begaud" } ,
+        "GivenName": { "type": "literal" , "value": "Xavier" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Khy" } ,
+        "GivenName": { "type": "literal" , "value": "Antoine" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Roblin" } ,
+        "GivenName": { "type": "literal" , "value": "Christophe" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cousin" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-christophe" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bergeault" } ,
+        "GivenName": { "type": "literal" , "value": "Eric" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Lepage" } ,
+        "GivenName": { "type": "literal" , "value": "Claire" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sibille" } ,
+        "GivenName": { "type": "literal" , "value": "Alain" } ,
+        "group": { "type": "literal" , "value": "RFM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "David" } ,
+        "GivenName": { "type": "literal" , "value": "Bertrand" } ,
+        "group": { "type": "literal" , "value": "AAO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Essid" } ,
+        "GivenName": { "type": "literal" , "value": "Slim" } ,
+        "group": { "type": "literal" , "value": "AAO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Richard" } ,
+        "GivenName": { "type": "literal" , "value": "Gaël" } ,
+        "group": { "type": "literal" , "value": "AAO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gramfort" } ,
+        "GivenName": { "type": "literal" , "value": "Alexandre" } ,
+        "group": { "type": "literal" , "value": "AAO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Grenier" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "group": { "type": "literal" , "value": "AAO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Badeau" } ,
+        "GivenName": { "type": "literal" , "value": "Roland" } ,
+        "group": { "type": "literal" , "value": "AAO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GUIARD" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BAILLY" } ,
+        "GivenName": { "type": "literal" , "value": "Gilles" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SENELLART" } ,
+        "GivenName": { "type": "literal" , "value": "Pierre" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SOZIO" } ,
+        "GivenName": { "type": "literal" , "value": "Mauro" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ABDESSALEM" } ,
+        "GivenName": { "type": "literal" , "value": "Talel" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "EAGAN" } ,
+        "GivenName": { "type": "literal" , "value": "James" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BURTSCHY" } ,
+        "GivenName": { "type": "literal" , "value": "Bernard" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SUCHANEK" } ,
+        "GivenName": { "type": "literal" , "value": "Fabian" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DESSALLES" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Louis" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LECOLINET" } ,
+        "GivenName": { "type": "literal" , "value": "Eric" } ,
+        "group": { "type": "literal" , "value": "IC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Erasme" } ,
+        "GivenName": { "type": "literal" , "value": "Didier" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Jaouen" } ,
+        "GivenName": { "type": "literal" , "value": "Yves" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Minot" } ,
+        "GivenName": { "type": "literal" , "value": "Christophe" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Grillot" } ,
+        "GivenName": { "type": "literal" , "value": "Frédéric" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ware" } ,
+        "GivenName": { "type": "literal" , "value": "Cedric" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Popoff" } ,
+        "GivenName": { "type": "literal" , "value": "Sébastien" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gosset" } ,
+        "GivenName": { "type": "literal" , "value": "Christophe" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gallion" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gabet" } ,
+        "GivenName": { "type": "literal" , "value": "Renaud" } ,
+        "group": { "type": "literal" , "value": "GTO" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "HOUY" } ,
+        "GivenName": { "type": "literal" , "value": "Thomas" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "POGOREL" } ,
+        "GivenName": { "type": "literal" , "value": "Gérard" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DAVIDOVICI-NORA" } ,
+        "GivenName": { "type": "literal" , "value": "Myriam" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GILLE" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LEVALLOIS-BARTH" } ,
+        "GivenName": { "type": "literal" , "value": "Claire" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MUSELLI" } ,
+        "GivenName": { "type": "literal" , "value": "Laure" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "WAELBROECK" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MANIAK" } ,
+        "GivenName": { "type": "literal" , "value": "Rémi" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LEBART" } ,
+        "GivenName": { "type": "literal" , "value": "Ludovic" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BACACHE" } ,
+        "GivenName": { "type": "literal" , "value": "Maya" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BOURREAU" } ,
+        "GivenName": { "type": "literal" , "value": "Marc" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "FERNANDEZ" } ,
+        "GivenName": { "type": "literal" , "value": "Valérie" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BOUNIE" } ,
+        "GivenName": { "type": "literal" , "value": "David" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GRZYBOWSKI" } ,
+        "GivenName": { "type": "literal" , "value": "Lukasz" } ,
+        "group": { "type": "literal" , "value": "ECOGE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ameur-boulifa" } ,
+        "GivenName": { "type": "literal" , "value": "Rabea" } ,
+        "group": { "type": "literal" , "value": "LabSoC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Coudert" } ,
+        "GivenName": { "type": "literal" , "value": "Sophie" } ,
+        "group": { "type": "literal" , "value": "LabSoC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Apvrille" } ,
+        "GivenName": { "type": "literal" , "value": "Ludovic" } ,
+        "group": { "type": "literal" , "value": "LabSoC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Pacalet" } ,
+        "GivenName": { "type": "literal" , "value": "Renaud" } ,
+        "group": { "type": "literal" , "value": "LabSoC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tanzi" } ,
+        "GivenName": { "type": "literal" , "value": "Tullio" } ,
+        "group": { "type": "literal" , "value": "LabSoC" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MOREL" } ,
+        "GivenName": { "type": "literal" , "value": "Julien" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BAKER" } ,
+        "GivenName": { "type": "literal" , "value": "Michael" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DETIENNE" } ,
+        "GivenName": { "type": "literal" , "value": "Françoise" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "CAHOUR" } ,
+        "GivenName": { "type": "literal" , "value": "Béatrice" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RIZZA" } ,
+        "GivenName": { "type": "literal" , "value": "Caroline" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "FIGEAC" } ,
+        "GivenName": { "type": "literal" , "value": "Julien" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DIMINESCU" } ,
+        "GivenName": { "type": "literal" , "value": "Dana" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DRAETTA" } ,
+        "GivenName": { "type": "literal" , "value": "Laura" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LICOPPE" } ,
+        "GivenName": { "type": "literal" , "value": "Christian" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RELIEU" } ,
+        "GivenName": { "type": "literal" , "value": "Marc" } ,
+        "group": { "type": "literal" , "value": "SPE" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Desgreys" } ,
+        "GivenName": { "type": "literal" , "value": "Patricia" } ,
+        "group": { "type": "literal" , "value": "C2S" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Fakhoury" } ,
+        "GivenName": { "type": "literal" , "value": "Hussein" } ,
+        "group": { "type": "literal" , "value": "C2S" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Loumeau" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "group": { "type": "literal" , "value": "C2S" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Nguyen" } ,
+        "GivenName": { "type": "literal" , "value": "Van Tam" } ,
+        "group": { "type": "literal" , "value": "C2S" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Naviner" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-francois" } ,
+        "group": { "type": "literal" , "value": "C2S" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Petit" } ,
+        "GivenName": { "type": "literal" , "value": "Herve" } ,
+        "group": { "type": "literal" , "value": "C2S" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Likforman" } ,
+        "GivenName": { "type": "literal" , "value": "Laurence" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Clavel" } ,
+        "GivenName": { "type": "literal" , "value": "Chloé" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Le Feuvre" } ,
+        "GivenName": { "type": "literal" , "value": "Jean" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Pesquet-Popescu" } ,
+        "GivenName": { "type": "literal" , "value": "Béatrice" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sigelle" } ,
+        "GivenName": { "type": "literal" , "value": "Marc" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Chollet" } ,
+        "GivenName": { "type": "literal" , "value": "Gérard" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Pelachaud" } ,
+        "GivenName": { "type": "literal" , "value": "Catherine" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Valenzise" } ,
+        "GivenName": { "type": "literal" , "value": "Giuseppe" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Moissinac" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Claude" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Dufourd" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Claude" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cagnazzo" } ,
+        "GivenName": { "type": "literal" , "value": "Marco" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Dufaux" } ,
+        "GivenName": { "type": "literal" , "value": "Frédéric" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Concolato" } ,
+        "GivenName": { "type": "literal" , "value": "Cyril" } ,
+        "group": { "type": "literal" , "value": "MM" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Brettel" } ,
+        "GivenName": { "type": "literal" , "value": "Hans" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Asselineau" } ,
+        "GivenName": { "type": "literal" , "value": "Dominique" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Roux" } ,
+        "GivenName": { "type": "literal" , "value": "Michel" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Memari" } ,
+        "GivenName": { "type": "literal" , "value": "Pooran" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tupin" } ,
+        "GivenName": { "type": "literal" , "value": "Florence" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Boubekeur" } ,
+        "GivenName": { "type": "literal" , "value": "Tamy" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Nicolas" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Marie" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bloch" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Maître" } ,
+        "GivenName": { "type": "literal" , "value": "Henri" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Campedel" } ,
+        "GivenName": { "type": "literal" , "value": "Marine" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Almansa" } ,
+        "GivenName": { "type": "literal" , "value": "Andrés" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Ladjal" } ,
+        "GivenName": { "type": "literal" , "value": "Saïd" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Tierny" } ,
+        "GivenName": { "type": "literal" , "value": "Julien" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sahbi" } ,
+        "GivenName": { "type": "literal" , "value": "Hichem" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "TENDERO" } ,
+        "GivenName": { "type": "literal" , "value": "Yohann" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gousseau" } ,
+        "GivenName": { "type": "literal" , "value": "Yann" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Angelini" } ,
+        "GivenName": { "type": "literal" , "value": "Elsa" } ,
+        "group": { "type": "literal" , "value": "STA" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LE" } ,
+        "GivenName": { "type": "literal" , "value": "Marie-Christine" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "AURAY" } ,
+        "GivenName": { "type": "literal" , "value": "Nicolas" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MUSSO" } ,
+        "GivenName": { "type": "literal" , "value": "Pierre" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GARRON" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "FOURNOUT" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "CASILLI" } ,
+        "GivenName": { "type": "literal" , "value": "Antonio" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DENIS" } ,
+        "GivenName": { "type": "literal" , "value": "Jerôme" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BEAUDOUIN" } ,
+        "GivenName": { "type": "literal" , "value": "Valérie" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "COUSSIEU" } ,
+        "GivenName": { "type": "literal" , "value": "Wilfried" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GENTES" } ,
+        "GivenName": { "type": "literal" , "value": "Annie" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MUNIER-TEMIME" } ,
+        "GivenName": { "type": "literal" , "value": "Brigitte" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "PASQUIER" } ,
+        "GivenName": { "type": "literal" , "value": "Dominique" } ,
+        "group": { "type": "literal" , "value": "SHS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rossi" } ,
+        "GivenName": { "type": "literal" , "value": "Dario" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Kofman" } ,
+        "GivenName": { "type": "literal" , "value": "Daniel" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Godlewski" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Giovanidis" } ,
+        "GivenName": { "type": "literal" , "value": "Anastasios" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Gagnaire" } ,
+        "GivenName": { "type": "literal" , "value": "Maurice" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Zahr" } ,
+        "GivenName": { "type": "literal" , "value": "Sawsan" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Boukhatem" } ,
+        "GivenName": { "type": "literal" , "value": "Nadia" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Simoni" } ,
+        "GivenName": { "type": "literal" , "value": "Noémie" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Coupechoux" } ,
+        "GivenName": { "type": "literal" , "value": "Marceau" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bonald" } ,
+        "GivenName": { "type": "literal" , "value": "Thomas" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Martins" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Rougier" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-Louis" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Iannone" } ,
+        "GivenName": { "type": "literal" , "value": "Luigi" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Vergne" } ,
+        "GivenName": { "type": "literal" , "value": "Anaïs" } ,
+        "group": { "type": "literal" , "value": "RMS" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "VIGNES" } ,
+        "GivenName": { "type": "literal" , "value": "Sylvie" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DEMEURE" } ,
+        "GivenName": { "type": "literal" , "value": "Isabelle" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MOURET" } ,
+        "GivenName": { "type": "literal" , "value": "Gerard" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BELLOT" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GADRET" } ,
+        "GivenName": { "type": "literal" , "value": "Serge" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "KUZNETSOV" } ,
+        "GivenName": { "type": "literal" , "value": "Petr" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BORDE" } ,
+        "GivenName": { "type": "literal" , "value": "Etienne" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DAX" } ,
+        "GivenName": { "type": "literal" , "value": "Philippe" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "TARDIEU" } ,
+        "GivenName": { "type": "literal" , "value": "Samuel" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DIACONESCU" } ,
+        "GivenName": { "type": "literal" , "value": "Ada" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "BUSCH" } ,
+        "GivenName": { "type": "literal" , "value": "Patrick" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "PAUTET" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "GARDOLL" } ,
+        "GivenName": { "type": "literal" , "value": "Sebastien" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "NAJM" } ,
+        "GivenName": { "type": "literal" , "value": "Elie" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "ROBERT" } ,
+        "GivenName": { "type": "literal" , "value": "Thomas" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SHARROCK" } ,
+        "GivenName": { "type": "literal" , "value": "Remi" } ,
+        "group": { "type": "literal" , "value": "S3" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "D'Alche-Buc" } ,
+        "GivenName": { "type": "literal" , "value": "Florence" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Fort" } ,
+        "GivenName": { "type": "literal" , "value": "Gersende" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Moulines" } ,
+        "GivenName": { "type": "literal" , "value": "Éric" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Roueff" } ,
+        "GivenName": { "type": "literal" , "value": "François" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cardoso" } ,
+        "GivenName": { "type": "literal" , "value": "Jean-François" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Clémençon" } ,
+        "GivenName": { "type": "literal" , "value": "Stephan" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Charbit" } ,
+        "GivenName": { "type": "literal" , "value": "Maurice" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Cappé" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Blanchet" } ,
+        "GivenName": { "type": "literal" , "value": "Gérard" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Salmon" } ,
+        "GivenName": { "type": "literal" , "value": "Joseph" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Bianchi" } ,
+        "GivenName": { "type": "literal" , "value": "Pascal" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Portier" } ,
+        "GivenName": { "type": "literal" , "value": "Francois" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Fercoq" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "Sabourin" } ,
+        "GivenName": { "type": "literal" , "value": "Anne" } ,
+        "group": { "type": "literal" , "value": "TII" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MADORE" } ,
+        "GivenName": { "type": "literal" , "value": "David" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "USTUNEL" } ,
+        "GivenName": { "type": "literal" , "value": "Suleyman" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "HUDRY" } ,
+        "GivenName": { "type": "literal" , "value": "Olivier" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "COHEN" } ,
+        "GivenName": { "type": "literal" , "value": "Gerard" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "LOBSTEIN" } ,
+        "GivenName": { "type": "literal" , "value": "Antoine" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RAMBAUD" } ,
+        "GivenName": { "type": "literal" , "value": "Matthieu" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "DECREUSEFOND" } ,
+        "GivenName": { "type": "literal" , "value": "Laurent" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "RANDRIAMBOLOLONA" } ,
+        "GivenName": { "type": "literal" , "value": "Hugues" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "SAKAROVITCH" } ,
+        "GivenName": { "type": "literal" , "value": "Jacques" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "MEYER" } ,
+        "GivenName": { "type": "literal" , "value": "Bertrand" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      } ,
+      {
+        "familyName": { "type": "literal" , "value": "CHARON" } ,
+        "GivenName": { "type": "literal" , "value": "Irene" } ,
+        "group": { "type": "literal" , "value": "MIC2" }
+      }
+    ]
+  }
+}
