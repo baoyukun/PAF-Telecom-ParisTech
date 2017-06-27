@@ -280,6 +280,8 @@ Par `Nino Filiu`
 
 [*Retour au calendrier*](#développement-du-projet)
 
+Par `Nino Filiu`
+
 ### Mardi 27 juin 2017
 
 [*Retour au calendrier*](#développement-du-projet)
