@@ -16,9 +16,9 @@ La méthode utilisée pour visualiser les fichiers est la suivante:
 1. Des données JSON sont produites en amont par SPARQL à partir de la base de données RDF
 2. Des scripts PHP construisent à partir de ces données des PAA
 3. D'autres scripts PHP filtrent certaines de ces données afin de les rendre plus pertinentes, plus lisibles ou plus rapides à afficher
-4. Un dernier script PHP *display.php* va produire la page HTML sur laquelle cont apparaître les graphs. Par exemple, l'affichage du graph ZFDG des co-auteurs va se trouver à l'adresse *display.php?dataURL=data/coauteurs.json&graphType=ZFDG*.
+4. Un dernier script PHP *display.php* va produire la page HTML sur laquelle vont apparaître les graphs. Par exemple, l'affichage du graph ZFDG des co-auteurs va se trouver à l'adresse *display.php?dataURL=data/coauteurs.json&graphType=ZFDG*.
 
-J'ai choisi cette architecture car elle permet une indépendance totale entre les fichiers JSON de base que me donnera Fonda Zhu et le lien qu'intègrera Cherif Diallo sur son site: les fichiers JSON seront d'ores et déjà sur le serveur lors du lancement du site, et le sit
+J'ai choisi cette architecture car elle permet une indépendance totale entre les fichiers JSON de base que me donnera Fonda Zhu et le lien qu'intègrera Cherif Diallo sur son site.
 
 La méthode et les emplacements des fichiers peut donc être visualisée de la manière suivante:
 
