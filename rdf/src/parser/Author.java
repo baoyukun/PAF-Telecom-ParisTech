@@ -1,83 +1,145 @@
 package parser;
 
 
+import java.util.HashMap;
+import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+
 
 public class Author {
-	private String familyName = null;
-	private String givenName = null;
+	private Affiliation affiliation = new Affiliation();
+	private String affiliation_id;
+	private String email = null;
+	private Name name;
+	private String scopus_id;
 	private String uri = null;
-	private String affiliation = null;
-	private String departement = null;
-	private String groupe = null;
+
+	public Author() {
+		this.name = new Name();
+	}
+
 	
-	
-	public final String getAffiliation() {
+	public final Set<String> getAddress() {
+		return affiliation.getAddress();
+	}
+
+	public final Affiliation getAffiliation() {
 		return affiliation;
 	}
 
-	public final void setAffiliation(String affiliation) {
+	public final String getAffiliation_id() {
+		return affiliation_id;
+	}
+
+	public final Set<String> getDepartement() {
+		return affiliation.getDepartment();
+	}
+
+	public final String getEmail() {
+		return email;
+	}
+	
+	
+	@JsonProperty("familyName")
+	public final String getFamilyName() {
+		return name.getFamilyName();
+	}
+
+	public final String getFullName() {
+		return this.name.getFullName();
+	}
+
+	@JsonProperty("givenName")
+	public final String getGivenName() {
+		return name.getGivenName();
+	}
+
+	public final Set<String> getGroupe() {
+		return affiliation.getGroup();
+	}
+
+	public final String getMiddleName() {
+		return this.name.getMiddleName();
+	}
+
+	public final Name getName() {
+		return name;
+	}
+
+
+	public final String getScopus_id() {
+		return scopus_id;
+	}
+
+
+	public final String getUri() {
+		return uri;
+	}
+
+
+	public final void setAddress(String address) {
+		this.affiliation.getAddress().add(address);
+	}
+
+
+	public final void setAffiliation(Affiliation affiliation) {
 		this.affiliation = affiliation;
 	}
 
-	public final String getDepartement() {
-		return departement;
+	public final void setAffiliation_id(String affiliation_id) {
+		this.affiliation_id = affiliation_id;
 	}
 
 	public final void setDepartement(String departement) {
-		this.departement = departement;
+		this.affiliation.getDepartment().add(departement);
 	}
 
-	public final String getGroupe() {
-		return groupe;
+	public final void setEmail(String email) {
+		this.email = email;
 	}
 
-	public final void setGroupe(String groupe) {
-		this.groupe = groupe;
-	}
-
-	public final String getFamilyName() {
-		return familyName.trim();
-	}
-
+	@JsonProperty("familyName")
 	public final void setFamilyName(String familyName) {
-		this.familyName = familyName.trim();
+		this.name.setFamilyName(familyName);
+	}
+	
+	@JsonProperty("fullName")
+	public final void setFullName(String fullName) {
+		this.name.setFullName(fullName);
 	}
 
-	public final String getGivenName() {
-		return givenName.trim();
-	}
-
+	@JsonProperty("givenName")
 	public final void setGivenName(String givenName) {
-		this.givenName = givenName.trim();
+		this.name.setGivenName(givenName);
+	}
+	
+	public final void setGroupe(String groupe) {
+		this.affiliation.getGroup().add(groupe);
 	}
 
-	public final String getUri() {
-		return uri.trim();
+	public final void setInstitution(String string){
+		this.affiliation.getInstitution().add(string);
+	}
+	
+	@JsonProperty("middleName")
+	public final void setMiddleName(String middleName) {
+		this.name.setMiddleName(middleName);
+	}
+
+	public final void setName(Name name) {
+		this.name = name;
+	}
+
+	public final void setScopus_id(String scopus_id) {
+		this.scopus_id = scopus_id;
 	}
 
 	public final void setUri(String uri) {
 		this.uri = uri;
 	}
-
-	public Author() {
-		
-	}
 	
-	public Author(String familyName, String givenName){
-		this.familyName = familyName;
-		this.givenName = givenName;
-	}
-	
-	@Override
-	public String toString() {
-		
-		return ("{Family Name:" + this.familyName 
-				+ ",Given Name:" + this.givenName
-				+ ",uri:" + this.uri
-				+ ",Affiiliation:" + this.affiliation
-				+ ",Departement:" + this.departement
-				+ ",Group:" + this.groupe + "}");
-	} 
 	
 	
 }

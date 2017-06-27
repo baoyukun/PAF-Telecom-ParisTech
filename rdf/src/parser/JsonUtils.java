@@ -3,8 +3,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Created by zhufa on 22/06/2017.
  */
-public class JsonParser {
+public class JsonUtils {
 
     /** This method is used to deserialize the author list into a ArrayList
      * @param path the path of json file
@@ -27,6 +27,7 @@ public class JsonParser {
         File file = new File(path);
 
         ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
         
          JsonNode root = mapper.readTree(file);
          // Parcourir tous les departement
@@ -36,10 +37,9 @@ public class JsonParser {
 					Author author = mapper.readValue(people.traverse(), Author.class);
 					author.setDepartement(departement.findValue("name").asText());
 					author.setGroupe(group.findValue("name").asText());
- 					author.setAffiliation("Telecom P"
+ 					author.setInstitution("Telecom P"
  							+ "aristech");
  					authorList.add(author);
-					
 				}
 			}
 		}
@@ -51,13 +51,30 @@ public class JsonParser {
      * @throws JsonProcessingException **/
     public static List<Article> parserArticleList(String path) throws JsonProcessingException, IOException{
     	File file = new File(path);
-    
+
     	ObjectMapper mapper = new ObjectMapper();
+    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS,true);
     	
     	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+       	
     	JsonNode root = mapper.readTree(file).findValue("publis");
+    	if(root == null) root = mapper.readTree(file).findValue("articles");
     	
     	return  mapper.readValue(root.traverse(), new TypeReference<List<Article>>(){} );
+    }
+    
+    
+    public static Author parserAuthor(String path) throws JsonProcessingException, IOException{
+    	File file = new File(path);
+
+    	ObjectMapper mapper = new ObjectMapper();
+    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS,true);
+    	
+    	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+       	
+    	JsonNode root = mapper.readTree(file);
+    	
+    	return  mapper.readValue(root.traverse(), Author.class );
     }
     
 }

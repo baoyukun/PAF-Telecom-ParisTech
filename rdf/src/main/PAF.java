@@ -13,7 +13,8 @@ public class PAF {
     public static final Property GROUP = m_model.createProperty(NS + "group" );
     public static final Property ORGANISATION = m_model.createProperty( NS + "organisation" );
     public static final Property DEPARTEMENT = m_model.createProperty( NS + "departement" );    
-    public static final Property WRITTENBY = m_model.createProperty( NS + "wirtten_by" );
+    public static final Property WRITTENBY = m_model.createProperty( NS + "written_by" );
+    public static final Property MIDDLENAME = m_model.createProperty( NS + "middle_name");
     public static final String BASE = "http://givingsense.eu/sembib/data/tpt/paf2017/"; 
     public static final String AUTHOR= "http://givingsense.eu/sembib/data/tpt/paf2017/author#";
     public static final String ARTICLE= "http://givingsense.eu/sembib/data/tpt/paf2017/article#";

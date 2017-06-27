@@ -1,12 +1,9 @@
 package parser;
-
-import java.net.URI;
-import java.net.URL;
-import java.util.ArrayList;
+import java.lang.reflect.Field;
+import java.util.HashMap;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 /** This class is used to parse the json file*/
 public class Article {
 	private String entrytype;
@@ -19,12 +16,15 @@ public class Article {
 	private String category;
 	private String language;
 	private String audience;
+	
+	@JsonProperty("abstract")
+	private String summary;
 
 	private String title;
 	private String booktitle;
 	private String state;
 	private String project;
-	
+	private String monoTitle;
 	@JsonProperty("dept")
 	private String departement;
 	private String group;
@@ -38,17 +38,91 @@ public class Article {
 	
     @JsonProperty("author")
 	private List<Author> authorsList;
-    @JsonProperty("citationList")
-	private List<Author> citationList;
-    @JsonProperty("citedList")
-	private List<Author> citedList;
-	private List<Article> referenceList;
+    @JsonProperty("bibliography")
+	private List<Article> citationList;
+    
+    private Scopus scopus;
+    
+    public final Scopus getScopus() {
+		return scopus;
+	}
+
+	public final void setScopus(Scopus scopus) {
+		this.scopus = scopus;
+	}
+
+	private String citedCount;
+	
+	public final String getCitedCount() {
+		return citedCount;
+	}
+
+	public final void setCitedCount(String citedCount) {
+		this.citedCount = citedCount;
+	}
+
 	private List<String> keywords;
+	
+	
+	public final String getSummary() {
+		return summary;
+	}
+
+	public final void setSummary(String summary) {
+		this.summary = summary;
+	}
+
+	public final String getMonoTitle() {
+		return monoTitle;
+	}
+
+	public final void setMonoTitle(String monoTitle) {
+		this.monoTitle = monoTitle;
+	}
+
+	public final void setMonTitle(String monoTitle) {
+		this.monoTitle = monoTitle;
+	}
+	
+	public final List<Article> getCitationList() {
+		return citationList;
+	}
+
+	public final void setCitationList(List<Article> citationList) {
+		this.citationList = citationList;
+	}
+
+	public final List<Article> getCitedList() {
+		return citedList;
+	}
+
+	public final void setCitedList(List<Article> citedList) {
+		this.citedList = citedList;
+	}
+
 	
 	public Article() {
 
-
 	}
+	
+	@JsonProperty("lang")
+	public final void setLang(String lang){
+		this.language = lang;
+	}
+	
+	@JsonProperty("identity")
+	public final void setIdentity(String identity){
+		setUri(uri);
+	}
+
+	@JsonProperty("date")
+	@JsonDeserialize(using = HashMapDeserializer.class)  
+	public final void setDate(HashMap<String, String> date){
+		if(date == null) return;
+		if(date.containsKey("year")) this.year = date.get("year");
+		if(date.containsKey("month")) this.month = date.get("month");
+	}
+	
 	public final String getInvitedState() {
 		return invitedState;
 	}
@@ -60,7 +134,7 @@ public class Article {
 	}
 	public final void setPublisher(String publisher) {
 		this.publisher = publisher;
-	}
+	}	
 	public final String getDoi() {
 		return doi;
 	}
@@ -81,12 +155,7 @@ public class Article {
 	public final void setPages(String pages) {
 		this.pages = pages;
 	}
-	public final List<Article> getReferenceList() {
-		return referenceList;
-	}
-	public final void setReferenceList(List<Article> referenceList) {
-		this.referenceList = referenceList;
-	}
+
 	public final List<String> getKeywords() {
 		return keywords;
 	}
@@ -164,9 +233,11 @@ public class Article {
 	public final String getTitle() {
 		return title;
 	}
+		
 	public final void setTitle(String title) {
 		this.title = title.trim().replaceAll("\\s+", " ");
 	}
+	
 	public final String getBooktitle() {
 		return booktitle;
 	}
@@ -204,7 +275,28 @@ public class Article {
 		this.id = id;
 	}
 	
-	
-	
+	@Override
+	public String toString() {
+		Field[] fields = this.getClass().getDeclaredFields();
+		StringBuilder output = new StringBuilder();
+		output.append("{");
+		for (Field field : fields) {
+			try {
+				field.setAccessible(true);
+				Object obj = field.get(this); 
+				
+				if(obj == null) output.append(field.getName() + ":null");
+				else output.append(field.getName() + ":" + obj.toString());
+				output.append("\n,");
+			} catch (IllegalArgumentException | IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
+		output.deleteCharAt(output.lastIndexOf("\n,"));
+		output.append("}");
+		return output.toString();
+		
+	}
 }
