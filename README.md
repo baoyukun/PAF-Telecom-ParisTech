@@ -282,6 +282,8 @@ Par `Nino Filiu`
 
 J'ai essayé de voir si un serveur PHP pouvait processer lui-même les requêtes SPARQL sur le fichier RDF. Je ne pense pas que ça soit impossible, mais je n'ait pas réussi à le faire. Ces langages me sont inconnus et les codes proposés sur internet ne marchent pas (peut-être sont-ils dépassés? Le web design me semblait très "début d'internet").
 
+J'ai donc fini les scripts d'hier. Ces scripts sont disponibles dans la partie visualisation. Ils "lisent" l'output JSON de SPARQL et produisent un JSON "prêt à afficher" qui sera lu et affiché par le script *display.php*.
+
 Par `Nino Filiu`
 
 ### Mardi 27 juin 2017
