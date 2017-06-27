@@ -1,0 +1,69 @@
+{
+    "head": {
+        "vars": ["keyword","year","month"]
+    },
+    "results": {
+        "bindings": [
+            {
+                "keyword": {"type": "literal", "value": "potato"},
+                "year": {"type": "literal", "value": "2014"},
+                "month": {"type": "literal", "value": "January"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "potato"},
+                "year": {"type": "literal", "value": "2014"},
+                "month": {"type": "literal", "value": "February"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "potato"},
+                "year": {"type": "literal", "value": "2015"},
+                "month": {"type": "literal", "value": "September"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "potato"},
+                "year": {"type": "literal", "value": "2016"},
+                "month": {"type": "literal", "value": "January"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "bacon"},
+                "year": {"type": "literal", "value": "2015"},
+                "month": {"type": "literal", "value": "January"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "bacon"},
+                "year": {"type": "literal", "value": "2015"},
+                "month": {"type": "literal", "value": "December"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "bacon"},
+                "year": {"type": "literal", "value": "2016"},
+                "month": {"type": "literal", "value": "August"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "bacon"},
+                "year": {"type": "literal", "value": "2016"},
+                "month": {"type": "literal", "value": "November"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "bacon"},
+                "year": {"type": "literal", "value": "2017"},
+                "month": {"type": "literal", "value": "April"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "BDE"},
+                "year": {"type": "literal", "value": "2014"},
+                "month": {"type": "literal", "value": "May"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "BDE"},
+                "year": {"type": "literal", "value": "2015"},
+                "month": {"type": "literal", "value": "May"}
+            },
+            {
+                "keyword": {"type": "literal", "value": "BDE"},
+                "year": {"type": "literal", "value": "2017"},
+                "month": {"type": "literal", "value": "June"}
+            }
+        ]
+    }
+}
