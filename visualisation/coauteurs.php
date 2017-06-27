@@ -1,96 +1,91 @@
 <?php
 
-/*
-This scripts aims at creating a JSON file of the coauthors of TPT.
-It is based on publis.json:
+$t=time();
+include("utils.php");
+$gad=json_decode(file_get_contents("data/groupsanddepts.json"));
 
-{
-source
-publis: [
-    {
-    (various)2
-    author [
-        {givenName,familyName}+
-    ]
-    (various)*
-    }
-]+
+$data=json_decode(file_get_contents("data/publis-auteurs.json"))->results->bindings;
+for ($i=0; $i<count($data); $i++){
+    $data[$i]->familyName->value=ucwords(strtolower($data[$i]->familyName->value));
 }
+var_dump($data);
+$t=time()-$t;
+echo "<h1>time of calculation: $t</h1>";
+$t=time();
 
-and creates a force-oriented-graph-friendly coauthors.json:
+$publis=[];
+foreach ($data as $d){
+    $title=$d->title->value;
+    $name=$d->familyName->value;
+    if (!array_key_exists($title,$publis)){
+        $publis[$title]=[];
+    }
+    $publis[$title][]=$name;
+}
+var_dump($publis);
+$t=time()-$t;
+echo "<h1>time of calculation: $t</h1>";
+$t=time();
 
-{nodes[{id,group}+],links[{source,target,value}+]}
-
-*/
-
-$publis=json_decode(file_get_contents("data/publis.json"))->publis;
-$C=new stdClass();
-$C->nodes=[];
-$C->links=[];
-
-// authors list
-$alist=[];
-foreach ($publis as $p){
-    $authors=$p->author;
-    foreach ($authors as $a){
-        if (!in_array($a->familyName,$alist)){
-            $alist[]=$a->familyName;
-        }
+$chercheurs=[];
+foreach ($data as $d){
+    $name=$d->familyName->value;
+    if (!in_array($name,$chercheurs)){
+        $chercheurs[]=$name;
     }
 }
+var_dump($chercheurs);
+$t=time()-$t;
+echo "<h1>time of calculation: $t</h1>";
+$t=time();
 
-// collaboration list
-$L=[];
-foreach ($alist as $a){
-    $L[$a]=[];
+$co=[];
+foreach ($chercheurs as $c){
+    $co[$c]=[];
 }
 foreach ($publis as $p){
-    foreach ($p->author as $a1){
-        foreach ($p->author as $a2){
-            if (array_key_exists($a2->familyName,$L[$a1->familyName])){
-                $L[$a1->familyName][$a2->familyName]++;
+    foreach ($p as $c1){
+        foreach ($p as $c2){
+            if (array_key_exists($c2,$co[$c1])){
+                $co[$c1][$c2]++;
             }
             else {
-                $L[$a1->familyName][$a2->familyName]=1;
+                $co[$c1][$c2]=1;
             }
         }
     }
 }
+var_dump($co);
+$t=time()-$t;
+echo "<h1>time of calculation: $t</h1>";
+$t=time();
 
-// $C->nodes filling
-foreach ($alist as $a){
-    $C->nodes[]=new stdClass();
-    $C->nodes[count($C->nodes)-1]->id=$a;
-    $C->nodes[count($C->nodes)-1]->group=1;
+$jobj=new stdClass();
+$jobj->nodes=[];
+foreach ($chercheurs as $c){
+    $jobj->nodes[]=new stdClass();
+    $jobj->nodes[count($jobj->nodes)-1]->id=$c;
+    $jobj->nodes[count($jobj->nodes)-1]->group=getGroup($c,$gad);
 }
-foreach ($alist as $a1){
-    foreach ($alist as $a2){
-        if ($a1!=$a2 && array_key_exists($a2,$L[$a1])){
-            $C->links[]=new stdClass();
-            $C->links[count($C->links)-1]->source=$a1;
-            $C->links[count($C->links)-1]->target=$a2;
-            $C->links[count($C->links)-1]->value=$L[$a1][$a2];
+$jobj->links=[];
+foreach ($co as $c1=>$c){
+    foreach ($c as $c2=>$value){
+        if ($c1!=$c2){
+            $jobj->links[]=new stdClass();
+            $jobj->links[count($jobj->links)-1]->source=$c1;
+            $jobj->links[count($jobj->links)-1]->target=$c2;
+            $jobj->links[count($jobj->links)-1]->value=$value;
         }
     }
 }
+var_dump($jobj);
+$t=time()-$t;
+echo "<h1>time of calculation: $t</h1>";
+$t=time();
 
 $f=fopen("data/coauteurs.json","w");
-fwrite($f,json_encode($C));
+fwrite($f,json_encode($jobj));
 fclose($f);
 
-$nblinks=0;
-foreach ($L as $a){
-    $nblinks+=count($a);
-}
-$maxlink=0;
-foreach ($C->links as $link){
-    if ($link->value>$maxlink){
-        $maxlink=$link->value;
-    }
-}
-echo "<a href='display.html'>done.</a><br>";
-echo "number of authors: ".count($alist)."<br>";
-echo "number of links: ".$nblinks."<br>";
-echo "maximum number of publications: ".$maxlink."<br>";
 
 ?>
