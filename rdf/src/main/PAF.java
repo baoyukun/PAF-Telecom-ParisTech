@@ -19,5 +19,9 @@ public class PAF {
     public static final String AUTHOR= "http://givingsense.eu/sembib/data/tpt/paf2017/author#";
     public static final String ARTICLE= "http://givingsense.eu/sembib/data/tpt/paf2017/article#";
 	public static final Property HASKEYWORD =m_model.createProperty( NS + "has_key_word" );
+	public static final Property CITATION = m_model.createProperty( NS + "citation" );
+	public static final Property AggregationType = m_model.createProperty( NS + "AggregationType" );
+	public static final Property PaperScopusId = m_model.createProperty( NS + "PaperScopusId" );
+	public static final Property PublicationName = m_model.createProperty( NS + "PublicationName" );
     
 }

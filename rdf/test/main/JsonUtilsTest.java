@@ -6,25 +6,26 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.List;
 
+import org.apache.jena.ext.com.google.common.annotations.VisibleForTesting;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import parser.Article;
 import parser.Author;
-import parser.JsonParser;
+import parser.JsonUtils;
 
-public class JsonParserTest {
+public class JsonUtilsTest {
 
 
 	@Ignore
 	public void testParserAuthorsList() throws JsonParseException, JsonMappingException, IOException {
-		List<Author> authors = JsonParser.parserAuthorsList("res/chercheurstpt.json");
+		List<Author> authors = JsonUtils.parserAuthorsList("res/chercheurstpt.json");
 		for (Author author : authors) {
-			System.out.println(author);
+			//System.out.println(author);
 		}
 
 	}
@@ -32,18 +33,35 @@ public class JsonParserTest {
 	
 	@Ignore
 	public void testParserArticleList() throws JsonParseException, JsonMappingException, IOException {
-		List<Article> articles = JsonParser.parserArticleList("res/18112015.5ans.json");
+		List<Article> articles = JsonUtils.parserArticleList("res/18112015.5ans.json");
 		for (Article article : articles) {
-			ObjectMapper mapper = new ObjectMapper();
+			if(article.getCitedList()!= null){
+				ObjectMapper mapper = new ObjectMapper();
+				System.out.println("ITIEDlIST:\t" + mapper.writeValueAsString(article.getCitedList()));
 			
-			System.out.println(mapper.writeValueAsString(article));
+			}
 		}
 		
 		
 		System.out.println(articles.size());
 	}
 	
+	/*** This method will test JsonUtils.parserArcticleList with res/jsonSample.json
+	 * @throws IOException 
+	 * @throws JsonProcessingException */
 	@Test
+	public void testParserArticleListYUKUN() throws JsonProcessingException, IOException {
+		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json");
+		for (Article article : articles) {
+			if(article.getCitedList() != null){
+				ObjectMapper mapper = new ObjectMapper();
+				System.out.println("ITIEDlIST:\t" + mapper.writeValueAsString(article.getCitedList()));
+			
+			}
+		}
+	}
+	
+	@Ignore
 	public void test() throws ClassNotFoundException {
 	Class<?> class1 = Class.forName("parser.Article");
 	Field[] x_aiff = class1.getDeclaredFields();

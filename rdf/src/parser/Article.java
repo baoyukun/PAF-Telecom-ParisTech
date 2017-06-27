@@ -80,9 +80,6 @@ public class Article {
 		this.monoTitle = monoTitle;
 	}
 
-	public final void setMonTitle(String monoTitle) {
-		this.monoTitle = monoTitle;
-	}
 	
 	public final List<Article> getCitationList() {
 		return citationList;
@@ -90,14 +87,6 @@ public class Article {
 
 	public final void setCitationList(List<Article> citationList) {
 		this.citationList = citationList;
-	}
-
-	public final List<Article> getCitedList() {
-		return citedList;
-	}
-
-	public final void setCitedList(List<Article> citedList) {
-		this.citedList = citedList;
 	}
 
 	
@@ -235,7 +224,8 @@ public class Article {
 	}
 		
 	public final void setTitle(String title) {
-		this.title = title.trim().replaceAll("\\s+", " ");
+		this.title = title.trim().replaceAll("[`\\{\\}\\(\\)]+","").replaceAll("\\s+", " ");
+		this.title.replaceAll("^\\*+", "");
 	}
 	
 	public final String getBooktitle() {

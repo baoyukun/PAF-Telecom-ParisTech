@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,6 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Created by zhufa on 22/06/2017.
  */
+
 public class JsonUtils {
 
     /** This method is used to deserialize the author list into a ArrayList
@@ -28,6 +30,9 @@ public class JsonUtils {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , true);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
+        
         
          JsonNode root = mapper.readTree(file);
          // Parcourir tous les departement
@@ -53,12 +58,15 @@ public class JsonUtils {
     	File file = new File(path);
 
     	ObjectMapper mapper = new ObjectMapper();
-    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS,true);
+        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , true);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
     	
     	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
        	
     	JsonNode root = mapper.readTree(file).findValue("publis");
     	if(root == null) root = mapper.readTree(file).findValue("articles");
+    	
     	
     	return  mapper.readValue(root.traverse(), new TypeReference<List<Article>>(){} );
     }
@@ -68,7 +76,9 @@ public class JsonUtils {
     	File file = new File(path);
 
     	ObjectMapper mapper = new ObjectMapper();
-    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS,true);
+        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , true);
+        mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
     	
     	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
        	
