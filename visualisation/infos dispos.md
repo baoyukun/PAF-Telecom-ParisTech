@@ -6,11 +6,11 @@ Toutes les informations que le serveur peut obtenir ou qui sont déjà sous form
 |---------------------------------------------|-------------------------------------------------------|---------------|
 |Liste des chercheurs avec leur groupe        |[query](#liste-des-chercheurs-avec-leur-groupe)        |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-groupe.json)
 |Liste des chercheurs avec leur département   |[query](#liste-des-chercheurs-avec-leur-département)   |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-département.json)
-|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[12,111 entries](/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs.json)
+|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[44,991 entries](/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs.json)
 |Liste des publications avec les auteurs      |[query](#liste-des-publications-avec-les-auteurs)      |[13,648 entries](/visualisation/json/liste-des-publications-avec-les-auteurs.json)
 |Liste des publications avec le département   |[query](#liste-des-publications-avec-le-département)   |[3,834 entries](/visualisation/json/liste-des-publications-avec-le-département.json)
 |Liste des publications avec le groupe        |[query](#liste-des-publications-avec-le-groupe)        |[3,814 entries]("/visualisation/json/liste-des-publications-avec-le-groupe.json)
-|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[7,909 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
+|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[11,740 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
 |Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[ 28,839 entries](/visualisation/json/liste-des-publications-avec-la-date.json.)
 |Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[33,242 entries](/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json)
 
@@ -65,7 +65,7 @@ PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
 
 SELECT ?familyName ?GivenName ?keyword
 WHERE {
-  ?article paf:wirtten_by ?author.
+  ?article paf:written_by ?author.
   ?article paf:has_key_word ?keyword.
   ?author foaf:family_name ?familyName.
   ?author foaf:givenname ?GivenName
