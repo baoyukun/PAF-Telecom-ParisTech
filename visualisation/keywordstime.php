@@ -1,29 +1,69 @@
-<!-- Creates a ready-to display CSV file to display a streamgraph showing the popularity of keywords over time. -->
-
 <?php
 
-$data=json_decode(file_get_contents("data/keywordstime.json"))->results->bindings;
+$t=time();
 
-// format Month => month number
-for ($i=0; $i<count($data); $i++){
-    switch($data[$i]->month->value){
-        case "January": $data[$i]->month->value=01;
-        case "February": $data[$i]->month->value=02;
-        case "March": $data[$i]->month->value=03;
-        case "April": $data[$i]->month->value=04;
-        case "May": $data[$i]->month->value=05;
-        case "June": $data[$i]->month->value=06;
-        case "July": $data[$i]->month->value=07;
-        case "August": $data[$i]->month->value=08;
-        case "September": $data[$i]->month->value=09;
-        case "October": $data[$i]->month->value=10;
-        case "November": $data[$i]->month->value=11;
-        case "December": $data[$i]->month->value=12;
+$data=json_decode(file_get_contents("data/keywordstime.json"))->results->bindings;
+$l=count($data);
+for ($i=0; $i<$l; $i++){
+    if (!property_exists($data[$i],"month")){
+        $data[$i]->month=new stdClass();
+        $data[$i]->month->value="July";
+    }
+    $data[$i]->year->value=(int)$data[$i]->year->value;
+    if ($data[$i]->year->value<2000){
+        unset($data[$i]);
+        break;
+    }
+    switch(strtolower($data[$i]->month->value)){
+        case "january": $data[$i]->month->value=1;
+        case "february": $data[$i]->month->value=2;
+        case "march": $data[$i]->month->value=3;
+        case "april": $data[$i]->month->value=4;
+        case "may": $data[$i]->month->value=5;
+        case "june": $data[$i]->month->value=6;
+        case "july": $data[$i]->month->value=7;
+        case "august": $data[$i]->month->value=8;
+        case "september": $data[$i]->month->value=9;
+        case "october": $data[$i]->month->value=10;
+        case "november": $data[$i]->month->value=11;
+        case "december": $data[$i]->month->value=12;
+    }
+    $data[$i]->month->value=(int)$data[$i]->month->value;
+}
+$data=array_values($data);
+
+$t=time()-$t;
+echo "init done in $t seconds<br>";ob_flush();flush();
+$t=time();
+
+$keywords=[];
+foreach ($data as $d){
+    $k=$d->keyword->value;
+    if (!array_key_exists($k,$keywords)){
+        $keywords[$k]=1;
+    }
+    else {
+        $keywords[$k]++;
     }
 }
-var_dump($data);
-echo "<hr>";
+$bestkws=[];
+for ($i=0; $i<5; $i++){
+    $bestk=array_search(max($keywords),$keywords);
+    $bestkws[]=$bestk;
+    unset($keywords[$bestk]);
+}
+$l=count($data);
+for ($i=0; $i<$l; $i++){
+    if (!in_array($data[$i]->keyword->value,$bestkws)){
+        unset($data[$i]);
+    }
+}
+$data=array_values($data);
 
+
+$t=time()-$t;
+echo "cleaning done in $t seconds<br>";ob_flush();flush();
+$t=time();
 
 $datemin=2012;
 $datemax=0001;
@@ -52,10 +92,11 @@ for ($year=$yearmin+1; $year<$yearmax; $year++){
 for ($month=1; $month<=$monthmax; $month++){
     $dates[]=100*($yearmax%100)+$month;
 }
-var_dump($dates);
-echo "<hr>";
 
-// trends
+$t=time()-$t;
+echo "dates created in $t seconds<br>";ob_flush();flush();
+$t=time();
+
 $trends=[];
 foreach ($dates as $d){
     $trends[$d]=[];
@@ -74,11 +115,11 @@ foreach ($data as $d){
         $keywords[]=$k;
     }
 }
-var_dump($trends);
-var_dump($keywords);
-echo "<hr>";
 
-// write file accordingly
+$t=time()-$t;
+echo "trends built in $t seconds<br>";ob_flush();flush();
+$t=time();
+
 $txt="key,value,date\r\n";
 foreach ($keywords as $k){
     foreach ($dates as $d){
@@ -90,9 +131,9 @@ foreach ($keywords as $k){
         }
     }
 }
-var_dump($txt);
 $f=fopen("data/timekeywords.csv","w");
 fwrite($f,$txt);
 fclose($f);
 
+echo "<h1>done</h1>";
 ?>
