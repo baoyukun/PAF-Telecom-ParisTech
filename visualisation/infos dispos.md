@@ -13,6 +13,7 @@ Toutes les informations que le serveur peut obtenir ou qui sont déjà sous form
 |Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[11,740 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
 |Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[ 28,839 entries](/visualisation/json/liste-des-publications-avec-la-date.json.)
 |Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[33,242 entries](/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json)
+|liste des publications avec les mots clefs|[query](#liste-des-publications-avec-les-mots-clefs)|[9,450 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
 
 
 Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 1.1 Graph Store HTTP Protocolles"  pour obtenir la resultat. Le code resemble à ci-dessous
@@ -140,5 +141,17 @@ WHERE {
   ?article paf:citation ?citation.
   ?article paf:title ?articleTitle.
   ?citation paf:title ?citationTitle
+}
+```
+## Liste des publications avec les mots clefs
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?keyword ?year ?month
+WHERE {
+  ?article paf:has_key_word ?keyword.
+  ?article paf:year ?year.
+  OPTIONAL {?article paf:month ?month}
 }
 ```
