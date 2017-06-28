@@ -250,11 +250,21 @@ Par `BAO Yukun`
 
 ### Jeudi 22 juin 2017
 
+#### Partie Visualisation
+
 J'ai modifié les scripts existants en fonction de la nouvelle convention de fichier JSON décrite plus haut par Yukun. J'ai en outre écrit de nouveaux scripts permettant une visualisation des mots-clefs. Cela m'a pris un peu de temps étant donné qu'il fallait construire une toute nouvelle clase d'objets adapté à ce script.
 
 Je n'ai pas encore mis à jour la partie "visualisation" du git car j'attends d'avoir des scripts fonctionnels et complets.
 
 Par `Nino Filiu`
+
+#### Partie Analyse
+
+J'ai décidé de profiter des outils pour arriver à la fin comme le suivant:
+
+1. Utiliser *Grobid* pour extraire des informations de base sous format [TEI(Text Encoding Initiative)](http://www.tei-c.org/index.xml) qui est une variante de standard `XML` connu. Remarquez que le *TEI* utilisé par Grobid a été encore adapté à PDF en utilisant le langage [ODD(One Document Does it all)](http://www.tei-c.org/Guidelines/Customization/odds.xml).
+
+2. Ecrire moi-même un parser pour analyser des documents `TEI` et mettre les éléments d'information sous format `json`. Là encore il y a deux façons pour le faire:
 
 [*Retour au calendrier*](#développement-du-projet)
 
