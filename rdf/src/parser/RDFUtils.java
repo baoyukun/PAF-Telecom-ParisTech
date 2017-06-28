@@ -24,7 +24,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.Resource;
-
+import org.apache.jena.sparql.pfunction.library.str;
 import org.apache.jena.sparql.vocabulary.FOAF;
 
 import org.apache.jena.util.FileManager;
@@ -202,7 +202,8 @@ public class RDFUtils{
 			if(!field.getType().equals(String.class)) continue;
 			field.setAccessible(true);
 			Property property = model.createProperty(PAF.NS + field.getName());
-			if(field.get(article) != null){
+			String info = (String)field.get(article);
+			if(info != null && !info.replaceAll("\\W+", "").trim().equals("")){
 				articleRes.addProperty(property, (String)field.get(article));
 			}				
 		}
@@ -219,6 +220,12 @@ public class RDFUtils{
 		
 		//Add author list
 		for(Author author: article.getAuthorsList()){
+			if(author.getFamilyName() == null 
+					|| author.getFamilyName().replaceAll("[^a-zA-Z]+", "").equals("")
+					|| author.getGivenName() == null
+					|| author.getGivenName().replaceAll("[^a-zA-Z]+", "").equals(""))
+				continue;
+			
 			Resource authorRes = checkAuthor(author);
 			if(authorRes == null) authorRes = addAuthor(author);			
 			model.add(articleRes,PAF.WRITTENBY,authorRes);
@@ -229,7 +236,8 @@ public class RDFUtils{
 		List<String> keywords = article.getKeywords();
 		if(keywords != null){
 			for(String keyword: article.getKeywords()){
-				articleRes.addProperty(PAF.HASKEYWORD, keyword.trim().replace("\\s+", " "));
+				if(!keyword.replaceAll("\\W+", "").replace("\\s+", "").equals(""))
+					articleRes.addProperty(PAF.HASKEYWORD, keyword.trim().replace("\\s+", " "));
 			}
 		}
 		
@@ -238,7 +246,7 @@ public class RDFUtils{
 		if(article.getCitationList()!= null)
 		{		
 			for(Article citation: article.getCitationList()){
-				if(citation.getTitle().equals("")) continue;
+				if(citation.getTitle().replaceAll("\\W+", "").trim().equals("")) continue;
 				Resource citationRes = addArticle(citation,true);			
 				model.add(articleRes,PAF.CITATION, citationRes);
 			}

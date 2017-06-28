@@ -35,6 +35,7 @@ public class Author {
 		return affiliation_id;
 	}
 
+	
 	public final Set<String> getDepartement() {
 		return affiliation.getDepartment();
 	}
@@ -43,8 +44,6 @@ public class Author {
 		return email;
 	}
 	
-	
-	@JsonProperty("familyName")
 	public final String getFamilyName() {
 		return name.getFamilyName();
 	}
@@ -53,11 +52,10 @@ public class Author {
 		return this.name.getFullName();
 	}
 
-	@JsonProperty("givenName")
 	public final String getGivenName() {
 		return name.getGivenName();
 	}
-
+	
 	public final Set<String> getGroupe() {
 		return affiliation.getGroup();
 	}
@@ -94,7 +92,9 @@ public class Author {
 		this.affiliation_id = affiliation_id;
 	}
 
+	@JsonProperty("departement")
 	public final void setDepartement(String departement) {
+		System.out.println(departement);
 		this.affiliation.getDepartment().add(departement);
 	}
 
@@ -104,6 +104,11 @@ public class Author {
 
 	@JsonProperty("familyName")
 	public final void setFamilyName(String familyName) {
+		if(familyName.replace("[^a-zA-Z]+", "").equals("")){ 
+			this.name.setFamilyName(null);
+			System.out.println("Find special name" + familyName + "\t name = " + getFamilyName());
+			return;
+		}
 		this.name.setFamilyName(StringEscapeUtils.unescapeXml(familyName).trim());
 	}
 	
@@ -114,14 +119,29 @@ public class Author {
 
 	@JsonProperty("givenName")
 	public final void setGivenName(String givenName) {
+		if(givenName.replace("[^a-zA-Z]+", "").equals("")){
+			this.name.setGivenName(null);
+		System.out.println("Find special name" + givenName + "\t name = " + getFamilyName());
+		return;
+		}
 		this.name.setGivenName(StringEscapeUtils.unescapeXml(givenName).trim());
 	}
 	
+	@JsonProperty("group")
 	public final void setGroupe(String groupe) {
+		System.out.println(groupe);
 		this.affiliation.getGroup().add(groupe);
 	}
-
+	
+	@JsonProperty("institution")
 	public final void setInstitution(String string){
+		System.out.println(string);
+		this.affiliation.getInstitution().add(string);
+	}
+	
+	@JsonProperty("organisation")
+	public final void setOrganisation(String string){
+		System.out.println(string);
 		this.affiliation.getInstitution().add(string);
 	}
 	

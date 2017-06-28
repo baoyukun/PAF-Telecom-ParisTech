@@ -20,6 +20,7 @@ public class Main {
 		for (Author author : authors) {
 			rdfUtils.addAuthor(author);
 		}
+		rdfUtils.update();
 		
 		System.out.println("Get article information from paperJsonNew.json...");
 		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json");

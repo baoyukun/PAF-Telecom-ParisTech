@@ -80,7 +80,9 @@ public class JsonUtilsTest {
 	
 	@Test
 	public void testString() throws IOException{
-		
+		String xString = StringEscapeUtils.unescapeXml("&amp;");
+		System.out.println("I # $$hahaha$$$ ;".replaceAll("[^a-zA-Z]+", ""));
+		System.out.println(xString);
 		JsonUtils.escapeHTML("res/paperJson.json", "res/paperJsonNew.json");
 	}
 }
