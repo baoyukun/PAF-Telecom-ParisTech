@@ -29,7 +29,7 @@ Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 
         }
     };
   ```
-  Pour différent de demande, il suffit de changer le myquery chaqut fois. 
+  Pour différent de demande, il suffit de changer le myquery chaqut fois.
 
 ## Liste des chercheurs avec leur groupe
 Query:
@@ -52,9 +52,8 @@ PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
 
 SELECT ?familyName ?GivenName ?departement
 WHERE {
-  ?author paf:departement ?departement.
+  ?author paf:department ?departement.
   ?author foaf:family_name ?familyName.
-  ?author foaf:givenname ?GivenName
 }
 ```
 
@@ -116,9 +115,19 @@ PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
 SELECT ?title ?keyword
 WHERE {
   ?article paf:title ?title.
-  ?article paf:has_key_word ?keyword 
+  ?article paf:has_key_word ?keyword
 }
 ```
 ## Liste des publications avec la date
 ## Liste des publications avec les auteurs cités
-    
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?articleTitle ?citationTitle
+WHERE {
+  ?article paf:citation ?citation.
+  ?article paf:title ?articleTitle.
+  ?citation paf:title ?citationTitle
+}
+```
