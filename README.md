@@ -375,6 +375,12 @@ Par `BAO Yukun`
 
 #### Partie Analyse
 
+Aujourd'hui j'essaie de compléter le champ *keywords* pour les articles qui manquent du mot clé ou bien qui ont très peu de mots clés. Le résultat à la fin est que chaque article a au moins 5 mots clés sous la condition que son abstract ait été extrait.
+
+La plupart des codes open-source pour extraire des mots clés à partir du texte est une implémentation d'un algorithme bien connu qui s'appelle [**Automatic Keyword Extraction from Individual Documents**](https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents) par Stuart Rose, Dave Engel, Nick Cramer et Wendy Cowley. L'implémentation la plus connue qui s'appelle `Rake` réalisée en Python n'a pas utilisé le toolkit *NLTK*. Dans notre cas, j'ai implémenté cet algorithme en utilisant NLTK grâce à l'inspiration de *Vishwas B Sharma*.
+
+Vous trouveriez le [code](/NLTK/keywordExtraction.py) ainsi que le fichier [json](/parser/paperJson.json) définitif.
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 29 juin 2017
