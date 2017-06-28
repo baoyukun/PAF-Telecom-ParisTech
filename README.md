@@ -381,6 +381,8 @@ La plupart des codes open-source pour extraire des mots clés à partir du texte
 
 Vous trouveriez le [code](/NLTK/keywordExtraction.py) ainsi que le fichier [json](/parser/paperJson.json) définitif.
 
+Par `BAO Yukun`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 29 juin 2017
