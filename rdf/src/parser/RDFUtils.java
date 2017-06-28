@@ -12,14 +12,12 @@ import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.QueryFactory;
 import org.apache.jena.query.QueryParseException;
 import org.apache.jena.query.QuerySolution;
-import org.apache.jena.query.ReadWrite;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -89,7 +87,7 @@ public class RDFUtils{
 		if(authorRes == null){
 			authorRes = model 
 				.createResource(PAF.AUTHOR + author.getFamilyName().replaceAll("\\W+", "_").trim() + "_"
-						+ author.getGivenName().replaceAll("\\W+"," ").trim());
+						+ author.getGivenName().replaceAll("\\W+","_").trim());
 		}
 		
 		authorRes.addProperty(FOAF.family_name, author.getFamilyName().toLowerCase());
@@ -144,8 +142,11 @@ public class RDFUtils{
 				+ "WHERE {?x  <" + FOAF.family_name.getURI() +">  \"" + author.getFamilyName().toLowerCase() + "\". "
 						+ "?x  <" + FOAF.givenname.getURI() +">  ?g."
 								+ "FILTER regex(?g,\"^" + author.getGivenName().replaceAll("\\W+"," ").trim().charAt(0) +"\",\"i\")}";
+
+		   
 		QueryExecution qexec = null;
 		 try {
+			   
 			 Query query = QueryFactory.create(queryString);
 			 qexec = QueryExecutionFactory.create(query, model);
 			    ResultSet results = qexec.execSelect() ;
@@ -153,10 +154,11 @@ public class RDFUtils{
 					 QuerySolution sln = results.nextSolution();
 				    String givienName = sln.getLiteral("g").getString();
 				    log.info("Find same people(" + author.getFamilyName() +  "):" + givienName  + "--->" + author.getGivenName());
-				    if(author.getGivenName().length() > givienName.length()){
+				    if(givienName.replace(".", "").length() == 1
+				    		&& author.getGivenName().length() > givienName.length()){
 				    	model.remove(sln.getResource("x").getProperty(FOAF.givenname));
 				    	sln.getResource("x").addProperty(FOAF.givenname, author.getGivenName().toLowerCase());
-				    	log.warn("Change Given name:" + givienName  + "--->" + author.getGivenName());
+				    	log.info("Change Given name:" + givienName  + "--->" + author.getGivenName());
 				    }
 				   
 				    return sln.getResource("x");
@@ -171,7 +173,6 @@ public class RDFUtils{
 				try{
 					qexec.close();
 				}catch (Exception e) {
-					e.printStackTrace();
 				}
 			}
 			    	
@@ -255,11 +256,15 @@ public class RDFUtils{
 	public Resource checkArticle(Article article){
 		if(article.getTitle().equals("")) return null;
 		String queryString = "SELECT ?x "
-					+ "WHERE {?x  <" + PAF.NS + "title" +">  \"" +article.getTitle().toLowerCase()
-					+ "\"}";	
+					+ "WHERE {?x  <" + PAF.NS + "title" +">  \"" + article.getTitle().toLowerCase().trim()
+					+ "\" , \"i\"}";	
+		
+		
 		QueryExecution qexec = null;
 		
 		try{
+	   
+			   
 			Query query = QueryFactory.create(queryString);
 			qexec = QueryExecutionFactory.create(query, model);
 			ResultSet results = qexec.execSelect() ;

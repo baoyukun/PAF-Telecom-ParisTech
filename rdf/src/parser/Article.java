@@ -228,7 +228,7 @@ public class Article {
 		
 	public final void setTitle(String title) {
 		this.title = StringEscapeUtils.unescapeXml(title);
-		this.title = this.title.trim().replaceAll("[`\\{\\}\\(\\)]+","").replaceAll("\\s+", " ");
+		this.title = this.title.trim().replaceAll("[`\\{\\}\\(\\)\"]+","").replaceAll("\\s+", " ");
 		this.title.replaceAll("^\\*+", "");
 
 	}
