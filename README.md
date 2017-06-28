@@ -196,7 +196,9 @@ Les données d'un article sont organisées sous json comme ceci:
       "fullName": "fullName",
       "affiliation_id": "affiliation_id",
       "scopus_id": "scopus_id"
-    },{},{},{}
+    },
+    {},
+    {}
     ]
   }
 }
@@ -221,7 +223,7 @@ Par `BAO Yukun`
 
 #### Partie Visualisation
 
-J'ai continué le développement des outils de visualisation de fichiers JSON. J'ai écrit des scripts PHP permettant la production de PAA, d'autres produisant des fichiers intermédiaires avant le passage par une sorte de "filtre" PHP qui modifie les données pour ne garder que celles pertinentes. Le détail de ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/edit/master/visualisation)
+J'ai continué le développement des outils de visualisation de fichiers JSON. J'ai écrit des scripts PHP permettant la production de PAA, d'autres produisant des fichiers intermédiaires avant le passage par une sorte de "filtre" PHP qui modifie les données pour ne garder que celles pertinentes. Le détail de ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/edit/master/visualisation).
 
 Par `Nino Filiu`
 
@@ -262,17 +264,41 @@ Par `Nino Filiu`
 
 J'ai décidé de profiter des outils pour arriver à la fin comme le suivant:
 
-1. Utiliser *Grobid* pour extraire des informations de base sous format [TEI(Text Encoding Initiative)](http://www.tei-c.org/index.xml) qui est une variante de standard `XML` connu. Remarquez que le *TEI* utilisé par Grobid a été encore adapté à PDF en utilisant le langage [ODD(One Document Does it all)](http://www.tei-c.org/Guidelines/Customization/odds.xml).
+1. Utiliser *Grobid* pour extraire des informations de base du format [TEI(Text Encoding Initiative)](http://www.tei-c.org/index.xml) qui est une variante de standard `XML` connu. Remarquez que le *TEI* utilisé par Grobid a été encore adapté à PDF en utilisant le langage [ODD(One Document Does it all)](http://www.tei-c.org/Guidelines/Customization/odds.xml).
 
 2. Ecrire moi-même un parser pour analyser des documents `TEI` et mettre les éléments d'information sous format `json`. Là encore il y a deux façons pour le faire:
+
+  - Après avoir compris le standard *TEI*, écrire une classe de parser pour chaque élément que l'on voudrait extraire, puis manipuler ces classes. On pourrait être inspiré par différents schémas comme `xsd`, `relaxNG`, `W3C XML`, etc.
+
+  - Considérer chaque fichier du format *TEI* comme un fichier contenant simplement une *String*, puis en utilisant `Expressions Régulières` pour extraire des éléments que l'on veut. Le programme serait beaucoup plus court, mais on devrait prendre beaucoup de temps pour synthétiser l'environnement de syntaxe autour duquel l'élément se localise. Cette règle doit être universelle pour tous les cas afin de ne pas produire des bêtises.
+
+3. Enrichir le premier json en utilisant des APIs publics de *Scopus*, des crawlers sur *Google Scholar* ou *Arxiv* et en le comparant avec la liste de publications fournie par professeur. Corriger éventuellement des erreurs dans le json, par exemple des caractères non ASCII dans le titre des articles.
+
+4. En utilisant le toolkit `NLTK`, extraire des mots clés à partir soit des abstraits déjà acquis dans le json soit du texte complet produit par des outils comme *PyPDF*, pour les textes qui manquent des mots clés.
+
+Par `BAO Yukun`
 
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Vendredi 23 juin 2017
 
+#### Partie Analyse
+
+Dans un premier temps, on commence par le *Grobid*. J'ai utilisé la `version 0.4.1` qui est la dernière version stable sur `Windows10 64bit`.
+
+- J'ai essayé le mode server local (localhost:8080) tout d'abord et j'ai écrit un petit programme qui sert à faire tourner les 1819 articles automatiquement. Malheureusement, après un succès d'environ 500 articles, le serveur tombe en panne ou peut-être refuse de continuer (même le programme dort une seconde après chaque requête, même pour les petits articles dont le nom ne comporte que des caractères ASCII). Vous trouveriez aussi ce petit programme [ici](/parser/parser_pdf2tei_grobid_local_service.py).
+
+- Puis j'ai tourné vers le mode command line (batch mode en anglais) et j'ai de la chance d'avoir toutes les réponses de 1678 articles parmi les 1819 articles avec une super performance. Les commands sous fichier Windows *bat* se trouvent [ici](/parser/parser_pdf2tei_grobid_batch_service.bat).
+
+- Je n'ai pas essayé le mode intégré en Java. A mon avis, le résultat du mode command line serait le plus satisfaisant. Mais c'est totalement faisable et vous touveriez le [Javadoc](http://grobid.github.io/grobid-core/index.html) du projet Grobid ainsi qu'un [exemple complet](https://github.com/kermitt2/grobid-example) qui utilise des Java APIs de Grobid.  
+
+Par `BAO Yukun`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Lundi 26 juin 2017
+
+#### Partie Visualisation
 
 J'ai travaillé sur le poster et j'ai mis au clair certains aspects de l'architecture et de la chaîne d'information avec mes collègues.
 
@@ -288,7 +314,13 @@ Cette architecture est plus pertinente car RDF est plus adapté au stockage de d
 
 Par `Nino Filiu`
 
+#### Partie Analyse
+
 [*Retour au calendrier*](#développement-du-projet)
+
+### Mardi 27 juin 2017
+
+#### Partie Visualisation
 
 J'ai essayé de voir si un serveur PHP pouvait processer lui-même les requêtes SPARQL sur le fichier RDF. Je ne pense pas que ça soit impossible, mais je n'ait pas réussi à le faire. Ces langages me sont inconnus et les codes proposés sur internet ne marchent pas (peut-être sont-ils dépassés? Le web design me semblait très "début d'internet").
 
@@ -300,14 +332,22 @@ J'ai fini le site internet et j'ai vérifié la possibilité d'intégration des 
 
 Par `Cherif Diallo`
 
-### Mardi 27 juin 2017
+#### Partie Analyse
 
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 28 juin 2017
 
+#### Partie Visualisation
+
+#### Partie Analyse
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 29 juin 2017
+
+#### Partie Visualisation
+
+#### Partie Analyse
 
 [*Retour au calendrier*](#développement-du-projet)
