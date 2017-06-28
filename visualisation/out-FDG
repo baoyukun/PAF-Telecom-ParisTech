@@ -1,0 +1,30 @@
+<!-- eliminates the people who do not belong to Telecom ParisTech in an FDG-ready-to-display JSON file -->
+
+<?php
+
+$dataurl=$_GET["dataURL"];
+$data=json_decode(file_get_contents($dataurl));
+
+$deletednames=[];
+$l=count($data->nodes);
+for ($i=0; $i<$l; $i++){
+    if ($data->nodes[$i]->group==0){
+        $deletednames[]=$data->nodes[$i]->id;
+        unset($data->nodes[$i]);
+    }
+}
+$data->nodes=array_values($data->nodes);
+
+$l=count($data->links);
+for ($i=0; $i<$l; $i++){
+    if (in_array($data->links[$i]->source,$deletednames) || in_array($data->links[$i]->target,$deletednames)){
+        unset($data->links[$i]);
+    }
+}
+$data->links=array_values($data->links);
+
+$f=fopen(substr($dataurl,0,-5)."-out.json","w");
+fwrite($f,json_encode($data));
+fclose($f);
+
+?>

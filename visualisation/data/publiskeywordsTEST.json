@@ -1,0 +1,44 @@
+{
+    "head": {
+        "vars": ["title","date","keyword"]
+    },
+    "results": {
+        "bindings": [
+            {
+                "title": {"type": "literal", "value": "APPLE"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "worm"}
+            },
+            {
+                "title": {"type": "literal", "value": "APPLE"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "rotten"}
+            },
+            {
+                "title": {"type": "literal", "value": "APPLE"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "tree"}
+            },
+            {
+                "title": {"type": "literal", "value": "NATURE"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "worm"}
+            },
+            {
+                "title": {"type": "literal", "value": "NATURE"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "tree"}
+            },
+            {
+                "title": {"type": "literal", "value": "GARDEN"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "worm"}
+            },
+            {
+                "title": {"type": "literal", "value": "APPLE"},
+                "date": {"type": "literal", "value": "???"},
+                "keyword": {"type": "literal", "value": "tree"}
+            }
+        ]
+    }
+}

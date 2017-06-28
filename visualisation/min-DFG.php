@@ -1,3 +1,15 @@
+<!--
+
+This script takes as an input a .json file formatted to fit a force-directed graph:
+  {nodes:[{id,group},...,{id,group}], links:[{source,target,value},...,{source,target,value}]}
+and cuts out the "weak links", ie the links with a value inferior to the input "cut". Nodes with no connexions are deleted afterward, and then the filtered .json file is written somewhere with a similar name. ex:
+
+min-DFG?dataURL=data/coauteurs.json&cut=10
+^^^^
+writes data/coauteurs-min10.json where only people with 10+ common publications appear
+
+-->
+
 <?php
 $t=time();
 

@@ -20,7 +20,7 @@
 
 ## Domaines
 
-_Programmation_, _Informatique_, _Traitement du langage naturel_
+`Programmation`, `Informatique`, `Traitement du langage naturel`
 
 ## Introduction
 
@@ -196,7 +196,9 @@ Les données d'un article sont organisées sous json comme ceci:
       "fullName": "fullName",
       "affiliation_id": "affiliation_id",
       "scopus_id": "scopus_id"
-    },{},{},{}
+    },
+    {},
+    {}
     ]
   }
 }
@@ -221,7 +223,7 @@ Par `BAO Yukun`
 
 #### Partie Visualisation
 
-J'ai continué le développement des outils de visualisation de fichiers JSON. J'ai écrit des scripts PHP permettant la production de PAA, d'autres produisant des fichiers intermédiaires avant le passage par une sorte de "filtre" PHP qui modifie les données pour ne garder que celles pertinentes. Le détail de ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/edit/master/visualisation)
+J'ai continué le développement des outils de visualisation de fichiers JSON. J'ai écrit des scripts PHP permettant la production de PAA, d'autres produisant des fichiers intermédiaires avant le passage par une sorte de "filtre" PHP qui modifie les données pour ne garder que celles pertinentes. Le détail de ce travail est disponible [ici](https://github.com/baoyukun/PAF-Telecom-ParisTech/edit/master/visualisation).
 
 Par `Nino Filiu`
 
@@ -250,19 +252,59 @@ Par `BAO Yukun`
 
 ### Jeudi 22 juin 2017
 
+#### Partie Visualisation
+
 J'ai modifié les scripts existants en fonction de la nouvelle convention de fichier JSON décrite plus haut par Yukun. J'ai en outre écrit de nouveaux scripts permettant une visualisation des mots-clefs. Cela m'a pris un peu de temps étant donné qu'il fallait construire une toute nouvelle clase d'objets adapté à ce script.
 
 Je n'ai pas encore mis à jour la partie "visualisation" du git car j'attends d'avoir des scripts fonctionnels et complets.
 
 Par `Nino Filiu`
 
+#### Partie Analyse
+
+J'ai décidé de profiter des outils pour arriver à la fin comme le suivant:
+
+1. Utiliser *Grobid* pour extraire des informations de base du format [TEI(Text Encoding Initiative)](http://www.tei-c.org/index.xml) qui est une variante de standard `XML` connu. Remarquez que le *TEI* utilisé par Grobid a été encore adapté à PDF en utilisant le langage [ODD(One Document Does it all)](http://www.tei-c.org/Guidelines/Customization/odds.xml).
+
+2. Ecrire moi-même un parser pour analyser des documents `TEI` et mettre les éléments d'information sous format `json`. Là encore il y a deux façons pour le faire:
+
+  - Après avoir compris le standard *TEI*, écrire une classe de parser pour chaque élément que l'on voudrait extraire, puis manipuler ces classes. On pourrait être inspiré par différents schémas comme `xsd`, `relaxNG`, `W3C XML`, etc.
+
+  - Considérer chaque fichier du format *TEI* comme un fichier contenant simplement une *String*, puis en utilisant `Expressions Régulières` pour extraire des éléments que l'on veut. Le programme serait beaucoup plus court, mais on devrait prendre beaucoup de temps pour synthétiser l'environnement de syntaxe autour duquel l'élément se localise. Cette règle doit être universelle pour tous les cas afin de ne pas produire des bêtises.
+
+3. Enrichir le premier json en utilisant des APIs publics de *Scopus*, des crawlers sur *Google Scholar* ou *Arxiv* et en le comparant avec la liste de publications fournie par professeur. Corriger éventuellement des erreurs dans le json, par exemple des caractères non ASCII dans le titre des articles.
+
+4. En utilisant le toolkit `NLTK`, extraire des mots clés à partir soit des abstraits déjà acquis dans le json soit du texte complet produit par des outils comme *PyPDF*, pour les textes qui manquent des mots clés.
+
+Par `BAO Yukun`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Vendredi 23 juin 2017
 
+#### Partie Analyse
+
+Dans un premier temps, on commence par le *Grobid*. J'ai utilisé la [`version 0.4.1`](https://github.com/kermitt2/grobid/archive/grobid-parent-0.4.1.zip) qui est la dernière version stable sur `Windows10 64bit`.
+
+- J'ai essayé le mode server local (localhost:8080) tout d'abord et j'ai écrit un petit programme qui sert à faire tourner les 1819 articles automatiquement. Malheureusement, après un succès d'environ 500 articles, le serveur tombe en panne ou peut-être refuse de continuer (même le programme dort une seconde après chaque requête, même pour les petits articles dont le nom ne comporte que des caractères ASCII). Vous trouveriez aussi ce petit programme [ici](/parser/parser_pdf2tei_grobid_local_service.py).
+
+- Puis j'ai tourné vers le mode command line (batch mode en anglais) et j'ai de la chance d'avoir toutes les réponses de 1678 articles parmi les 1819 articles avec une super performance. Les commands sous fichier Windows *bat* se trouvent [ici](/parser/parser_pdf2tei_grobid_batch_service.bat).
+
+- Je n'ai pas essayé le mode intégré en Java. A mon avis, le résultat du mode command line serait le plus satisfaisant. Mais c'est totalement faisable et vous touveriez le [Javadoc](http://grobid.github.io/grobid-core/index.html) du projet Grobid ainsi qu'un [exemple complet](https://github.com/kermitt2/grobid-example) qui utilise des Java APIs de Grobid.
+
+Remarquez: Avec `maven`, building est juste une commande sous `grobid/`:
+
+```shell
+mvn -DskipTests=true clean install
+```  
+
+Par `BAO Yukun`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Lundi 26 juin 2017
+
+#### Partie Visualisation
 
 J'ai travaillé sur le poster et j'ai mis au clair certains aspects de l'architecture et de la chaîne d'information avec mes collègues.
 
@@ -278,7 +320,21 @@ Cette architecture est plus pertinente car RDF est plus adapté au stockage de d
 
 Par `Nino Filiu`
 
+#### Partie Analyse
+
+Aujourd'hui, je suis assez courageux pour écrire un parser pour `TEI`. J'ai tout d'abord essayé Java bindings pour XML de version `JAXB 2.0`(Java Architecture for XML Binding 2.0) qui associe Java classes avec la représentation XML. Malheureusement, ce n'est pas tout à fait la même chose qu'on veut. Mais ça m'aide à arriver jusqu'à la fin en écrivant moins de code. Vous trouvriez l'entrée de ce projet [ici](/parser/parser_tei2json_java/src/main/Main.java) qui produit le bon résultat.
+
+Le défaut de ce parser est qu'il est très long à écrire pour ajouter de nouveaux éléments qu'on veux extraire. Du coup, je préfère d'écrire un deuxième parser en Python en utilisant `Expressions régulières`. Le programme est beaucoup moins long et le résultat est assez satisfaisant. Vous trouveriez ce programme [ici](/parser/parser_tei2json_python.py).
+
+Finalement le fichier json produit de 1677 articles se trouve [ici](/parser/paperJson.json).
+
+Par `BAO Yukun`
+
 [*Retour au calendrier*](#développement-du-projet)
+
+### Mardi 27 juin 2017
+
+#### Partie Visualisation
 
 J'ai essayé de voir si un serveur PHP pouvait processer lui-même les requêtes SPARQL sur le fichier RDF. Je ne pense pas que ça soit impossible, mais je n'ait pas réussi à le faire. Ces langages me sont inconnus et les codes proposés sur internet ne marchent pas (peut-être sont-ils dépassés? Le web design me semblait très "début d'internet").
 
@@ -290,14 +346,53 @@ J'ai fini le site internet et j'ai vérifié la possibilité d'intégration des 
 
 Par `Cherif Diallo`
 
-### Mardi 27 juin 2017
+#### Partie Analyse
+
+Aujourd'hui d'une part j'ai utilisé des APIs publics de Scopus afin d'extraire l'information de `citedList`(c'est-à-dire la liste de publications qui ont cité cet article), d'autre part les APIs m'aide à corriger certaines informations puisque Scopus est une base de données assez complète.
+
+L'informations que Scopus APIs puissent fournir sont:
+
+- `titre`
+- `DOI`
+- `date de publication`
+- `nombre d'être cité`
+- `identité de l'article chez Scopus`
+- `auteurs(nom complet, identité de l'affiliation et identité chez Scopus)`
+
+Autres informations comme `citedList` et `bibliographie` ne sont pas directement retournées, mais j'ai essayé d'utiliser un petit crawler qui prend le lien vers cet article retourné par APIs et qui récupère la page, l'analyse en utilisant *Expressions régulières* et donne toutes les informations qu'on veut. Malheureusement, seulement 403 parmi 1677 articles ont été trouvés chez Scopus. L'information des autres articles est basée sur ce que Grobid a fourni.
+
+J'ai aussi vérifié et complété toutes les informations en consultant la liste de publications fournie par professeur.
+
+Le programme de cette partie se trouve [ici](/crawler/scopusCrawler.py).
+
+Par `BAO Yukun`
 
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mercredi 28 juin 2017
 
+#### Partie Visualisation
+
+#### Partie Analyse
+
+Aujourd'hui j'essaie de compléter le champ *keywords* pour les articles qui manquent du mot clé ou bien qui ont très peu de mots clés. Le résultat à la fin est que chaque article a au moins 5 mots clés sous la condition que son abstract ait été extrait.
+
+La plupart des codes open-source pour extraire des mots clés à partir du texte est une implémentation d'un algorithme bien connu qui s'appelle [**Automatic Keyword Extraction from Individual Documents**](https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents) par Stuart Rose, Dave Engel, Nick Cramer et Wendy Cowley. L'implémentation la plus connue qui s'appelle `Rake` réalisée en Python n'a pas utilisé le toolkit *NLTK*. Dans notre cas, j'ai implémenté cet algorithme en utilisant NLTK grâce à l'inspiration de *Vishwas B Sharma*.
+
+Vous trouveriez le [code](/NLTK/keywordExtraction.py) ainsi que le fichier [json](/parser/paperJson.json) définitif.
+
+Par `BAO Yukun`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 29 juin 2017
+
+**Triomphe !!!**
+
+:confetti_ball::balloon::sparkling_heart::satisfied::heart_eyes::stuck_out_tongue_closed_eyes:
+
+C'est le moment de présenter deux semaines de travail intense sur le sujet et de conclure l'année en beauté. Voici notre poster :)
+
+![poster](/resource/Poster.jpg "PAF: Analyse de publications scientifiques et Visualisation des résultats")
 
 [*Retour au calendrier*](#développement-du-projet)
