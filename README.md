@@ -346,8 +346,12 @@ Par `Cherif Diallo`
 
 ### Jeudi 29 juin 2017
 
-#### Partie Visualisation
+**Triomphe !!!**
 
-#### Partie Analyse
+:confetti_ball::balloon::sparkling_heart::satisfied::heart_eyes::stuck_out_tongue_closed_eyes:
+
+C'est le moment de présenter deux semaines de travail intense sur le sujet et de conclure l'année en beauté. Voici notre poster :)
+
+![poster](/resource/Poster.jpg "PAF: Analyse de publications scientifiques et Visualisation des résultats")
 
 [*Retour au calendrier*](#développement-du-projet)
