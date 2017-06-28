@@ -22,13 +22,22 @@ public class Main {
 		}
 		rdfUtils.update();
 		
-		System.out.println("Get article information from paperJsonNew.json...");
+		System.out.println("Get article information from paperJson.json...");
 		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json");
 		int count = 0;
 		for (Article article : articles) {
 		//	System.out.println(++count + "." + article.getTitle());
 			rdfUtils.addArticle(article,false);
 		}
+		
+		System.out.println("Get article information from paper.json...");
+		articles = JsonUtils.parserArticleList("res/paper.json");
+		count = 0;
+		for (Article article : articles) {
+		//	System.out.println(++count + "." + article.getTitle());
+			rdfUtils.addArticle(article,false);
+		}
+		
 		
 		System.out.println("Get article information from 18112015.5ans.json...");
 		articles = JsonUtils.parserArticleList("res/18112015.5ans.json");
@@ -37,6 +46,7 @@ public class Main {
 		//	System.out.println(++count + "." + article.getTitle());
 			rdfUtils.addArticle(article,true);
 		}
+		
 		
 		rdfUtils.update();
 	}
