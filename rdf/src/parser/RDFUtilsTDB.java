@@ -69,10 +69,7 @@ public class RDFUtilsTDB{
 		if(author == null) throw new NullPointerException("Can not add a null author");
 
 		Resource authorRes = checkAuthor(author);
-		
-		dataset.begin(ReadWrite.WRITE);
-		this.model = dataset.getDefaultModel();
-		
+
 		if(authorRes == null){
 			authorRes = model 
 				.createResource(PAF.AUTHOR + author.getFamilyName().replaceAll("\\W+", "_") + "_"
@@ -115,9 +112,7 @@ public class RDFUtilsTDB{
 				authorRes.addProperty(property, data.toLowerCase());
 			}
 		}
-		
-		dataset.commit();
-		dataset.end();
+
 		return authorRes;
 	}
 
@@ -128,16 +123,16 @@ public class RDFUtilsTDB{
 	 * 			Returns null if not
 	 *  */
 	public Resource checkAuthor(Author author){
-		dataset.begin(ReadWrite.WRITE);
-		model = dataset.getDefaultModel();
 		
 		if(author.getGivenName().equals("")) return null;
 		String queryString = "SELECT ?x ?g "
 				+ "WHERE {?x  <" + FOAF.family_name.getURI() +">  \"" + author.getFamilyName().toLowerCase() + "\". "
 						+ "?x  <" + FOAF.givenname.getURI() +">  ?g."
 								+ "FILTER regex(?g,\"^" + author.getGivenName().charAt(0) +"\")}";
-		Query query = QueryFactory.create(queryString);
-		 try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+		 QueryExecution qexec = null;
+		 try {
+			 Query query = QueryFactory.create(queryString);
+			 qexec = QueryExecutionFactory.create(query, model);
 			    ResultSet results = qexec.execSelect() ;
 
 				if(results.hasNext()){
@@ -148,13 +143,18 @@ public class RDFUtilsTDB{
 				    	sln.getResource("x").addProperty(FOAF.givenname, author.getGivenName().toLowerCase());
 				    	log.warn("Change Given name:" + givienName  + "--->" + author.getGivenName());
 				    }
-				   dataset.commit();
 				    return sln.getResource("x");
 				}else{
 					return null;
 				}
+		 }catch (Exception e) {
+			// TODO: handle exception
 		 }finally {
-			dataset.end();
+			 try{
+				 qexec.close();
+			 }catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 			    	
 	}
@@ -168,9 +168,7 @@ public class RDFUtilsTDB{
 		//Check if thisResou resource has existed.
 		Resource articleRes = null;
 		if(check == true) articleRes = checkArticle(article);
-		
-		dataset.begin(ReadWrite.READ);
-		model = dataset.getDefaultModel();
+
 		
 		// Create article resource 
 		if(articleRes == null){
@@ -216,24 +214,19 @@ public class RDFUtilsTDB{
 		if(article.getCitationList()!= null)
 		{		
 			for(Article citation: article.getCitationList()){
-				Resource citationRes = addArticle(citation,true);			
+				Resource citationRes = addArticle(citation,true);
 				model.add(articleRes,PAF.CITATION, citationRes);
 			}
 		}
 		
-		dataset.commit();
-		dataset.end();
+
 		
 		//Add author list
 		for(Author author: article.getAuthorsList()){
 			Resource authorRes = checkAuthor(author);
-			if(authorRes == null) authorRes = addAuthor(author);
-			
-			dataset.begin(ReadWrite.WRITE);
-			model = dataset.getDefaultModel();
+			if(authorRes == null) authorRes = addAuthor(author);		
 			model.add(articleRes,PAF.WRITTENBY,authorRes);
-			dataset.commit();
-			dataset.end();
+
 		}
 				
 		return articleRes;
@@ -251,7 +244,6 @@ public class RDFUtilsTDB{
 					+ "WHERE {?x  <" + PAF.NS + "title" +">  \"" + article.getTitle().toLowerCase()
 					+ "\"}";	
 		QueryExecution qexec = null;
-		dataset.begin(ReadWrite.READ);
 		try{
 			Query query = QueryFactory.create(queryString);
 			qexec = QueryExecutionFactory.create(query, model);
@@ -268,7 +260,6 @@ public class RDFUtilsTDB{
 		}finally {
 			try{
 				qexec.close();
-				dataset.end();
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -283,5 +274,18 @@ public class RDFUtilsTDB{
 	    model.removeAll(null, null, resource);
 	}
 	
+	public Dataset getDataset() {
+		return dataset;
+	}
+	
+	public void setModle(Model model){
+		this.model = model;
+	}
+	
+	public void update() throws FileNotFoundException, IOException{
+		try(OutputStreamWriter or = new OutputStreamWriter(new FileOutputStream("res/database.rdf") , Charset.forName("UTF-8"));){
+			model.write(or,"RDFXML");
+		}
+	}
 
 }

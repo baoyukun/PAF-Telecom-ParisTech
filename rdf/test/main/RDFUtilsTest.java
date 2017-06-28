@@ -83,7 +83,7 @@ public class RDFUtilsTest {
 		}
 		
 		System.out.println("Get article information from paperJson.json...");
-		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json...");
+		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json");
 		int count = 0;
 		for (Article article : articles) {
 			System.out.println(++count + "." + article.getTitle());

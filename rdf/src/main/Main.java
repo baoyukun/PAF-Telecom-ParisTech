@@ -21,11 +21,11 @@ public class Main {
 			rdfUtils.addAuthor(author);
 		}
 		
-		System.out.println("Get article information from paperJson.json...");
-		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json...");
+		System.out.println("Get article information from paperJsonNew.json...");
+		List<Article> articles = JsonUtils.parserArticleList("res/paperJson.json");
 		int count = 0;
 		for (Article article : articles) {
-			System.out.println(++count + "." + article.getTitle());
+		//	System.out.println(++count + "." + article.getTitle());
 			rdfUtils.addArticle(article,false);
 		}
 		
@@ -33,7 +33,7 @@ public class Main {
 		articles = JsonUtils.parserArticleList("res/18112015.5ans.json");
 		count = 0;
 		for (Article article : articles) {
-			System.out.println(++count + "." + article.getTitle());
+		//	System.out.println(++count + "." + article.getTitle());
 			rdfUtils.addArticle(article,true);
 		}
 		

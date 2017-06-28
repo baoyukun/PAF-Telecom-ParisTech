@@ -1,11 +1,24 @@
 package parser;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
+import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.io.CharacterEscapes;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -32,6 +45,9 @@ public class JsonUtils {
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
+        mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+
         
         
          JsonNode root = mapper.readTree(file);
@@ -61,6 +77,7 @@ public class JsonUtils {
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
+    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
     	
     	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
        	
@@ -79,12 +96,53 @@ public class JsonUtils {
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , true);
         mapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT , true);
+    	mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
     	
     	//mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
        	
     	JsonNode root = mapper.readTree(file);
     	
     	return  mapper.readValue(root.traverse(), Author.class );
+    }
+    
+    
+    public static void escapeHTML(String src, String dst) throws IOException{
+    	File srcFile = new File(src);
+    	File destFile = new File(dst);
+    	if(!destFile.exists()){
+    		destFile.getParentFile().mkdirs();
+    		destFile.createNewFile();
+    	}
+    	
+    	try(FileInputStream fi = new FileInputStream(srcFile);
+    		InputStreamReader ir= new InputStreamReader(fi, Charset.forName("utf-8"));
+    		BufferedReader in = new BufferedReader(ir);
+    		FileOutputStream fo = new FileOutputStream(destFile);
+    		OutputStreamWriter or = new OutputStreamWriter(fo, Charset.forName("utf-8"));
+    		BufferedWriter out = new BufferedWriter(or)){
+    		
+    		String inputLine = null;
+    		String outputLine = null;
+    		
+    		while((inputLine =in.readLine()) != null){
+    			outputLine = StringEscapeUtils.unescapeXml(inputLine);
+    			outputLine = StringEscapeUtils.escapeJson(inputLine);
+    			out.write(outputLine);
+    			out.newLine();
+    		}
+    		
+    		out.flush();
+    		
+    	} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	
+    	
     }
     
 }

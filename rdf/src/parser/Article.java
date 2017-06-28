@@ -2,6 +2,9 @@ package parser;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
+
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 /** This class is used to parse the json file*/
@@ -224,8 +227,10 @@ public class Article {
 	}
 		
 	public final void setTitle(String title) {
-		this.title = title.trim().replaceAll("[`\\{\\}\\(\\)]+","").replaceAll("\\s+", " ");
+		this.title = StringEscapeUtils.unescapeXml(title);
+		this.title = this.title.trim().replaceAll("[`\\{\\}\\(\\)]+","").replaceAll("\\s+", " ");
 		this.title.replaceAll("^\\*+", "");
+
 	}
 	
 	public final String getBooktitle() {

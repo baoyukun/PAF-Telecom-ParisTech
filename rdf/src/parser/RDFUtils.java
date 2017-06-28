@@ -11,6 +11,8 @@ import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Set;
+
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.jena.query.Query;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
@@ -42,7 +44,7 @@ public class RDFUtils{
 	private Model model = null;
 	
 	private RDFUtils() throws IOException{	
-		log.setLevel(Level.INFO);
+		log.setLevel(Level.WARN);
 		model =  ModelFactory.createDefaultModel();
 		model.setNsPrefix("foaf", FOAF.NS);
 		model.setNsPrefix("paf", PAF.NS);
@@ -86,8 +88,8 @@ public class RDFUtils{
 		Resource authorRes = checkAuthor(author);
 		if(authorRes == null){
 			authorRes = model 
-				.createResource(PAF.AUTHOR + author.getFamilyName().replaceAll("\\W+", "_") + "_"
-						+ author.getGivenName().replaceAll("\\W+", "_"));
+				.createResource(PAF.AUTHOR + author.getFamilyName().replaceAll("\\W+", "_").trim() + "_"
+						+ author.getGivenName().replaceAll("\\W+"," ").trim());
 		}
 		
 		authorRes.addProperty(FOAF.family_name, author.getFamilyName().toLowerCase());
@@ -127,7 +129,6 @@ public class RDFUtils{
 			}
 		}
 		
-		update();
 		return authorRes;
 	}
 
@@ -138,18 +139,20 @@ public class RDFUtils{
 	 * 			Returns null if not
 	 *  */
 	public Resource checkAuthor(Author author){
-		if(author.getGivenName().equals("")) return null;
+		if(author.getGivenName().replaceAll("\\W+"," ").trim().equals("")) return null;
 		String queryString = "SELECT ?x ?g "
 				+ "WHERE {?x  <" + FOAF.family_name.getURI() +">  \"" + author.getFamilyName().toLowerCase() + "\". "
 						+ "?x  <" + FOAF.givenname.getURI() +">  ?g."
-								+ "FILTER regex(?g,\"^" + author.getGivenName().charAt(0) +"\")}";
-		Query query = QueryFactory.create(queryString);
-		 try (QueryExecution qexec = QueryExecutionFactory.create(query, model)) {
+								+ "FILTER regex(?g,\"^" + author.getGivenName().replaceAll("\\W+"," ").trim().charAt(0) +"\",\"i\")}";
+		QueryExecution qexec = null;
+		 try {
+			 Query query = QueryFactory.create(queryString);
+			 qexec = QueryExecutionFactory.create(query, model);
 			    ResultSet results = qexec.execSelect() ;
-
 				if(results.hasNext()){
 					 QuerySolution sln = results.nextSolution();
 				    String givienName = sln.getLiteral("g").getString();
+				    log.info("Find same people(" + author.getFamilyName() +  "):" + givienName  + "--->" + author.getGivenName());
 				    if(author.getGivenName().length() > givienName.length()){
 				    	model.remove(sln.getResource("x").getProperty(FOAF.givenname));
 				    	sln.getResource("x").addProperty(FOAF.givenname, author.getGivenName().toLowerCase());
@@ -160,7 +163,17 @@ public class RDFUtils{
 				}else{
 					return null;
 				}
-		 }
+		 }catch (Exception e) {
+				e.printStackTrace();
+				System.err.println(queryString);
+				return  null;
+		}finally {
+				try{
+					qexec.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
 			    	
 	}
 	
@@ -193,7 +206,7 @@ public class RDFUtils{
 			}				
 		}
 
-		// add scorpus
+		// add scopus
 		if(article.getScopus() != null){
 			if(article.getScopus().getAggregationType() != null)
 				articleRes.addProperty(PAF.AggregationType, article.getScopus().getAggregationType());
@@ -224,6 +237,7 @@ public class RDFUtils{
 		if(article.getCitationList()!= null)
 		{		
 			for(Article citation: article.getCitationList()){
+				if(citation.getTitle().equals("")) continue;
 				Resource citationRes = addArticle(citation,true);			
 				model.add(articleRes,PAF.CITATION, citationRes);
 			}
@@ -241,7 +255,7 @@ public class RDFUtils{
 	public Resource checkArticle(Article article){
 		if(article.getTitle().equals("")) return null;
 		String queryString = "SELECT ?x "
-					+ "WHERE {?x  <" + PAF.NS + "title" +">  \"" + article.getTitle().toLowerCase()
+					+ "WHERE {?x  <" + PAF.NS + "title" +">  \"" +article.getTitle().toLowerCase()
 					+ "\"}";	
 		QueryExecution qexec = null;
 		

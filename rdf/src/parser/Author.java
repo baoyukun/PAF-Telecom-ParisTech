@@ -4,6 +4,8 @@ package parser;
 import java.util.HashMap;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringEscapeUtils;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -102,7 +104,7 @@ public class Author {
 
 	@JsonProperty("familyName")
 	public final void setFamilyName(String familyName) {
-		this.name.setFamilyName(familyName);
+		this.name.setFamilyName(StringEscapeUtils.unescapeXml(familyName).trim());
 	}
 	
 	@JsonProperty("fullName")
@@ -112,7 +114,7 @@ public class Author {
 
 	@JsonProperty("givenName")
 	public final void setGivenName(String givenName) {
-		this.name.setGivenName(givenName);
+		this.name.setGivenName(StringEscapeUtils.unescapeXml(givenName).trim());
 	}
 	
 	public final void setGroupe(String groupe) {
