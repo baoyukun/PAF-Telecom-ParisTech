@@ -326,7 +326,7 @@ Aujourd'hui, je suis assez courageux pour écrire un parser pour `TEI`. J'ai tou
 
 Le défaut de ce parser est qu'il est très long à écrire pour ajouter de nouveaux éléments qu'on veux extraire. Du coup, je préfère d'écrire un deuxième parser en Python en utilisant `Expressions régulières`. Le programme est beaucoup moins long et le résultat est assez satisfaisant. Vous trouveriez ce programme [ici](/parser/parser_tei2json_python.py).
 
-Finalement le fichier json produit de 1677 articles se trouve [ici](/parser/paperJson.json).
+Finalement le fichier json produit de 1677 articles se trouve [ici](/resource/paperJson.json).
 
 Par `BAO Yukun`
 
@@ -377,7 +377,7 @@ Aujourd'hui j'essaie de compléter le champ *keywords* pour les articles qui man
 
 La plupart des codes open-source pour extraire des mots clés à partir du texte est une implémentation d'un algorithme bien connu qui s'appelle [**Automatic Keyword Extraction from Individual Documents**](https://www.researchgate.net/publication/227988510_Automatic_Keyword_Extraction_from_Individual_Documents) par Stuart Rose, Dave Engel, Nick Cramer et Wendy Cowley. L'implémentation la plus connue qui s'appelle `Rake` réalisée en Python n'a pas utilisé le toolkit *NLTK*. Dans notre cas, j'ai implémenté cet algorithme en utilisant NLTK grâce à l'inspiration de *Vishwas B Sharma*.
 
-Vous trouveriez le [code](/NLTK/keywordExtraction.py) ainsi que le fichier [json](/parser/paperJson.json) définitif.
+Vous trouveriez le [code](/NLTK/keywordExtraction.py) ainsi que le fichier [json](/resource/paperJson.json) définitif.
 
 Par `BAO Yukun`
 
@@ -391,7 +391,7 @@ Par `BAO Yukun`
 
 C'est le moment de présenter deux semaines de travail intense sur le sujet et de conclure l'année en beauté.
 
-Voici notre Website: [Analyse de publications scientifiques – Visualisation des résultats](http://paf-telecom-paristech.comli.com)
+Voici notre website: [Analyse de publications scientifiques – Visualisation des résultats](http://paf-telecom-paristech.comli.com)
 
 Voici notre poster:
 
