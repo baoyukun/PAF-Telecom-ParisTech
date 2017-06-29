@@ -420,9 +420,26 @@ J'ai essayé de faire un petit programme pour faire un rêqut à client. Mais j'
 
 Par `ZHU Fangda`
 
+#### Partie visualisation
+
+J'ai en outre créé des nouveaux graphs accessibles sur le site via *display.php?dataURL=data/chordcoaut.txt&graphType=CD* et *display.php?dataURL=data/chordcokey.txt&graphType=CD* qui permettent d'avoir une quantification moins détaillée mais plus exacte des liens entre les départements.
+
+A deux heures du matin, j'ai arrêté de coder mais si j'avais eu plus de temps, j'aurais essayé de développer les fonctions suivantes:
+
+- **Recherche par auteur** qui redirige vers un set sur-mesure de graphs
+- **Amélioration du rendu des mots-clefs au fil du temps** avec une modification des données pour les étaler dans le temps
+- **Arbre des mots-clefs** qui n'a pas pu être fini car le script php qui crée le .csv PAA contenait des bugs.
+
+Par `Nino Filiu`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Jeudi 29 juin 2017
+Mon travail d'aujourd'hui consiste à intégrer toutes les productions dans le site final. Etant donné mon architecture, cela a été assez rapide car il fallait juste mettre les bons liens aux bons endroits sur *index.html*. J'ai aussi du reprendre les paragraphes qu'avaient écrit Chérif car cela ne décrivait pas assez les graphs et leur utilité.
+
+Les fonctions que j'avais voulu coder n'ont pas pu être développées aujourd'hui.
+
+Par `Nino Filiu`
 
 **Triomphe !!!**
 
