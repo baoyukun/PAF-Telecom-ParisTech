@@ -1,0 +1,12 @@
+{
+    "head": {
+        "vars": [ "title" , "familyName" , "givenname" ]
+    },
+    "results": {
+        "bindings": [
+            {
+                "title": {"type": "literal", "value": "123"}
+            }
+        ]
+    }
+    
