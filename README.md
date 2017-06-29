@@ -371,8 +371,6 @@ Par `BAO Yukun`
 
 ### Mercredi 28 juin 2017
 
-#### Partie Visualisation
-
 #### Partie Analyse
 
 Aujourd'hui j'essaie de compléter le champ *keywords* pour les articles qui manquent du mot clé ou bien qui ont très peu de mots clés. Le résultat à la fin est que chaque article a au moins 5 mots clés sous la condition que son abstract ait été extrait.
