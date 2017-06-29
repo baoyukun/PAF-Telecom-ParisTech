@@ -252,6 +252,7 @@ Par `BAO Yukun`
 
 ### Jeudi 22 juin 2017
 
+
 #### Partie Visualisation
 
 J'ai modifié les scripts existants en fonction de la nouvelle convention de fichier JSON décrite plus haut par Yukun. J'ai en outre écrit de nouveaux scripts permettant une visualisation des mots-clefs. Cela m'a pris un peu de temps étant donné qu'il fallait construire une toute nouvelle clase d'objets adapté à ce script.
@@ -278,6 +279,10 @@ J'ai décidé de profiter des outils pour arriver à la fin comme le suivant:
 
 Par `BAO Yukun`
 
+Aujourd j'ai commencé à traité les fichiers de json que le prof donnée. Pour deserializer les fichier de json, j'ai décidé d'utilier le bibliothèque Jackson. Donc j'ai tout d'abord étudier la documentation de jackson et crée des classes qui représente les auteurs et articles afin de facilier la deserialisation. Le classe qui fait desérialization se trouve [ici](/src/parser/JsonUtils.java).
+
+ Par `ZHU Fangda`
+
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Vendredi 23 juin 2017
@@ -299,6 +304,11 @@ mvn -DskipTests=true clean install
 ```  
 
 Par `BAO Yukun`
+
+Aujourd j'ai commencé à construire le fichier rdf à partir les fichier json. J'ai cherché partout mais il n'exite pas un ontology ou un seul ensemble de vocabulaire qui me permet d'exprimer tous les relations enter les  données. Pourquoi pas construire notre propre ondology.
+J'ai trouvé un logiciels, protégé, qui me permet de construire un ondology et bien difinie les contrainte de chaque classe. Le model d'ontology peut être trouvé [ici](rdf/res/paf.owl). Mais quand j'ai utilisé mon propre ontology pour creer un model de jena, mon travail va devinir plus compliquer. Ce que j'ai besoin est un ensemble de vocabulaire. J'ai décidé d'abandonner cette solution. Donc j'ai recherché le code resouce de jena pour savoir comment il a défini un class de vobaulaire, par example,org.apache.jena.sparql.vocabulary.FOAF. J'ai créé mon propre classe de vocabulary s'en réferant à org.apache.jena.sparql.vocabulary.FOAF. Vous pouvez trouver le class [ici](rdf/src/parser/main/PAF.java).
+
+Par `ZHU Fangda`
 
 [*Retour au calendrier*](#développement-du-projet)
 
@@ -330,6 +340,11 @@ Finalement le fichier json produit de 1677 articles se trouve [ici](/resource/pa
 
 Par `BAO Yukun`
 
+Aujourd j'ai creé une classe afin d'importer les informations et creer un base de donné de rdf. Comme j'ai mis tous les données dans un même model. Donc J'ai utilisé Singleton pour concevoir cette classe. Comme il y a beaucoup de attribut pour chaque article. Il est maladroit d'ajouter les "properties" de chaque article un par un. Sachant que chaque attribut de classe [Article](/rdf/src/parser/Article.java) correspond à un "poperty" darticle dans rdf. Est-ce que je peut trouver un méthode qui peut savoir tous les attributs de class? Le jackson m'a inspiré. J'ai donc décidé d'utilier la réflexion pour realiser cette fonction. Avec cette méthode, mon programme est capable d'filter les valeurs des attributs et d'ajouter les "peroperties" avec même processus et d'eviter la répetion de code. Et aussi, quand on ajoute des nouvelles attributs sur article, il n'est pas nececaisre de modifier le code dans [RDFUtils](rdf/src/parser/RDFUtils.java).
+
+J'ai donné les fichiers de json que Nino demande pour faciliter son travail.Il a rédigé tous ses demandes dans le fichier [infos dispos.md](visualisation/infos dispos.md), j'ai répondé ses demandes avec les resultats sous format json et les sparsqls. Comme je connais rien sur php,
+donc j'ai lui demandé la possibilité de faire un client pour faire un rêquet à serveur.
+Par `ZHU Fangda`   
 [*Retour au calendrier*](#développement-du-projet)
 
 ### Mardi 27 juin 2017
@@ -367,7 +382,17 @@ Le programme de cette partie se trouve [ici](/crawler/scopusCrawler.py).
 
 Par `BAO Yukun`
 
-[*Retour au calendrier*](#développement-du-projet)
+Aujourd Yukun me donne un partie de ses resultat. Malheureusement, j'ai touvé qu'il a changé la structure de fichier json. C'est à dire:
+- Le ficher de Yukun et le fichier de prof utilise le nom different pour exprimer même attribut.
+- Pour quel que attributs, ses types de valeurs sont variés. Par example, la valeur de contry soit "String" soit "Array".
+Donc j'ai cherché un méthode pour que mon classes [JsonUtils](rdf/src/parser/JsonUtils.java) sera capable de compatible avec le fichier de prof et le ficher de Yunkun. J'ai ajouté pas mal de JsonPoerperty pour resoudre premier problème et j'ai implement des sous-classe de JsonDeserializer afin de personaliser la processus de deserialization pour quel que atributs.
+C'est à dire les classes [HashMapDeserializer](rdf/src/parser/HashMapDeserializer.java),[SetDeserializer](rdf/src/parser/SetDeserializer.java) et [ListDeserializer](rdf/src/parser/ListDeserializer.java).
+[*Retour au calendrier*](#développement-du-projet). Et aussi, il faut modidifier le code sur RDFUtils pour adapter ce changement.
+J'ai remerqué que chaque fois quand on ajoute un article ou autre dans rdf, il va verifier ses existance par title(pour article) et nom et premier charatère de prénom pour autre. J'ai utilié sparsql pour cette vérification. Au cours de teste, j'ai trouvé il y a pas mal de charctrère spécial dedans, ces charactère bloque mon prgramme. Donc j'ai ajouté quel ligne de code pour nettoiyé les donneés.  
+
+J'ai éssaydé d'utiliser jena TDB pour enregister les données sur rdf, mais j'ai trouvé que c'est pas éfficace dans notre projet.
+
+Par "ZHU Fangda"
 
 ### Mercredi 28 juin 2017
 
@@ -380,6 +405,171 @@ La plupart des codes open-source pour extraire des mots clés à partir du texte
 Vous trouveriez le [code](/NLTK/keywordExtraction.py) ainsi que le fichier [json](/resource/paperJson.json) définitif.
 
 Par `BAO Yukun`
+
+Ce matin j'ai résusi à mettre tous les donnée dans le fichier de rdf(rdf/res/database.rdf) et mis à jour les donnée dans le serveur Jena Fuséki. Afin d'exporter les fichiers json demandé par
+Nino, j'ai tout d'abord utiliser l'application Web de Jena Fuseki pour faire des rêquet et
+télécharger les fichiers json. Sachant que les données très gros, et le web application a craqué
+toujours. Donc j'ai décidé d'utiliser le outil de line command fourni par Jena pour faire un query par sparsql et obtenir les fichiers json. Cette méthode est très rapide et efficace.  
+Ce soir, YuKun a complété le champ "keyword" et m' donnée un nouvelle fichier json. Il est évident que le nouvelle fichier va être plus gros que ancien fichier. Mais la réalité est en revanche. J'ai mis à jour les donée et fournie à Nino. Ci-dessous est l'information sur requet
+
+
+|**information**                              |**statut**                                             |**resultat**     |
+|---------------------------------------------|-------------------------------------------------------|---------------|
+|Liste des chercheurs avec leur groupe        |[query](#liste-des-chercheurs-avec-leur-groupe)        |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-groupe.json)
+|Liste des chercheurs avec leur département   |[query](#liste-des-chercheurs-avec-leur-département)   |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-département.json)
+|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[44,991 entries](/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs.json)
+|Liste des publications avec les auteurs      |[query](#liste-des-publications-avec-les-auteurs)      |[13,648 entries](/visualisation/json/liste-des-publications-avec-les-auteurs.json)
+|Liste des publications avec le département   |[query](#liste-des-publications-avec-le-département)   |[3,834 entries](/visualisation/json/liste-des-publications-avec-le-département.json)
+|Liste des publications avec le groupe        |[query](#liste-des-publications-avec-le-groupe)        |[3,814 entries]("/visualisation/json/liste-des-publications-avec-le-groupe.json)
+|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[11,740 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
+|Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[ 28,839 entries](/visualisation/json/liste-des-publications-avec-la-date.json.)
+|Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[33,242 entries](/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json)
+|liste des publications avec les mots clefs|[query](#liste-des-publications-avec-les-mots-clefs)|[9,450 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
+
+
+Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 1.1 Graph Store HTTP Protocolles"  pour obtenir la resultat. Le code resemble à ci-dessous
+
+```Angular
+ var req = {
+        method: 'GET',
+        url: http://localhost:3030/paf/query',
+        headers: { 'Content-type' : 'application/x-www-form-urlencoded',
+            'Accept' : 'application/sparql-results+json' },
+        params: {
+            query :myquery,
+            format: "json"
+        }
+    };
+  ```
+  Pour différent de demande, il suffit de changer le myquery chaqut fois.
+
+- Liste des chercheurs avec leur groupe
+Query:
+```sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?familyName ?GivenName ?group
+WHERE {
+  ?author paf:group ?group.
+  ?author foaf:family_name ?familyName.
+  ?author foaf:givenname ?GivenName
+}
+```
+- Liste des chercheurs avec leur département
+Query
+```sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?familyName ?GivenName ?departement
+WHERE {
+  ?author paf:department ?departement.
+  ?author foaf:family_name ?familyName.
+}
+```
+
+
+- Liste des chercheurs avec les mots-clefs
+``` sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?familyName ?GivenName ?keyword
+WHERE {
+  ?article paf:written_by ?author.
+  ?article paf:has_key_word ?keyword.
+  ?author foaf:family_name ?familyName.
+  ?author foaf:givenname ?GivenName
+}
+```
+- Liste des publications avec les auteurs
+``` sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?title ?familyName ?givenname
+WHERE {
+  ?article paf:written_by ?author.
+  ?article paf:title ?title.
+  ?author foaf:family_name ?familyName.
+  ?author foaf:givenname ?givenname
+}
+```
+
+- Liste des publications avec le département
+``` sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?title ?departement
+WHERE {
+  ?article paf:title ?title.
+  ?article paf:departement ?departement
+}
+```
+- Liste des publications avec le groupe
+``` sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?title ?group
+WHERE {
+  ?article paf:title ?title.
+  ?article paf:group ?group
+}
+```
+- Liste des publications avec les mots-clefs
+``` sql
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?title ?keyword
+WHERE {
+  ?article paf:title ?title.
+  ?article paf:has_key_word ?keyword
+}
+```
+- Liste des publications avec la date
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+SELECT ?title ?year ?month
+WHERE {
+  ?article paf:title ?title.
+  ?article paf:year ?year.
+  OPTIONAL {?article paf:month ?month}
+}
+```
+
+- Liste des publications avec les auteurs cités
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?articleTitle ?citationTitle
+WHERE {
+  ?article paf:citation ?citation.
+  ?article paf:title ?articleTitle.
+  ?citation paf:title ?citationTitle
+}
+```
+- Liste des publications avec les mots clefs
+```
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
+
+SELECT ?keyword ?year ?month
+WHERE {
+  ?article paf:has_key_word ?keyword.
+  ?article paf:year ?year.
+  OPTIONAL {?article paf:month ?month}
+}
+```
+
+J'ai essayé de faire un petit programme pour faire un rêqut à client. Mais j'ai pas rèussi à faire car j'ai manqué des connaissances basique sur PHP
+
+Par `ZHU Fangda`
 
 [*Retour au calendrier*](#développement-du-projet)
 
