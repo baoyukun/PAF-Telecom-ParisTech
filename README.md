@@ -1,4 +1,4 @@
-﻿# PAF-Telecom-ParisTech
+# PAF-Telecom-ParisTech
 
 **Analyse de publications scientifiques – Visualisation des résultats**
 
@@ -342,7 +342,7 @@ Par `BAO Yukun`
 
 Aujourd j'ai creé une classe afin d'importer les informations et creer un base de donné de rdf. Comme j'ai mis tous les données dans un même model. Donc J'ai utilisé Singleton pour concevoir cette classe. Comme il y a beaucoup de attribut pour chaque article. Il est maladroit d'ajouter les "properties" de chaque article un par un. Sachant que chaque attribut de classe [Article](/rdf/src/parser/Article.java) correspond à un "poperty" darticle dans rdf. Est-ce que je peut trouver un méthode qui peut savoir tous les attributs de class? Le jackson m'a inspiré. J'ai donc décidé d'utilier la réflexion pour realiser cette fonction. Avec cette méthode, mon programme est capable d'filter les valeurs des attributs et d'ajouter les "peroperties" avec même processus et d'eviter la répetion de code. Et aussi, quand on ajoute des nouvelles attributs sur article, il n'est pas nececaisre de modifier le code dans [RDFUtils](/rdf/src/parser/RDFUtils.java).
 
-J'ai donné les fichiers de json que Nino demande pour faciliter son travail.Il a rédigé tous ses demandes dans le fichier [infos dispos.md](/visualisation/infos-dispos.md), j'ai répondé ses demandes avec les resultats sous format json et les sparsqls. Comme je connais rien sur php,
+J'ai donné les fichiers de json que Nino demande pour faciliter son travail.Il a rédigé tous ses demandes dans le fichier [infos_dispos.md](/visualisation/infos_dispos.md), j'ai répondé ses demandes avec les resultats sous format json et les sparsqls. Comme je connais rien sur php,
 donc j'ai lui demandé la possibilité de faire un client pour faire un rêquet à serveur.
 
 Par `ZHU Fangda`   
@@ -414,162 +414,7 @@ Ce matin j'ai résusi à mettre tous les donnée dans le fichier de rdf(rdf/res/
 Nino, j'ai tout d'abord utiliser l'application Web de Jena Fuseki pour faire des rêquet et
 télécharger les fichiers json. Sachant que les données très gros, et le web application a craqué
 toujours. Donc j'ai décidé d'utiliser le outil de line command fourni par Jena pour faire un query par sparsql et obtenir les fichiers json. Cette méthode est très rapide et efficace.  
-Ce soir, YuKun a complété le champ "keyword" et m' donnée un nouvelle fichier json. Il est évident que le nouvelle fichier va être plus gros que ancien fichier. Mais la réalité est en revanche. J'ai mis à jour les donée et fournie à Nino. Ci-dessous est l'information sur requet
-
-
-|**information**                              |**statut**                                             |**resultat**     |
-|---------------------------------------------|-------------------------------------------------------|---------------|
-|Liste des chercheurs avec leur groupe        |[query](#liste-des-chercheurs-avec-leur-groupe)        |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-groupe.json)
-|Liste des chercheurs avec leur département   |[query](#liste-des-chercheurs-avec-leur-département)   |[195 entries](/visualisation/json/liste-des-chercheurs-avec-leur-département.json)
-|Liste des chercheurs avec les mots-clefs     |[query](#liste-des-chercheurs-avec-les-mots-clefs)     |[44,991 entries](/visualisation/json/liste-des-chercheurs-avec-les-mots-clefs.json)
-|Liste des publications avec les auteurs      |[query](#liste-des-publications-avec-les-auteurs)      |[13,648 entries](/visualisation/json/liste-des-publications-avec-les-auteurs.json)
-|Liste des publications avec le département   |[query](#liste-des-publications-avec-le-département)   |[3,834 entries](/visualisation/json/liste-des-publications-avec-le-département.json)
-|Liste des publications avec le groupe        |[query](#liste-des-publications-avec-le-groupe)        |[3,814 entries]("/visualisation/json/liste-des-publications-avec-le-groupe.json)
-|Liste des publications avec les mots-clefs   |[query](#liste-des-publications-avec-les-mots-clefs)   |[11,740 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
-|Liste des publications avec la date          |[query](#liste-des-publications-avec-la-date)          |[ 28,839 entries](/visualisation/json/liste-des-publications-avec-la-date.json.)
-|Liste des publications avec les auteurs cités|[query](#liste-des-publications-avec-les-auteurs-cités)|[33,242 entries](/visualisation/json/liste-des-publications-avec-les-auteurs-cités.json)
-|liste des publications avec les mots clefs|[query](#liste-des-publications-avec-les-mots-clefs)|[9,450 entries](/visualisation/json/liste-des-publications-avec-les-mots-clefs.json)
-
-
-Sachant que l'on utilise Jena Fuseki comme un serveur, on peut utiliser "SPARQL 1.1 Graph Store HTTP Protocolles"  pour obtenir la resultat. Le code resemble à ci-dessous
-
-```Angular
- var req = {
-        method: 'GET',
-        url: http://localhost:3030/paf/query',
-        headers: { 'Content-type' : 'application/x-www-form-urlencoded',
-            'Accept' : 'application/sparql-results+json' },
-        params: {
-            query :myquery,
-            format: "json"
-        }
-    };
-  ```
-  Pour différent de demande, il suffit de changer le myquery chaqut fois.
-
-- Liste des chercheurs avec leur groupe
-Query:
-```sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?familyName ?GivenName ?group
-WHERE {
-  ?author paf:group ?group.
-  ?author foaf:family_name ?familyName.
-  ?author foaf:givenname ?GivenName
-}
-```
-- Liste des chercheurs avec leur département
-Query
-```sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?familyName ?GivenName ?departement
-WHERE {
-  ?author paf:department ?departement.
-  ?author foaf:family_name ?familyName.
-}
-```
-
-
-- Liste des chercheurs avec les mots-clefs
-``` sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?familyName ?GivenName ?keyword
-WHERE {
-  ?article paf:written_by ?author.
-  ?article paf:has_key_word ?keyword.
-  ?author foaf:family_name ?familyName.
-  ?author foaf:givenname ?GivenName
-}
-```
-- Liste des publications avec les auteurs
-``` sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?title ?familyName ?givenname
-WHERE {
-  ?article paf:written_by ?author.
-  ?article paf:title ?title.
-  ?author foaf:family_name ?familyName.
-  ?author foaf:givenname ?givenname
-}
-```
-
-- Liste des publications avec le département
-``` sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?title ?departement
-WHERE {
-  ?article paf:title ?title.
-  ?article paf:departement ?departement
-}
-```
-- Liste des publications avec le groupe
-``` sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?title ?group
-WHERE {
-  ?article paf:title ?title.
-  ?article paf:group ?group
-}
-```
-- Liste des publications avec les mots-clefs
-``` sql
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?title ?keyword
-WHERE {
-  ?article paf:title ?title.
-  ?article paf:has_key_word ?keyword
-}
-```
-- Liste des publications avec la date
-```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-SELECT ?title ?year ?month
-WHERE {
-  ?article paf:title ?title.
-  ?article paf:year ?year.
-  OPTIONAL {?article paf:month ?month}
-}
-```
-
-- Liste des publications avec les auteurs cités
-```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?articleTitle ?citationTitle
-WHERE {
-  ?article paf:citation ?citation.
-  ?article paf:title ?articleTitle.
-  ?citation paf:title ?citationTitle
-}
-```
-- Liste des publications avec les mots clefs
-```
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX paf: <http://givingsense.eu/sembib/data/tpt/paf2017/model#>
-
-SELECT ?keyword ?year ?month
-WHERE {
-  ?article paf:has_key_word ?keyword.
-  ?article paf:year ?year.
-  OPTIONAL {?article paf:month ?month}
-}
-```
+Ce soir, YuKun a complété le champ "keyword" et m' donnée un nouvelle fichier json. Il est évident que le nouvelle fichier va être plus gros que ancien fichier. Mais la réalité est en revanche. J'ai mis à jour les donée et fournie à Nino. Le fichier [infos_dispos.md](/visualisation/infos_dispos.md) contiens tous les resultats sur sparsql.
 
 J'ai essayé de faire un petit programme pour faire un rêqut à client. Mais j'ai pas rèussi à faire car j'ai manqué des connaissances basique sur PHP
 
