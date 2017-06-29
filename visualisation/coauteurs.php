@@ -1,16 +1,17 @@
 <?php
 
+ini_set("memory_limit", "1G");
+
 $t=time();
 include("utils.php");
-$gad=json_decode(file_get_contents("data/groupsanddepts.json"));
-
+$gad=json_decode(file_get_contents("data/depts.json"));
 $data=json_decode(file_get_contents("data/publis-auteurs.json"))->results->bindings;
 for ($i=0; $i<count($data); $i++){
     $data[$i]->familyName->value=ucwords(strtolower($data[$i]->familyName->value));
 }
-var_dump($data);
+
 $t=time()-$t;
-echo "<h1>time of calculation: $t</h1>";
+echo "<h3>Data loaded, time of calculation: $t seconds</h3>";ob_flush();flush();
 $t=time();
 
 $publis=[];
@@ -22,9 +23,9 @@ foreach ($data as $d){
     }
     $publis[$title][]=$name;
 }
-var_dump($publis);
+
 $t=time()-$t;
-echo "<h1>time of calculation: $t</h1>";
+echo "<h3>Publications loaded, time of calculation: $t seconds</h3>";ob_flush();flush();
 $t=time();
 
 $chercheurs=[];
@@ -34,9 +35,9 @@ foreach ($data as $d){
         $chercheurs[]=$name;
     }
 }
-var_dump($chercheurs);
+
 $t=time()-$t;
-echo "<h1>time of calculation: $t</h1>";
+echo "<h3>Scientists list built, time of calculation: $t seconds</h3>";ob_flush();flush();
 $t=time();
 
 $co=[];
@@ -55,9 +56,9 @@ foreach ($publis as $p){
         }
     }
 }
-var_dump($co);
+
 $t=time()-$t;
-echo "<h1>time of calculation: $t</h1>";
+echo "<h3>Connexion list built, time of calculation: $t seconds</h3>";ob_flush();flush();
 $t=time();
 
 $jobj=new stdClass();
@@ -65,7 +66,7 @@ $jobj->nodes=[];
 foreach ($chercheurs as $c){
     $jobj->nodes[]=new stdClass();
     $jobj->nodes[count($jobj->nodes)-1]->id=$c;
-    $jobj->nodes[count($jobj->nodes)-1]->group=getGroup($c,$gad);
+    $jobj->nodes[count($jobj->nodes)-1]->group=getDept(strtolower($c),$gad));
 }
 $jobj->links=[];
 foreach ($co as $c1=>$c){
@@ -78,14 +79,17 @@ foreach ($co as $c1=>$c){
         }
     }
 }
-var_dump($jobj);
+
 $t=time()-$t;
-echo "<h1>time of calculation: $t</h1>";
+echo "<h3>Json object built, time of calculation: $t seconds</h3>";ob_flush();flush();
 $t=time();
 
 $f=fopen("data/coauteurs.json","w");
 fwrite($f,json_encode($jobj));
 fclose($f);
 
+$t=time()-$t;
+echo "<h3>Json object written, time of calculation: $t seconds</h3>";ob_flush();flush();
+$t=time();
 
 ?>

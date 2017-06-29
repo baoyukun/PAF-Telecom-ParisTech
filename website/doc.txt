@@ -1,0 +1,26 @@
+auteurs-copublis
+http://localhost/PAF2/display.php?dataURL=data/coauteurs.json&graphType=ZFDG
+
+auteurs-citations
+http://localhost/PAF2/display.php?dataURL=data/authorkeywords.json&graphType=ZFDG
+
+mots-clefs presentation
+http://localhost/PAF2/display.php?dataURL=data/keywords.json&graphType=CFL
+
+mots-clefs temps
+http://localhost/PAF2/display.php?dataURL=data/timekeywords.csv&graphType=SG
+
+-----
+
+BASE		PHP		INT/FIN
+
+groupsanddepts	autkeywords	authorkeywords (FDG)
+autkeywords	
+
+groupsanddepts	coauteurs	coauteurs (FDG)
+publis-auteurs	
+
+publiskeywords	keywordpres	keywords (CFL)
+
+keywordstime	keywordstime	timekeywords (SG)
+

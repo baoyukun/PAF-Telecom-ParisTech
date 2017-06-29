@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/* font-family: 'Raleway', sans-serif
+bleu foncé:#0C105B;
+violet :#7E0CE8;
+*/
+body, html{
+	padding:0;
+	margin:0;
+}
+body {
+	font-family: 'Raleway', sans-serif
+}
+a , a:hover {
+	text-decoration: none;
+}
+
+.sel:hover{
+
+}
+
+.container-fluid{
+	padding: 0;
+}
+/* header*/
+.header{
+	background-color: #5A9EE6;
+	height: 70px;
+	line-height: 70px;
+}
+
+.logo{
+	color:#ffffff;
+	text-transform: uppercase;
+	font-weight:bold;
+	letter-spacing: 1px;
+	float: left;
+}
+
+.menu{
+	float:right;
+}
+.menu a{
+	color:#ffffff;
+	margin-right: 20px;
+}
+.menu a:hover{
+	color:#7E0CE8;
+}
+/* banière*/
+.banner{
+	width: 100%;
+	max-width: 100%;
+
+}
+.ban{
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+
+}
+.ban img{
+	width: 100%;
+	max-width: 100%;
+	height: 25%;
+	max-height: 25%;
+}
+
+.inner-banner{
+	position : absolute;
+	top: 30%;
+	width: 100%;
+	text-align: center;
+}
+.inner-banner h1{
+	color: white;
+	text-shadow: 2px 2px 30px #000000;
+	font-size: 5em;
+	text-align: center;
+	padding: 100px;
+
+}
+/* graphs*/
+.separation {
+	height: 4px;
+	width: 5%;
+	background-color: #5A9EE6;
+}
+.graph article h2,h1{
+	text-align: center;
+}
+.graph article {
+	margin-top: 5%;
+}
+.row h1,h2{
+	color:#7E0CE8;
+}
+
+/* la team*/
+.row img{
+	width:94%;
+
+}
+
+.fongda img {
+	width: 100%;
+}
+.about article h2,h1{
+	text-align: center;
+	}
+.about article{
+	margin-bottom: 30px;
+}
+/* contact */
+.footer{
+	background-color:#5A9EE6; 
+}
+
+.footer h2{
+	margin-top: 10px;
+	color:#ffffff;
+	text-align: center;
+}
+.formulaireContact{
+	width:500px;
+	display: block;
+	margin: 0 auto;
+}
+
+input{
+	margin-bottom: 20px;
+}
+input[type=text]{
+	height: 50px;
+	width:500px;
+
+}
+
+input[type=email]{
+	height: 50px;
+	width:500px;
+	
+}
+
+textarea{
+	width:500px;
+	height:200px;
+	resize:vertical;
+}
+
+.btn-custom{
+	background-color:#3498DB ;
+	color:#ffffff;
+}

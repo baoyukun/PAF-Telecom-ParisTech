@@ -371,8 +371,6 @@ Par `BAO Yukun`
 
 ### Mercredi 28 juin 2017
 
-#### Partie Visualisation
-
 #### Partie Analyse
 
 Aujourd'hui j'essaie de compléter le champ *keywords* pour les articles qui manquent du mot clé ou bien qui ont très peu de mots clés. Le résultat à la fin est que chaque article a au moins 5 mots clés sous la condition que son abstract ait été extrait.
@@ -391,7 +389,11 @@ Par `BAO Yukun`
 
 :confetti_ball::balloon::sparkling_heart::satisfied::heart_eyes::stuck_out_tongue_closed_eyes:
 
-C'est le moment de présenter deux semaines de travail intense sur le sujet et de conclure l'année en beauté. Voici notre poster :)
+C'est le moment de présenter deux semaines de travail intense sur le sujet et de conclure l'année en beauté.
+
+Voici notre Website: [Analyse de publications scientifiques – Visualisation des résultats](http://paf-telecom-paristech.comli.com)
+
+Voici notre poster:
 
 ![poster](/resource/Poster.jpg "PAF: Analyse de publications scientifiques et Visualisation des résultats")
 

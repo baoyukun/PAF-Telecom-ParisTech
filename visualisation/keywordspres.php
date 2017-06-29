@@ -1,5 +1,3 @@
-<!-- build a json that will presents the keywords as a collapsible tree. A keyword is the father of another keyword if both are used in the same article. Thus, close to the root, are the main concepts, and close to the leaves are the specific concepts. The bigger the leaf, the more frequently the word is used. -->
-
 <?php
 
 $data=json_decode(file_get_contents("data/publiskeywords.json"))->results->bindings;

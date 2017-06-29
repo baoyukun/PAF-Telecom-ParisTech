@@ -1,0 +1,61 @@
+http://localhost/PAF3/min-FDG?dataURL=data/coauteurs.json&cutBy=1
+
+input: 25849 nodes and 212778 links
+Data loaded in 0 seconds, 212778 links
+Values modified in 0 seconds, 54626 links left
+total links calculated in 1 seconds
+Weak nodes located in 0 seconds (17084 weak nodes, 8765 strong nodes left)
+Weak nodes deleted in 23 seconds
+Weak links deleted in 168 seconds
+Arrays reindexed in 0 seconds
+output: 8765 nodes and 54626 links
+Object written back in 0 seconds
+
+
+
+http://localhost/PAF3/min-FDG?dataURL=data/coauteurs.json&cutBy=5
+
+input: 25849 nodes and 212778 links
+Data loaded in 1 seconds, 212778 links
+Values modified in 0 seconds, 5962 links left
+total links calculated in 0 seconds
+Weak nodes located in 0 seconds (24368 weak nodes, 1481 strong nodes left)
+Weak nodes deleted in 20 seconds
+Weak links deleted in 26 seconds
+Arrays reindexed in 0 seconds
+output: 1481 nodes and 5962 links
+Object written back in 0 seconds
+
+
+
+http://localhost/PAF3/min-FDG?dataURL=data/coauteurs-min5.json&cutBy=5
+
+input: 1481 nodes and 5962 links
+Data loaded in 1 seconds, 5962 links
+Values modified in 0 seconds, 1584 links left
+total links calculated in 0 seconds
+Weak nodes located in 0 seconds (922 weak nodes, 559 strong nodes left)
+Weak nodes deleted in 0 seconds
+Weak links deleted in 0 seconds
+Arrays reindexed in 0 seconds
+output: 559 nodes and 1584 links
+Object written back in 0 seconds
+
+
+
+http://localhost/PAF3/min-FDG?dataURL=data/coauteurs.json&cutBy=10
+
+input: 25849 nodes and 212778 links
+Data loaded in 1 seconds, 212778 links
+Values modified in 0 seconds, 1584 links left
+total links calculated in 0 seconds
+Weak nodes located in 0 seconds (25290 weak nodes, 559 strong nodes left)
+Weak nodes deleted in 21 seconds
+Weak links deleted in 6 seconds
+Arrays reindexed in 0 seconds
+output: 559 nodes and 1584 links
+Object written back in 0 seconds
+
+-------------------------
+
+approxdepts: 87% success

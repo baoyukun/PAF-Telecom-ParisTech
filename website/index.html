@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<style>
+    p {
+        text-align: center;
+        font-size: 1.3em;
+    }
+</style>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>représentations de publictions scientifiques</title>
+        <!-- font -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600" rel="stylesheet">
+        <!-- css -->
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+
+    <body>
+    	<!--header-->
+       	<header class="container-fluid header ">
+       		<div class="container">
+       			<a href="#" class="logo"> représentations d'articles scientifiques</a>
+       			<nav class="menu">
+       				<a href="#"> Accueil</a>
+       				<a href="#graph"> Graphes disponibles</a>
+       				<a href="#about"> La team </a>
+       				<a href="#contact"> Contact</a>
+       			</nav>
+       		</div>
+       	
+       	</header> 
+        <!--fin header-->
+        <!--banière -->
+       	<section class ="container-fluid banner">
+       		<div class="ban">
+       			<img src="images/nice.jpg" alt="banière du site"/>
+       		</div>
+       		<div class="inner-banner">
+       			<h1> Des chercheurs liés dans un monde connecté </h1>
+       			
+       		</div>
+       	</section>>
+       	<!--fin banière-->
+       	<!--graphs-->
+   		<section class ="container-fluid graph">
+   		<div class="container">
+   			<div class="row">
+   				<h1  id="graph">Graphs</h1>
+   				<hr class="separation">
+                
+   				<article class="col-md-12 sel">
+   					<h2>Pourquoi une visualisation des publications?</h2>
+   					<p>
+                        Telecom ParisTech est une école reconnue pour la recherche. Avec <a href="display.php?dataURL=data/chercheurs.json&graphType=CT" aria-label="département et groupe des chercheurs de l'ENST"><strong>un grand nombre d'enseignants chercheurs</strong></a> et près d'un millier de publications par an en moyenne depuis 2010, la masse d'information est cependant impossible à assimiler par une personne extérieure. L'intérêt d'une visualisation graphique est de représenter des informations complexes qui peuvent être assimilés en un instant.<br>
+   					</p>
+   				</article>
+                
+                <!-- INCOMPLETE
+   				<article class="col-md-12">
+   					<h2>Lien entre les acteurs en fonction des citations</h2>
+   					<p>
+                        Une publication est citée pour éviter à une équipe de refaire un travail identique ou de donner une pertinence à une idée avancée. Les citations peuvent être négatives ou positives, mais dans les deux cas, un article beaucoup cité est considéré comme central, fondateur, et acteur principal de la recherche.
+                    </p>
+                    <p>
+                        
+                        Les graphs suivants ont été construits de la manière suivante: chaque point représente une publication. Chaque fois qu'une publication se réfère à une autre, un lien se crée entre les deux. Les publications très citées ont alors une place remarquable dans le graph. <a href=""><strong>Ici</strong></a>, les points sont colorés en fonction du département, et <a href=""><strong>ici</strong></a>, ils le sont en fonction de la différence citée/citation. Le premier vient informer sur quel département est au centre de la recherche, et le second nous informe sur qui se repose le plus sur les autres.
+   					</p>
+   				</article> -->
+                
+   				<article class="col-md-12">
+   					<h2>Liens entre les acteurs en fonction des collaborations</h2>
+   					<p>
+                        Un article est co-écrit si les informations recherchées nécessitent des expertises complémentaires. Dans <a href="display.php?dataURL=data/coauteurs-dirty.json&graphType=ZFDG"><strong>ce graph</strong></a>, un point représente un chercheur, sa couleur est relative à son département. Deux chercheurs sont liés d'une force proportionnelle au nombre de publications communes. Le résultat étant très peu lisible, les graphs suivant représentent les mêmes données mais que pour les forts liens de co-publication:
+                    </p>
+                    <p>
+                        <a href="display.php?dataURL=data/coauteurs-dirty-min3.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant plus de 3 publications communes</strong></a><br>
+                        <a href="display.php?dataURL=data/coauteurs-dirty-min5.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant plus de 5 publications communes</strong></a><br>
+                        <a href="display.php?dataURL=data/coauteurs-dirty-min7.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant plus de 6 publications communes</strong></a><br>
+                        <a href="display.php?dataURL=data/coauteurs-dirty-min10.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant plus de 10 publications communes</strong></a><br>
+                    </p>
+                    <p>
+                        On remarque qu'il semble il y avoir beaucoup de chercheurs venant d'un même département. C'est en fait l'affectation par défaut lorsque le département du chercheur n'a pas été trouvé, le plus souvent parce qu'il ne viens pas de l'école. On peut donc supposer qu'un chercheur appartienne à un certain département s'il a collaboré le plus de fois avec. Ainsi, on arrive à outrepasseer les trous dans les données avec <a href="display.php?dataURL=data/coauteurs-min6.json&graphType=ZFDG"><strong>ce graph</strong></a> qui donne une vision plus pertinente des liens entre les départements.
+                    </p>
+                    <p>
+                        Il a aussi été filtré dans <a href="display.php?dataURL=data/coauteurs-out-min0.json&graphType=ZFDG"><strong>ce graph</strong></a> tous les chercheurs extérieurs à l'école. Dans <a href="display.php?dataURL=data/chordcoaut.txt&graphType=CD"><strong>ce diagramme</strong></a>, les liens entre les départements sont quantifiés de manière moins détaillée mais plus exacte.
+                    </p>
+   				</article>
+                
+                <article class="col-md-12 sel">
+                    <h2>Liens entre les acteurs en fonction des mots-clefs</h2>
+                    <p>
+                        L'utilisation de mots-clefs communs est un bon indicateur de la proximité des domaines. Dans <a href="display.php?dataURL=data/authorkeywords.json&graphType=ZFDG"><strong>ce graph</strong></a>, là encore, chaque point représente un chercheur, sa couleur représente son département, et les chercheurs sont liés d'une force proportionnelle au nombre de mots-clefs communs utilisés dans leur publications. Il y a le même problème de surcharge d'information que précédemment, d'où la pertinence des graphs suivants:
+                    </p>
+                    <p>
+                        <a href="display.php?dataURL=data/authorkeywords-min4.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant utilisé plus de 4 mots-clefs communs</strong></a><br>
+                        <a href="display.php?dataURL=data/authorkeywords-min9.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant utilisé plus de 9 mots-clefs communs</strong></a><br>
+                        <a href="display.php?dataURL=data/authorkeywords-min15.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant utilisé plus de 15 mots-clefs communs</strong></a><br>
+                        <a href="display.php?dataURL=data/authorkeywords-min20.json&graphType=ZFDG"><strong>Liens entre les chercheurs ayant utilisé plus de 20 mots-clefs communs</strong></a><br>
+                        <i>NB: les départements ont été ici "approximés" comme précédemment pour plus de pertinence</i>
+                    </p>
+                    <p>
+                        <a href="display.php?dataURL=data/chordcokey.txt&graphType=CD"><strong>Ce diagramme</strong></a> précise les liens entre les départements de manière moins détaillée mais plus exacte.
+                    </p>
+                </article>
+                
+                <article class="col-md-12 sel">
+                    <h2>Evolution des thématiques dans le temps</h2>
+                    <p>
+                        <a href="display.php?dataURL=data/timekeywords.csv&graphType=SG"><strong>Cette représentation</strong></a> nous permet de voir les modes en fonction du temps. Chaque bande horizontale représente un mot clef et sa hauteur est proportionnelle au nombre de publication dans lequel il apparait. Alors que l'on s'attend à voir les mot clefs faire un boom puis s'éteindre progressivement, on voit que les sujets de recherches peuvent revenir au centre de l'attention après plusieurs années.
+                    </p>
+                </article>
+   	    </div>
+   	</div>
+
+   		</section>
+   		<!--fin graph-->
+   		<!--la team-->
+       	<section class= "container-fluid about ">
+       	<div class="container">
+       	<div class="row">
+       		<h1 id="about"> l'équipe du site </h1>
+       		<hr class="separation">
+       		<article class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
+       			<h2 >Cherif Diallo</h2>
+       			<img src="images/cherif.jpg" alt="cherif">
+       			
+       			
+       			
+       		</article>
+       		<article class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
+       			<h2> Yukun bao</h2> 
+       			<img src="images/yukun.jpg" alt="kun ">
+       		</article>
+       		<article class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
+       			<h2>Nino Filiu</h2> 
+       			<img src="images/nino.jpg" alt="nino">
+       		</article>
+       		<article class="col-md-3 col-lg-3 col-xs-12 col-sm-12">
+       			<h2> Fongda Zhu</h2>
+       			<div class="fongda">
+       				<img src="images/fongda.jpg" alt="fongda">
+       			</div>  
+       		</article>
+       		
+       	</div>
+       	</div>
+       	
+       	</section>
+       	<!--fin de la team-->
+   		<!--footer-->
+        <footer class="container-fluid footer"> 
+            <div class="container">
+                <div class="row">
+                    <h2 id="contact" action="contact.php"> Contactez-nous </h2>
+                    <hr class="separation">
+                    <div class="span6">
+                        <form class="formulaireContact">
+                            <div class="controls controls-row">
+                                <input id="name" name="name" type="text" class="span3" placeholder="Name"> 
+                                <input id="email" name="email" type="email" class="span3" placeholder="Email address">
+                            </div>
+                            <div class="controls">
+                                <textarea id="message" name="message" class="span6" placeholder="Your Message" rows="5"></textarea>
+                            </div>
+                            <div class="controls">
+                                <button id="contact-submit" type="submit" class="btn btn-custom input-medium pull-right">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+   		</footer>
+   		<!--fin footer-->
+    </body>
+</html>
