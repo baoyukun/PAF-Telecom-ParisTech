@@ -1,0 +1,12 @@
+{
+	"name": {"firstName": "firstName", "middleName": "", "lastName": "lastName"},
+	"email": "emailAddr",
+	"affiliation": {
+		"department": ["dpart1", "dpart2"],
+		"laboratory": ["lab1", "lab2"],
+		"institution": ["institut1", "institut2"],
+		"address": "address",
+		"settlement": ["settle1", "settle2"],
+		"country": ["country1", "country2"]
+	}
+}
