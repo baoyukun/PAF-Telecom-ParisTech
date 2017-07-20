@@ -3,7 +3,7 @@
 **Analyse de publications scientifiques – Visualisation des résultats**
 
 - [Site Internet](http://paf-telecom-paristech.comli.com)
-- [Poster](/resource/Poster.jpg)
+- [Poster](https://raw.githubusercontent.com/baoyukun/PAF-Telecom-ParisTech/master/resource/Poster.jpg)
 - [Code & Données](https://drive.google.com/open?id=0Byh-un6Ly9NCU0hpaHFka3dpV28)
 
 ## Encadrants
